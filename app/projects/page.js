@@ -1,11 +1,9 @@
-import { Scroll } from "@/components/Scroll"
+
 
 
 function page() {
   return (
-<Scroll className='flex flex-col'>
-
-</Scroll>
+    <div></div>
   )
 }
 

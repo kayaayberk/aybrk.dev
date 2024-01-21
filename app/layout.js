@@ -3,6 +3,9 @@ import './globals.css';
 import Providers from './providers';
 import { GeistSans } from 'geist/font/sans';
 import SideBar from '@/components/SideBar';
+import ChildrenRenderer from '@/components/ChildrenRenderer';
+import DrawerMenu from '@/components/DrawerMenu';
+import MobileHeader from '@/components/MobileHeader';
 
 export const metadata = {
   title: 'aybrk.dev',
@@ -11,18 +14,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={GeistSans.className}>
-      <body className="overflow-hidden">
+    <html lang='en' className={GeistSans.className}>
+      <body className='overflow-hidden lg:flex bg-spice'>
         <Providers>
-          <div className="lg:flex">
-            <SideBar className="relative top-0 hidden lg:flex">
+          <main className='min-h-screen flex-1 lg:flex'>
+            <SideBar className='relative hidden lg:flex'>
               <SideBarContent />
             </SideBar>
-            <div className="flex flex-1 overflow-y-auto h-screen mx-auto">
-              {children}
-              {/* This is where the page content will be rendered */}
-            </div>
-          </div>
+            <MobileHeader />
+            <ChildrenRenderer>{children}</ChildrenRenderer>
+          </main>
         </Providers>
       </body>
     </html>
