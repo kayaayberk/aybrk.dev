@@ -1,10 +1,10 @@
 'use client';
 
-import { Scroll } from './Scroll';
+
 
 function SideBar({ children }) {
   return (
-    <div className="hidden lg:w-60 xl:w-72 lg:flex lg:flex-col">
+    <div className="hidden sticky left-0 lg:w-60 xl:w-80 lg:flex lg:flex-col border-r border-gray-300 dark:border-r-gray-800 dark:bg-spice">
       {children}
     </div>
   );

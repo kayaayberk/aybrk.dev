@@ -3,15 +3,16 @@
 import { STACK } from '@/lib/constants';
 
 import Image from 'next/image';
+import Card from './Card';
 
 function TechStack() {
+  const classId = 'tech-stack';
+  
+
   return (
-    <div
-      className='flex flex-wrap justify-center rounded-3xl gap-8 p-4 shadow-xl dark:shadow-lg
-     md:shadow-xl dark:shadow-white/10'
-    >
+    <Card classId={classId}>
       <div>
-        <span className='flex items-center text-xl font-semibold'>
+        <span className='flex items-center justify-center text-xl font-semibold'>
           My current tech stack
         </span>
       </div>
@@ -31,12 +32,14 @@ function TechStack() {
                   tech.label === 'Next.js' ? 'dark:invert dark:filter' : '',
                 ].join(' ')}
               />
-              <span className='text-xs text-card dark:text-card'>{tech.label}</span>
+              <span className='text-xs text-card dark:text-card'>
+                {tech.label}
+              </span>
             </div>
           );
         })}
       </div>
-    </div>
+    </Card>
   );
 }
 
