@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ChevronRight, ExternalLink, Slash, Hash } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { memo } from 'react';
 import { usePathname } from 'next/navigation';
 
@@ -23,6 +23,8 @@ export const NavigationLink = memo(({ href, label, icon, title }) => {
       href={href}
       key={href}
       target={title ? '_blank' : ''}
+      rel={title ? 'noopener noreferrer' : ''}
+      prefetch
       className={[
         'flex items-center justify-between rounded-lg p-2',
         isActive
