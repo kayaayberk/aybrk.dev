@@ -17,6 +17,10 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: (theme) => ({
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-linear': 'linear-gradient(var(--tw-gradient-stops))',
+      }),
       textColor: ['group-hover'],
       alignSelf: ['start'],
       colors: {
@@ -53,6 +57,10 @@ module.exports = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        spice: {
+          DEFAULT: 'hsl(var(--spice))',
+          foreground: 'hsl(var(--spice-foreground))',
+        }
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -74,8 +82,20 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
       scale: {
+        101: '1.01',
+        102: '1.02',
+        103: '1.03',
+        104: '1.04',
         200: '2',
       },
+    },
+  },
+  variants: {
+    extend: {
+      transform: ['hover', 'focus'],
+      scale: ['hover', 'focus'],
+      transitionProperty: ['hover', 'focus'],
+      duration: ['hover', 'focus'],
     },
   },
   plugins: [require('tailwindcss-animate')],
