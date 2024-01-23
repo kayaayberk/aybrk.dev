@@ -1,43 +1,49 @@
 'use client';
-import { useRef } from 'react';
+
+// Hook & Library Imports
 import {
-  useScroll,
   motion,
+  useScroll,
   useTransform,
   // useMotionValueEvent,
 } from 'framer-motion';
-import { PARAGRAPH } from '@/lib/constants';
+import { useEffect, useRef } from 'react';
 import useStore from '@/lib/store';
 
-function TextReveal() {
-  const words = PARAGRAPH.split(' ');
+function TextReveal({ textId, revealSpeed, revealPosition, sticky }) {
   const divRef = useStore((state) => state.divRef);
   const pRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: pRef,
     container: divRef,
-    offset: ['start 0.7', 'start 0.2'],
+    offset: [revealPosition, revealSpeed],
   });
 
+  // useEffect(() => {
+  //   scrollYProgress.on('change', (latest) => {
+  //     console.log(latest);
+  //   });
+  // });
+
   return (
-    <p 
-    className='flex flex-wrap' 
-    ref={pRef}
+    <p
+      className={[
+        'flex w-full flex-wrap justify-center',
+        sticky ? 'sticky top-1/3' : '',
+      ].join(' ')}
+      ref={pRef}
     >
-      {words.map((word, index) => {
-        const start = index / words.length;
-        const end = start + 1 / words.length;
-        return (
-          <Word 
-          key={index} 
-          range={[start, end]} 
-          progress={scrollYProgress}
-          >
-            {word + ' '}
-          </Word>
-        );
-      })}
+      {textId &&
+        textId.split(' ').map((word, index) => {
+          const start = index / textId.length;
+          const end = start + 1 / textId.length;
+          return (
+            <Word key={index} range={[start, end]} progress={scrollYProgress}>
+              {word + ' '}
+            </Word>
+          );
+        })}
     </p>
   );
 }
@@ -45,13 +51,13 @@ function TextReveal() {
 function Word({ children, range, progress }) {
   const opacity = useTransform(progress, range, [0, 1]);
   return (
-    <span className='relative text-3xl font-extrabold md:text-6xl'>
-      <span className='absolute mr-2 text-3xl font-bold opacity-5 md:text-6xl'>
+    <span className='relative text-4xl font-extrabold md:text-6xl'>
+      <span className='absolute mr-2 text-4xl font-bold opacity-5 md:text-6xl'>
         {children}
       </span>
       <motion.span
         style={{ opacity }}
-        className='mr-2 text-3xl font-bold md:text-6xl'
+        className='mr-2 text-4xl font-bold transition-all duration-200 md:text-6xl '
       >
         {children}
       </motion.span>

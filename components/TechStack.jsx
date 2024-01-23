@@ -20,13 +20,15 @@ function TechStack() {
         {STACK.map((tech) => {
           return (
             <div
-              className='flex h-20 w-20 flex-col items-center justify-between gap-2 rounded-2xl p-2'
+              className='flex h-20 w-20 flex-col items-center justify-between gap-2 rounded-xl p-2'
               key={tech.label}
             >
               <Image
                 src={tech.icon}
                 alt={tech.label}
                 height={tech.label === 'TailwindCSS' ? 24 : 32}
+                priority={true}
+                quality={1}
                 className={[
                   'rounded-lg',
                   tech.label === 'Next.js' ? 'dark:invert dark:filter' : '',

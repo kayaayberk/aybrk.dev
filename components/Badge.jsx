@@ -23,7 +23,7 @@ function Badge() {
   }, []);
 
   return (
-    <div className='flex lg:bg-spice items-center justify-between rounded-xl border border-gray-300 p-2  hover:bg-gray-200 dark:border-gray-800 dark:hover:bg-gray-500/20'>
+    <div className='flex lg:bg-spice items-center justify-between rounded-xl border border-gray-300 p-2  hover:bg-gray-200 dark:border-zinc-800 dark:hover:bg-gray-500/20'>
       <Link href='/' prefetch className='inline-flex items-center gap-2 rounded-lg'>
         <Image
           src={BadgeImage}

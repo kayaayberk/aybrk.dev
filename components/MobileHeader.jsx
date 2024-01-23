@@ -7,9 +7,8 @@ import { usePathname } from 'next/navigation';
 function MobileHeader() {
   const pathname = usePathname();
 
-  console.log(pathname);
   return (
-    <header className='bg-spice dark:bg-spice fixed top-0 z-50 w-full border-b border-gray-300 p-2 dark:border-gray-800 lg:hidden pl-4 pr-4'>
+    <header className='bg-spice dark:bg-spice fixed top-0 z-50 w-full border-b border-gray-300 p-2 dark:border-zinc-800 lg:hidden pl-4 pr-4'>
       <div className='flex w-full items-center justify-between'>
         <div className='flex items-center gap-2'>
           <DrawerMenu />

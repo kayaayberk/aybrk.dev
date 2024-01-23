@@ -15,7 +15,7 @@ function DrawerMenu() {
 
       <Drawer.Portal>
         <Drawer.Overlay className='fixed inset-0 bg-black/80' />
-        <Drawer.Content className='bg-spice fixed bottom-0 left-0 right-0 mt-24 flex h-[80%] flex-col rounded-t-xl border outline-none'>
+        <Drawer.Content className='bg-spice fixed bottom-0 left-0 right-0 mt-24 flex h-[80%] flex-col rounded-t-xl border dark:border-zinc-800 outline-none'>
           <div className='dark:bg-spice flex-1 overflow-y-auto rounded-t-xl bg-white p-4'>
             <div className='mx-auto mb-8 h-1.5 w-12 shrink-0 rounded-full border-none bg-white' />
             <SideBarContent />
