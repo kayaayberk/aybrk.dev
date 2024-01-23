@@ -1,11 +1,12 @@
-import SideBarContent from '@/components/SideBarContent';
-import './globals.css';
+// Component Imports
 import Providers from './providers';
-import { GeistSans } from 'geist/font/sans';
 import SideBar from '@/components/SideBar';
-import ChildrenRenderer from '@/components/ChildrenRenderer';
-import DrawerMenu from '@/components/DrawerMenu';
 import MobileHeader from '@/components/MobileHeader';
+import SideBarContent from '@/components/SideBarContent';
+import ChildrenRenderer from '@/components/ChildrenRenderer';
+// Style Imports
+import './globals.css';
+import { GeistSans } from 'geist/font/sans';
 
 export const metadata = {
   title: 'aybrk.dev',
@@ -15,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en' className={GeistSans.className}>
-      <body className='overflow-hidden lg:flex bg-spice'>
+      <body className='bg-spice overflow-hidden lg:flex'>
         <Providers>
           <main className='min-h-screen flex-1 lg:flex'>
             <SideBar className='relative hidden lg:flex'>
