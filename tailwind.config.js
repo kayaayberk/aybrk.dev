@@ -20,6 +20,8 @@ module.exports = {
       backgroundImage: (theme) => ({
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-linear': 'linear-gradient(var(--tw-gradient-stops))',
+        'bg-grid': 'url(../public/background/bg22.svg)',
+        'gradient-45deg': 'linear-gradient(-45deg, var(--tw-gradient-stops))',
       }),
       textColor: ['group-hover'],
       alignSelf: ['start'],
@@ -60,7 +62,11 @@ module.exports = {
         spice: {
           DEFAULT: 'hsl(var(--spice))',
           foreground: 'hsl(var(--spice-foreground))',
-        }
+        },
+        spiceLighter: {
+          DEFAULT: 'hsl(var(--spiceLighter))',
+          foreground: 'hsl(var(--spiceLighter-foreground))',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',
