@@ -1,4 +1,4 @@
-.background::before {
+/* .background::before {
   content: '';
   position: absolute;
   top: 0;
@@ -16,4 +16,4 @@
   background-image: url('../public/background/bg22-inv.svg');
   opacity: 0.01; 
   z-index: -1;
-}
+} */
