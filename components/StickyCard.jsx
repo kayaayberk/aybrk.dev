@@ -1,9 +1,16 @@
 'use client';
+/* eslint-disable react-hooks/rules-of-hooks */
 
 // Hook & Library Imports
 import useStore from '@/lib/store';
 import { useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import {
+  motion,
+  transform,
+  useScroll,
+  useSpring,
+  useTransform,
+} from 'framer-motion';
 // Constant Imports
 import { HEADLINES } from '@/lib/constants';
 
@@ -17,39 +24,62 @@ function StickyCard() {
     container: divRef,
     offset: ['start 0.7', 'end center'],
   });
-  // offset: ['start center', 'end end'],
-  // ['center center', 'end center'],
+
 
   useEffect(() => {
     scrollYProgress.on('change', (latest) => {
-      //   console.log(latest);
+      // console.log(latest);
     });
   });
 
+  // const newRange = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  // console.log(newRange);
+
   return (
-    <div ref={containerRef} className='w-full h-[1200px]'>
-      <div className='flex w-full flex-col items-start'>
+    <div ref={containerRef} className='h-[1200px] w-full'>
+      <div className='flex h-full w-full flex-col items-start'>
         {HEADLINES &&
           HEADLINES.map((headline, index) => {
             const delayFactor = index * 0.25;
             const start = delayFactor;
             const end = start + 1 / 4;
-            console.log('start:', start, 'end:', end);
-            const opacity = useTransform(scrollYProgress, [start, end, start, end], [0, 1, 1, 0]);
-            const scale = useTransform(scrollYProgress, [start, end], [0.7, 1]);
+            // console.log('start:', start, 'end:', end);
+            const opacity = useTransform(
+              scrollYProgress,
+              [start, end, end, end],
+              [0, 1, 1, 1],
+            );
+            const scale = useTransform(
+              scrollYProgress,
+              [start, end, start, end],
+              [0.7, 1, 0.7, 1],
+            );
+            const translateY = useTransform(
+              scrollYProgress,
+              [start, end],
+              [0, -70],
+            );
+            const springY = useSpring(translateY, {
+              stiffness: 100,
+              damping: 20,
+            });
+            const springOpacity = useSpring(opacity, {
+              stiffness: 100,
+              damping: 50,
+            });
+
             return (
               <motion.div
-                
-                style={{ opacity, scale }}
-                className='dark:bg-gradient-45deg sticky top-1/2 mx-auto flex rounded-xl border border-gray-300 pl-[0.3px] pt-[0.3px] dark:border-none dark:from-transparent dark:to-gray-600 md:w-6/12'
+                style={{ opacity, scale, translateY, springY, springOpacity }}
+                className='sticky top-1/2 mx-auto flex rounded-xl border border-gray-300 pl-[0.3px] pt-[0.3px] dark:border-none dark:bg-gradient-45deg dark:from-transparent dark:to-gray-600 md:w-8/12'
                 key={index}
               >
-                <div className='bg-spice dark:bg-gradient-45deg dark:from-spice dark:to-spiceLighter w-full rounded-xl p-1'>
+                <div className='w-full rounded-xl bg-spice p-3 dark:bg-gradient-45deg dark:from-spice dark:to-spiceLighter'>
                   <div className='flex items-center justify-center gap-3 p-2 md:pb-3 md:pt-3'>
-                    <span className='rounded-xl border-gray-300 dark:border-gray-800'>
+                    <span className='drop-shadow-glow rounded-xl border-gray-300 dark:border-gray-800'>
                       {headline.icon}
                     </span>
-                    <span className='bg-gradient-to-r from-[#A395F6] to-pink-500 bg-clip-text text-2xl font-extrabold text-transparent md:text-4xl'>
+                    <span className='bg-gradient-to-r from-cyan-300 to-purple-500 dark:from-[#A395F6] dark:to-pink-500 bg-clip-text text-xl font-extrabold text-transparent md:text-4xl'>
                       {headline.label}
                     </span>
                   </div>
