@@ -29,7 +29,7 @@ function TextReveal({ textId, revealSpeed, revealPosition, sticky }) {
   return (
     <p
       className={[
-        'flex w-full flex-wrap justify-center',
+        'flex w-full flex-wrap justify-center pb-20',
         sticky ? 'sticky top-1/3' : '',
       ].join(' ')}
       ref={pRef}
@@ -52,12 +52,12 @@ function Word({ children, range, progress }) {
   const opacity = useTransform(progress, range, [0, 1]);
   return (
     <span className='relative text-4xl font-extrabold md:text-6xl'>
-      <span className='absolute mr-2 text-4xl font-bold opacity-5 md:text-6xl'>
+      <span className='absolute mr-3 text-4xl font-bold opacity-5 md:text-6xl'>
         {children}
       </span>
       <motion.span
         style={{ opacity }}
-        className='mr-2 text-4xl font-bold transition-all duration-200 md:text-6xl '
+        className='mr-3 text-4xl font-bold transition-all duration-200 md:text-6xl '
       >
         {children}
       </motion.span>

@@ -29,7 +29,7 @@ export const NavigationLink = memo(({ href, label, icon, title }) => {
         'flex items-center justify-between rounded-lg p-2',
         isActive
           ? 'bg-black text-white dark:bg-white dark:text-black'
-          : 'hover:bg-gray-200 dark:hover:bg-gray-500/25 dark:text-card',
+          : 'hover:bg-gray-200 dark:hover:bg-gray-500/25 dark:text-white',
       ].join(' ')}
     >
       <span className="flex gap-2 items-center font-normal">

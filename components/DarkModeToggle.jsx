@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button';
 
 function DarkModeToggle() {
   const [mounted, setMounted] = useState(false);
-  const { setTheme } = useTheme();
+  const {  setTheme } = useTheme();
 
   useEffect(() => setMounted(true), []);
 
@@ -31,13 +31,13 @@ function DarkModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className='dark:bg-spice dark:border-zinc-800'>
-        <DropdownMenuItem onClick={() => setTheme('light')}>
+        <DropdownMenuItem onClick={() => setTheme('light')} className='hover:bg-gray-200 dark:hover:bg-gray-500/25'>
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('dark')}>
+        <DropdownMenuItem onClick={() => setTheme('dark')} className='hover:bg-gray-200 dark:hover:bg-gray-500/25'>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('system')}>
+        <DropdownMenuItem onClick={() => setTheme('system')} className='hover:bg-gray-200 dark:hover:bg-gray-500/25'>
           System
         </DropdownMenuItem>
       </DropdownMenuContent>

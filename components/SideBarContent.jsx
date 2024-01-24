@@ -53,7 +53,7 @@ function SideBarContent() {
             return (
               <span
                 key={link.label}
-                className='flex items-center gap-2 p-2 text-sm font-normal dark:text-card'
+                className='flex items-center gap-2 p-2 text-sm font-normal dark:text-white'
               >
                 {link.icon}
                 <span className='tracking-wide'>{link.label}</span>
@@ -86,7 +86,7 @@ function SideBarContent() {
                         : 'dark:invert dark:filter'
                     }
                   />
-                  <span className='dark:text-card'>{tech.name}</span>
+                  <span className='dark:text-white'>{tech.name}</span>
                 </Link>
               );
             })}
