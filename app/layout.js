@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       <body className='bg-spice overflow-hidden lg:flex'>
         <Providers>
           <main className='min-h-screen flex-1 lg:flex'>
-            <SideBar className='relative hidden lg:flex'>
+            <SideBar className='relative lg:flex'>
               <SideBarContent />
             </SideBar>
             <MobileHeader />
