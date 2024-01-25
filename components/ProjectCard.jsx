@@ -45,7 +45,7 @@ function ProjectCard() {
                   <Link href={project.sourcecode} prefetch={true}>
                     <Button
                       variant='outline'
-                      className='flex gap-2 border-gray-300 dark:border-zinc-700 hover:bg-gray-100 dark:bg-transparent'
+                      className='flex gap-2 border-gray-300 dark:border-zinc-700 hover:bg-gray-100 dark:hover:bg-gray-500/25 dark:bg-transparent'
                     >
                       <Github width={18} />
                       Source Code
@@ -55,7 +55,7 @@ function ProjectCard() {
                     <Link href={project.live} prefetch={true}>
                       <Button
                         variant='outline'
-                        className='flex gap-2 border-gray-300 dark:border-zinc-700 hover:bg-gray-100 dark:bg-transparent'
+                        className='flex gap-2 border-gray-300 dark:border-zinc-700 hover:bg-gray-100 dark:hover:bg-gray-500/25 dark:bg-transparent'
                       >
                         <ExternalLink width={18} />
                         See Live
