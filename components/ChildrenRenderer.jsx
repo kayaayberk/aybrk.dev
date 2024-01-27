@@ -15,7 +15,7 @@ function ChildrenRenderer({ children }) {
   });
 
   return (
-    <div className='background h-screen w-full overflow-scroll lg:flex lg:flex-col' ref={divRef}>
+    <div className='background h-screen w-full overflow-y-scroll lg:flex lg:flex-col' ref={divRef}>
       {children}
     </div>
   );
