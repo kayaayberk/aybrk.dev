@@ -26,18 +26,18 @@ function StickyCard() {
   });
 
 
-  useEffect(() => {
-    scrollYProgress.on('change', (latest) => {
-      // console.log(latest);
-    });
-  });
+  // useEffect(() => {
+  //   scrollYProgress.on('change', (latest) => {
+  //     // console.log(latest);
+  //   });
+  // });
 
   // const newRange = useTransform(scrollYProgress, [0, 1], [0, 100]);
   // console.log(newRange);
 
   return (
     <div ref={containerRef} className='h-[1200px] w-full'>
-      <div className='flex h-full w-full flex-col items-start'>
+      <div className='flex size-full flex-col items-start'>
         {HEADLINES &&
           HEADLINES.map((headline, index) => {
             const delayFactor = index * 0.25;
@@ -71,12 +71,12 @@ function StickyCard() {
             return (
               <motion.div
                 style={{ opacity, scale, translateY, springY, springOpacity }}
-                className='sticky top-1/2 mx-auto flex rounded-xl border border-gray-300 pl-[0.3px] pt-[0.3px] dark:border-none dark:bg-gradient-45deg dark:from-transparent dark:to-gray-600 md:w-8/12'
+                className='sticky top-1/2 mx-auto flex rounded-xl border border-gray-300 shadow-md dark:pl-[0.3px] dark:pt-[0.3px] dark:border-none dark:bg-gradient-45deg dark:from-transparent dark:to-gray-600 md:w-8/12'
                 key={index}
               >
                 <div className='w-full rounded-xl bg-spice p-3 dark:bg-gradient-45deg dark:from-spice dark:to-spiceLighter'>
-                  <div className='flex items-center justify-center gap-3 p-2 md:pb-3 md:pt-3'>
-                    <span className='drop-shadow-glow rounded-xl border-gray-300 dark:border-gray-800'>
+                  <div className='flex items-center justify-center gap-3 p-2 md:py-3'>
+                    <span className='dark:drop-shadow-glow'>
                       {headline.icon}
                     </span>
                     <span className='bg-gradient-to-r from-cyan-300 to-purple-500 dark:from-[#A395F6] dark:to-pink-500 bg-clip-text text-xl font-extrabold text-transparent md:text-4xl'>

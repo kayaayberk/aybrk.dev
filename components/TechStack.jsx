@@ -18,11 +18,11 @@ function TechStack() {
             </span>
           </div>
 
-          <div className='flex h-full w-full flex-wrap justify-center gap-3'>
+          <div className='flex size-full flex-wrap justify-center gap-3'>
             {STACK.map((tech) => {
               return (
                 <div
-                  className='flex h-20 w-20 flex-col items-center justify-between gap-2 rounded-xl p-2'
+                  className='flex size-20 flex-col items-center justify-between gap-2 rounded-xl p-2'
                   key={tech.label}
                 >
                   <Image
@@ -51,11 +51,11 @@ function TechStack() {
               Design
             </span>
           </div>
-          <div className='flex h-full w-full flex-wrap justify-center gap-3'>
+          <div className='flex size-full flex-wrap justify-center gap-3'>
             {DESIGN_STACK.map((stack) => {
               return (
                 <div
-                  className='flex h-20 w-20 flex-col items-center justify-between gap-2 rounded-xl p-2'
+                  className='flex size-20 flex-col items-center justify-between gap-2 rounded-xl p-2'
                   key={stack.label}
                 >
                   <Image
