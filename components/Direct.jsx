@@ -3,34 +3,32 @@
 import Link from 'next/link';
 import { Button } from './ui/button';
 
-function Direct() {
+function Direct({ option1, option2, href1, href2, message1, message2 }) {
   return (
-    <div className='flex justify-between md:px-32 gap-2'>
-      <div className='flex w-full flex-col gap-2 items-center'>
-        <h1 className='mx-auto text-sm md:text-base'>See what I&apos;m working on</h1>
-        <Link href='/projects' className='mx-auto mt-2'>
+    <div className='flex justify-between gap-2 md:px-32 w-full'>
+      <div className='flex w-full flex-col items-center gap-2'>
+        <h1 className='mx-auto text-sm md:text-base'>
+          {message1}
+        </h1>
+        <Link href={href1} className='mx-auto mt-2'>
           <Button
-            href='#top'
-            scroll={true}
             variant='outline'
-            className='border-gray-500 bg-transparent font-normal text-card hover:bg-gray-200 dark:border-white dark:text-white dark:hover:bg-gray-500/25'
+            className='border-gray-500 bg-transparent font-normal hover:bg-spice dark:border-white dark:text-white dark:hover:bg-gray-500/25'
           >
-            PROJECTS
+            {option1}
           </Button>
         </Link>
       </div>
-      <div className='bg-gray-500 dark:bg-white w-[1px]'/>
+      <div className='w-[1px] bg-gray-500 dark:bg-white' />
 
-      <div className='flex w-full flex-col gap-2 items-center'>
-        <h1 className='mx-auto text-sm md:text-base'>Say hi!</h1>
-        <Link href='/contact' className='mx-auto mt-2 '>
+      <div className='flex w-full flex-col items-center gap-2'>
+        <h1 className='mx-auto text-sm md:text-base'>{message2}</h1>
+        <Link href={href2} className='mx-auto mt-2 '>
           <Button
-            href='#top'
-            scroll={true}
             variant='outline'
-            className='border-gray-500 bg-transparent font-normal text-card hover:bg-gray-200 dark:border-white dark:text-white dark:hover:bg-gray-500/25'
+            className='border-gray-500 bg-transparent font-normal hover:bg-spice dark:border-white dark:text-white dark:hover:bg-gray-500/25'
           >
-            CONTACT
+            {option2}
           </Button>
         </Link>
       </div>

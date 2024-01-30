@@ -1,17 +1,17 @@
 'use client';
 
-import Link from 'next/link';
 import Card from './Card';
-import { PROJECTS } from '@/lib/constants';
+import Link from 'next/link';
 import Image from 'next/image';
-import { Button } from './ui/button';
 import TechBadge from './TechBadge';
+import { Button } from './ui/button';
+import { PROJECTS } from '@/lib/constants';
 import { ExternalLink, Github } from 'lucide-react';
 
 function ProjectCard() {
   const classId = 'tech-stack';
   return (
-    <div className='flex flex-col gap-10'>
+    <div className='flex flex-col gap-32'>
       {PROJECTS.map((project) => {
         return (
           <Card key={project.title} classId={classId}>
@@ -39,23 +39,31 @@ function ProjectCard() {
               <div className='f-full flex flex-col gap-4 md:w-1/2'>
                 <div className='flex flex-col gap-4'>
                   <h1 className='text-2xl font-bold'>{project.title}</h1>
-                  <p className='text-sm font-extralight tracking-wide'>{project.description}</p>
+                  <p className='text-sm font-extralight tracking-wide'>
+                    {project.description}
+                  </p>
                 </div>
                 <div className='flex gap-2 md:flex-col'>
-                  <Link href={project.sourcecode} prefetch={true}>
+                  <Link 
+                  href={project.sourcecode}
+                  target='_blank'
+                  >
                     <Button
                       variant='outline'
-                      className='flex gap-2 border-gray-300 dark:border-zinc-700 hover:bg-gray-100 dark:hover:bg-gray-500/25 dark:bg-transparent'
+                      className='flex gap-2 border-gray-300 bg-transparent hover:bg-gray-100 dark:border-zinc-700 dark:hover:bg-gray-500/25'
                     >
                       <Github width={18} />
                       Source Code
                     </Button>
                   </Link>
                   {project.live && (
-                    <Link href={project.live} prefetch={true}>
+                    <Link 
+                    href={project.live}
+                    target='_blank'
+                    >
                       <Button
                         variant='outline'
-                        className='flex gap-2 border-gray-300 dark:border-zinc-700 hover:bg-gray-100 dark:hover:bg-gray-500/25 dark:bg-transparent'
+                        className='flex gap-2 border-gray-300 bg-transparent hover:bg-gray-100 dark:border-zinc-700 dark:hover:bg-gray-500/25'
                       >
                         <ExternalLink width={18} />
                         See Live
