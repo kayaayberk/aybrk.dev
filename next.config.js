@@ -4,7 +4,7 @@ const path = require('path');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   images: {
-    domains: ['images.ctfassets.net'],
+    domains: ['images.ctfassets.net', 'downloads.ctfassets.net'],
   },
   darkMode: ['class'],
   content: ['app/**/*.{ts,tsx}', 'components/**/*.{ts,tsx}'],
