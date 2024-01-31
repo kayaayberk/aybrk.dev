@@ -1,9 +1,6 @@
 'use client';
 /* eslint-disable react-hooks/rules-of-hooks */
 
-// Hook & Library Imports
-import useStore from '@/lib/store';
-import { useEffect, useRef } from 'react';
 import {
   motion,
   transform,
@@ -11,7 +8,8 @@ import {
   useSpring,
   useTransform,
 } from 'framer-motion';
-// Constant Imports
+import { useRef } from 'react';
+import useStore from '@/lib/store';
 import { HEADLINES } from '@/lib/constants';
 
 function StickyCard() {
@@ -24,7 +22,6 @@ function StickyCard() {
     container: divRef,
     offset: ['start 0.7', 'end center'],
   });
-
 
   // useEffect(() => {
   //   scrollYProgress.on('change', (latest) => {
@@ -71,7 +68,7 @@ function StickyCard() {
             return (
               <motion.div
                 style={{ opacity, scale, translateY, springY, springOpacity }}
-                className='sticky top-1/2 mx-auto flex rounded-xl border border-gray-300 shadow-md dark:pl-[0.3px] dark:pt-[0.3px] dark:border-none dark:bg-gradient-45deg dark:from-transparent dark:to-gray-600 md:w-8/12'
+                className='sticky top-1/2 mx-auto flex rounded-xl border border-gray-300 shadow-lg shadow-black/30 dark:border-none dark:bg-gradient-45deg dark:from-transparent dark:to-[#A395F6]/30 dark:pl-[0.3px] dark:pt-[0.3px] md:w-8/12'
                 key={index}
               >
                 <div className='w-full rounded-xl bg-spice p-3 dark:bg-gradient-45deg dark:from-spice dark:to-spiceLighter'>
@@ -79,7 +76,7 @@ function StickyCard() {
                     <span className='dark:drop-shadow-glow'>
                       {headline.icon}
                     </span>
-                    <span className='bg-gradient-to-r from-cyan-300 to-purple-500 dark:from-[#A395F6] dark:to-pink-500 bg-clip-text text-xl font-extrabold text-transparent md:text-4xl'>
+                    <span className='bg-gradient-to-r from-[#A395F6] to-orange-400 bg-clip-text text-xl font-extrabold text-transparent md:text-4xl'>
                       {headline.label}
                     </span>
                   </div>

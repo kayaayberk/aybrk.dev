@@ -1,9 +1,10 @@
 'use client';
+
 import { Drawer } from 'vaul';
+import { useState } from 'react';
 import { Button } from './ui/button';
 import { OptionIcon } from 'lucide-react';
 import SideBarContent from './SideBarContent';
-import { useState } from 'react';
 
 function DrawerMenu() {
   const [open, setOpen] = useState(false);

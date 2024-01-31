@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { ExternalLink } from 'lucide-react';
 import { memo } from 'react';
+import { ExternalLink } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 
 export const NavigationLink = memo(({ href, label, icon, title, handleDrawerClose }) => {

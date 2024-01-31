@@ -1,12 +1,7 @@
 'use client';
 
-// Hook & Library Imports
-import useStore from '@/lib/store';
-import { useEffect, useRef } from 'react';
-// Component Imports
-import StickyCard from './StickyCard';
 import TextReveal from './TextReveal';
-// Constant Imports
+import StickyCard from './StickyCard';
 import { STICKY_ABOUT_ME } from '@/lib/constants';
 
 function StickyAboutMe() {

@@ -1,10 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
-import BadgeImage from '@/public/meImages/me.jpg';
+import Image from 'next/image';
 import DarkModeToggle from './DarkModeToggle';
+import BadgeImage from '@/public/meImages/me.jpg';
+import React, { useEffect, useState } from 'react';
 
 function Badge() {
   const [windowWidth, setWindowWidth] = useState(0);

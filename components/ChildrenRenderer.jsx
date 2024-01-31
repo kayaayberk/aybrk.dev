@@ -1,9 +1,8 @@
 'use client';
-// Hook & Library Imports
-import { useEffect, useRef } from 'react';
-import useStore from '@/lib/store';
-// Style Imports
+
 import '@/styles/bgImage.css';
+import useStore from '@/lib/store';
+import { useEffect, useRef } from 'react';
 
 function ChildrenRenderer({ children }) {
   //   const [scrollPosition, setScrollPosition] = useState(0);

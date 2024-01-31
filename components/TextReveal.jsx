@@ -7,8 +7,8 @@ import {
   useTransform,
   // useMotionValueEvent,
 } from 'framer-motion';
-import { useEffect, useRef } from 'react';
 import useStore from '@/lib/store';
+import { useRef } from 'react';
 
 function TextReveal({ textId, revealSpeed, revealPosition, sticky }) {
   const divRef = useStore((state) => state.divRef);
@@ -19,12 +19,6 @@ function TextReveal({ textId, revealSpeed, revealPosition, sticky }) {
     container: divRef,
     offset: [revealPosition, revealSpeed],
   });
-
-  // useEffect(() => {
-  //   scrollYProgress.on('change', (latest) => {
-  //     console.log(latest);
-  //   });
-  // });
 
   return (
     <p

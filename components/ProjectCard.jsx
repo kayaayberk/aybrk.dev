@@ -50,7 +50,7 @@ function ProjectCard() {
                   >
                     <Button
                       variant='outline'
-                      className='flex gap-2 border-gray-300 bg-transparent hover:bg-gray-100 dark:border-zinc-700 dark:hover:bg-gray-500/25'
+                      className='flex gap-2 border-gray-300 bg-transparent hover:bg-gray-100 dark:border-zinc-800 dark:hover:bg-gray-500/25'
                     >
                       <Github width={18} />
                       Source Code
@@ -63,7 +63,7 @@ function ProjectCard() {
                     >
                       <Button
                         variant='outline'
-                        className='flex gap-2 border-gray-300 bg-transparent hover:bg-gray-100 dark:border-zinc-700 dark:hover:bg-gray-500/25'
+                        className='flex gap-2 border-gray-300 bg-transparent hover:bg-gray-100 dark:border-zinc-800 dark:hover:bg-gray-500/25'
                       >
                         <ExternalLink width={18} />
                         See Live
