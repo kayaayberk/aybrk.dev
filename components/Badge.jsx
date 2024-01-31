@@ -23,15 +23,18 @@ function Badge() {
   }, []);
 
   return (
-    <div className='flex lg:bg-spice items-center justify-between rounded-xl border border-gray-300 p-2  hover:bg-gray-200 dark:border-zinc-800 dark:hover:bg-gray-500/20'>
-      <Link href='/' prefetch className='inline-flex items-center gap-2 rounded-lg'>
+    <div className='flex items-center justify-between rounded-lg border border-gray-300 p-2 hover:bg-gray-200  dark:border-zinc-800 dark:hover:bg-gray-500/20 lg:bg-spice'>
+      <Link
+        href='/journey'
+        className='inline-flex items-center gap-2 rounded-lg'
+      >
         <Image
           src={BadgeImage}
           alt='Ayberk Kaya'
           width={40}
           height={40}
           loading='lazy'
-          className='rounded-full border shadow-xl'
+          className='rounded-full border shadow-md shadow-black/10'
         />
         <div className='flex flex-1 flex-col'>
           <span className='font-semibold tracking-tight'>Ayberk Kaya</span>
