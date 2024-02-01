@@ -19,9 +19,9 @@ module.exports = {
     extend: {
       dropShadow: {
         glow: [
-          "0 0px 10px rgba(154, 143, 229, 0.5)",
-          "0 0px 5px rgba(154, 143, 229, 0.7)"
-        ]
+          '0 0px 10px rgba(154, 143, 229, 0.5)',
+          '0 0px 5px rgba(154, 143, 229, 0.7)',
+        ],
       },
       backgroundImage: (theme) => ({
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
