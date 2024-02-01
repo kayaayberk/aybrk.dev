@@ -5,7 +5,7 @@ function Description() {
     <div className="flex flex-col gap-1 md:gap-4">
       <h1 className='text-3xl md:text-5xl font-bold'>
         Hi! <span className='text-3xl md:text-4xl'>👋</span> <br /> I&apos;m{' '}
-        <span className='bg-gradient-to-r from-cyan-300 to-purple-500 dark:from-[#A395F6] dark:to-pink-500 bg-clip-text text-3xl md:text-5xl font-extrabold text-transparent'>
+        <span className='bg-gradient-to-r from-[#A395F6] to-orange-400 bg-clip-text text-3xl md:text-5xl font-extrabold text-transparent'>
           Ayberk
         </span>
       </h1>

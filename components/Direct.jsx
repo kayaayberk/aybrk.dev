@@ -13,7 +13,7 @@ function Direct({ option1, option2, href1, href2, message1, message2 }) {
         <Link href={href1} className='mx-auto mt-2'>
           <Button
             variant='outline'
-            className='border-gray-500 bg-transparent font-normal hover:bg-spice dark:border-white dark:text-white dark:hover:bg-gray-500/25'
+            className='border-gray-300 bg-transparent font-normal hover:bg-gray-200 dark:border-white dark:text-white dark:hover:bg-gray-500/25'
           >
             {option1}
           </Button>
@@ -26,7 +26,7 @@ function Direct({ option1, option2, href1, href2, message1, message2 }) {
         <Link href={href2} className='mx-auto mt-2 '>
           <Button
             variant='outline'
-            className='border-gray-500 bg-transparent font-normal hover:bg-spice dark:border-white dark:text-white dark:hover:bg-gray-500/25'
+            className='border-gray-300 bg-transparent font-normal hover:bg-gray-200 dark:border-white dark:text-white dark:hover:bg-gray-500/25'
           >
             {option2}
           </Button>
