@@ -2,25 +2,14 @@
 
 import ContentContainer from './ContentContainer';
 import React, { useEffect, useState } from 'react';
-import { getJourneyContent } from '@/lib/contentful';
 
-const JourneyCard = () => {
+const JourneyCard = ({ result }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await getJourneyContent(false);
-        // Sort the posts by their title
-        const sortedResult = result.sort((a, b) =>
-          b.title.localeCompare(a.title),
-        );
-        setData(sortedResult);
-      } catch (error) {
-        console.error('Failed to fetch data:', error);
-      }
-    };
-    fetchData();
+    // Sort the posts by their title
+    const sortedResult = result.sort((a, b) => b.title.localeCompare(a.title));
+    setData(sortedResult);
   }, []);
 
   // Starts from the nest: 'items'
