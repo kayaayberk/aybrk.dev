@@ -34,7 +34,7 @@ function Badge() {
           width={40}
           height={40}
           loading='lazy'
-          className='rounded-full border shadow-md shadow-black/10'
+          className='rounded-full border'
         />
         <div className='flex flex-1 flex-col'>
           <span className='font-semibold tracking-tight'>Ayberk Kaya</span>

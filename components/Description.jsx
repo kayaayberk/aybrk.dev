@@ -5,7 +5,7 @@ function Description() {
     <div className="flex flex-col gap-1 md:gap-4">
       <h1 className='text-3xl md:text-5xl font-bold'>
         Hi! <span className='text-3xl md:text-4xl'>👋</span> <br /> I&apos;m{' '}
-        <span className='bg-gradient-to-r from-[#A395F6] to-orange-400 bg-clip-text text-3xl md:text-5xl font-extrabold text-transparent'>
+        <span className='bg-gradient-to-r from-[#A395F6] to-blue-300 bg-clip-text text-3xl md:text-5xl font-extrabold text-transparent'>
           Ayberk
         </span>
       </h1>
@@ -16,9 +16,9 @@ function Description() {
         </span>{' '}
         & <span className='font-semibold dark:text-white'>Designer.</span>
       </h2>
-      <p className='text-sm md:text-base font-light text-card dark:text-card'>
+      <p className='text-sm md:text-base font-extralight text-muted-foreground'>
         I have been learning programming{' '}
-        <span className='font-semibold dark:text-white'>fulltime</span> for the
+        <span className='font-semibold text-card'>fulltime</span> for the
         last 6 months. Currently working on a few projects, and seeking for
         opportunities. After graduating from a design school in Warsaw with
         solid experience in team work and thorough projects, I&apos;m ready to
