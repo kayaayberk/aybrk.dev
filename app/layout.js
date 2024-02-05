@@ -3,6 +3,7 @@ import Providers from './providers';
 import SideBar from '@/components/SideBar';
 import { GeistSans } from 'geist/font/sans';
 import { Toaster } from '@/components/ui/toaster';
+import { Analytics } from '@vercel/analytics/react';
 import MobileHeader from '@/components/MobileHeader';
 import SideBarContent from '@/components/SideBarContent';
 import ChildrenRenderer from '@/components/ChildrenRenderer';
@@ -25,7 +26,10 @@ export default function RootLayout({ children }) {
               <SideBarContent />
             </SideBar>
             <MobileHeader />
-            <ChildrenRenderer>{children}</ChildrenRenderer>
+            <ChildrenRenderer>
+              {children}
+              <Analytics />
+            </ChildrenRenderer>
             <Toaster />
           </main>
         </Providers>
