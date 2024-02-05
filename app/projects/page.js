@@ -2,14 +2,14 @@ import Direct from '@/components/Direct';
 import BgShape from '@/components/BgShape';
 import ProjectCard from '@/components/ProjectCard';
 import ReachedBottom from '@/components/ReachedBottom';
-import ProjectsHeader from '@/components/ProjectsHeader';
+import PageHeader from '@/components/PageHeader';
 
-function page() {
+function Projects() {
   return (
     <>
       <BgShape />
       <div className='container z-50 mx-auto flex min-h-max max-w-xl flex-col items-start gap-0  pt-28 md:max-w-4xl md:pt-24'>
-        <ProjectsHeader />
+        <PageHeader />
         <div className='flex w-full flex-col justify-between gap-60 pt-20'>
           <ProjectCard />
           <Direct
@@ -17,7 +17,7 @@ function page() {
             href1='/Journey'
             option2='Contact'
             href2='/contact'
-            message1='Visit my journey'
+            message1='Visit my journey page'
             message2='Get in touch'
           />
           <ReachedBottom />
@@ -27,4 +27,4 @@ function page() {
   );
 }
 
-export default page;
+export default Projects;

@@ -1,11 +1,11 @@
-import ProjectsHeader from '@/components/ProjectsHeader';
+import PageHeader from '@/components/PageHeader';
 
-function page() {
+function Blog() {
   return (
     <div className='container mx-auto flex h-full max-w-xl flex-col items-start gap-10 pb-24 pt-28 md:max-w-4xl md:pt-24'>
-      <ProjectsHeader />
+      <PageHeader />
     </div>
   );
 }
 
-export default page;
+export default Blog;
