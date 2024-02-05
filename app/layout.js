@@ -9,7 +9,7 @@ import SideBarContent from '@/components/SideBarContent';
 import ChildrenRenderer from '@/components/ChildrenRenderer';
 
 export const metadata = {
-  title: 'aybrk.dev',
+  title: 'Ayberk Kaya',
   description: 'Built by Ayberk Kaya',
 };
 
