@@ -1,11 +1,9 @@
 'use client';
 
-import '@/styles/bgImage.css';
 import useStore from '@/lib/store';
 import { useEffect, useRef } from 'react';
 
 function ChildrenRenderer({ children }) {
-  //   const [scrollPosition, setScrollPosition] = useState(0);
   const divRef = useRef(null);
   const setDivRef = useStore((state) => state.setDivRef);
 

@@ -46,12 +46,12 @@ function Word({ children, range, progress }) {
   const opacity = useTransform(progress, range, [0, 1]);
   return (
     <span className='relative text-4xl font-extrabold md:text-6xl'>
-      <span className='absolute mr-3 text-4xl font-bold opacity-5 md:text-6xl'>
+      <span className='absolute mr-2 text-4xl font-bold opacity-5 md:text-6xl'>
         {children}
       </span>
       <motion.span
         style={{ opacity }}
-        className='mr-3 text-4xl font-bold transition-all duration-200 md:text-6xl '
+        className='mr-2 text-4xl font-bold transition-all duration-200 md:text-6xl '
       >
         {children}
       </motion.span>

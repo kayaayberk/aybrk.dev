@@ -20,7 +20,7 @@ function Step() {
     <div ref={stepRef} className='flex h-64 w-full justify-center'>
       <motion.span
         style={{ height }}
-        className='h-full w-[0.1rem] bg-transparent bg-gradient-to-b dark:from-transparent dark:to-[#A395F6] from-white to-black'
+        className='h-full w-[0.1rem] bg-transparent bg-gradient-to-b dark:from-transparent dark:to-[#A395F6] from-transparent to-[#A395F6]'
       ></motion.span>
     </div>
   );

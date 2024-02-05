@@ -21,7 +21,6 @@ function ReachedBottom() {
             behavior: 'smooth',
           });
         }}
-        scroll={true}
         variant='ghost'
         className='mx-auto mt-2 border-gray-300 bg-transparent font-extralight text-card hover:bg-gray-200 dark:border-zinc-800 dark:text-card dark:hover:bg-gray-500/25'
       >

@@ -4,14 +4,7 @@ import Image from 'next/image';
 
 function TasteImageCard({ url, clicked }) {
   return (
-    <div
-      className={[
-        'relative size-full overflow-hidden rounded-xl transition-all duration-500',
-        clicked === url
-          ? 'absolute inset-0 z-50 scale-150 transition-all duration-500 ease-in-out '
-          : '',
-      ].join(' ')}
-    >
+    <div className='relative size-full overflow-hidden rounded-xl transition-all duration-500'>
       <Image
         src={url}
         width={500}

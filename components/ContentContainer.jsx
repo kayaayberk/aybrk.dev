@@ -1,8 +1,8 @@
 'use client';
 
-import StepPointer from './StepPointer';
-import JourneyDescRenderer from './JourneyDescRenderer';
-import JourneyImageRenderer from './JourneyImageRenderer';
+import StepPointer from '@/components/StepPointer';
+import JourneyDescRenderer from '@/components/JourneyDescRenderer';
+import JourneyImageRenderer from '@/components/JourneyImageRenderer';
 
 function ContentContainer({ posts }) {
   return (

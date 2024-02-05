@@ -4,16 +4,16 @@ import Card from './Card';
 import Image from 'next/image';
 import { STACK, DESIGN_STACK } from '@/lib/constants';
 
-
 function TechStack() {
   const classId = 'tech-stack';
 
   return (
     <Card classId={classId} hoverActive>
-      <div className='flex flex-col md:flex-row gap-4'>
+      <span className='mx-auto text-lg font-semibold'>My current stack</span>
+      <div className='flex flex-col gap-4 md:flex-row'>
         <div className='flex w-full flex-col gap-4'>
           <div>
-            <span className='flex items-center justify-center text-xl font-semibold'>
+            <span className='flex items-center justify-center text-lg font-medium'>
               Programming
             </span>
           </div>
@@ -36,7 +36,7 @@ function TechStack() {
                       tech.label === 'Next.js' ? 'dark:invert dark:filter' : '',
                     ].join(' ')}
                   />
-                  <span className='text-xs text-card dark:text-card'>
+                  <span className='text-xs text-muted-foreground'>
                     {tech.label}
                   </span>
                 </div>
@@ -47,7 +47,7 @@ function TechStack() {
 
         <div className='flex w-full flex-col gap-4'>
           <div>
-            <span className='flex items-center justify-center text-xl font-semibold'>
+            <span className='flex items-center justify-center text-lg font-medium'>
               Design
             </span>
           </div>
@@ -71,7 +71,7 @@ function TechStack() {
                         : '',
                     ].join(' ')}
                   />
-                  <span className='text-center text-xs text-card dark:text-card'>
+                  <span className='text-center text-xs text-muted-foreground'>
                     {stack.label}
                   </span>
                 </div>

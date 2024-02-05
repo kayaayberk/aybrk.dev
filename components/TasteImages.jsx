@@ -3,20 +3,15 @@
 import { Button } from './ui/button';
 import { MapPin } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import TasteImageCard from './TasteImageCard';
-import LoadingSpinner from './LoadingSpinner';
+import TasteImageCard from '@/components/TasteImageCard';
+import LoadingSpinner from '@/components/LoadingSpinner';
 
 function TasteImages({ result }) {
   const { items, totalImageCount } = result;
   const [data, setData] = useState([]);
-  const [clicked, setClicked] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [displayCount, setDisplayCount] = useState(20);
   const [totalImgCount, setTotalImgCount] = useState();
-
-  const resizeImage = (id) => {
-    setClicked((prev) => (prev === id ? '' : id));
-  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -32,11 +27,10 @@ function TasteImages({ result }) {
         {data.slice(0, displayCount).map((image, index) => {
           return (
             <div
-              onClick={() => resizeImage(image.image.url)}
               className='relative mb-5 rounded-xl shadow-lg shadow-black/50'
               key={index}
             >
-              <TasteImageCard url={image.image.url} clicked={clicked} />
+              <TasteImageCard url={image.image.url} />
               <div className='absolute bottom-0 left-0 p-3'>
                 <span className='flex items-center gap-1 rounded-full bg-gray-200/20 px-2 py-1 text-xs text-white filter backdrop-blur-3xl'>
                   <MapPin size={16} />

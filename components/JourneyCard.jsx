@@ -1,7 +1,7 @@
 'use client';
 
 import ContentContainer from './ContentContainer';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const JourneyCard = ({ result }) => {
   const [data, setData] = useState([]);
