@@ -15,7 +15,7 @@ export async function generateMetadata() {
   const url = '/blog';
 
   return {
-    sharedTitle,
+    title: 'Blog',
     sharedDescription,
     openGraph: {
       sharedTitle,

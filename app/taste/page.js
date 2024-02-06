@@ -44,7 +44,7 @@ export async function generateMetadata() {
   const url = '/taste';
 
   return {
-    sharedTitle,
+    title: 'Taste',
     sharedDescription,
     openGraph: {
       sharedTitle,

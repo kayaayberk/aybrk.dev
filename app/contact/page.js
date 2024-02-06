@@ -40,7 +40,7 @@ export async function generateMetadata() {
   const url = '/contact';
 
   return {
-    sharedTitle,
+    title: 'Contact',
     sharedDescription,
     openGraph: {
       sharedTitle,
