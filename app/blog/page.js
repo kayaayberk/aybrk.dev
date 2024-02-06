@@ -1,4 +1,5 @@
 import PageHeader from '@/components/PageHeader';
+import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
 
 function Blog() {
   return (
@@ -9,3 +10,20 @@ function Blog() {
 }
 
 export default Blog;
+
+export async function generateMetadata() {
+  const url = '/blog';
+
+  return {
+    sharedTitle,
+    sharedDescription,
+    openGraph: {
+      sharedTitle,
+      sharedDescription,
+      url: url,
+    },
+    alternates: {
+      canonical: url,
+    },
+  };
+}

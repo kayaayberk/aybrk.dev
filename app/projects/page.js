@@ -1,8 +1,9 @@
 import Direct from '@/components/Direct';
 import BgShape from '@/components/BgShape';
+import PageHeader from '@/components/PageHeader';
 import ProjectCard from '@/components/ProjectCard';
 import ReachedBottom from '@/components/ReachedBottom';
-import PageHeader from '@/components/PageHeader';
+import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
 
 function Projects() {
   return (
@@ -28,3 +29,20 @@ function Projects() {
 }
 
 export default Projects;
+
+export async function generateMetadata() {
+  const url = '/projects';
+
+  return {
+    sharedTitle,
+    sharedDescription,
+    openGraph: {
+      sharedTitle,
+      sharedDescription,
+      url: url,
+    },
+    alternates: {
+      canonical: url,
+    },
+  };
+}

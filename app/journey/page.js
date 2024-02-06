@@ -1,8 +1,9 @@
 import Direct from '@/components/Direct';
 import PageHeader from '@/components/PageHeader';
 import JourneyCard from '@/components/JourneyCard';
-import ReachedBottom from '@/components/ReachedBottom';
 import { getJourneyContent } from '@/lib/contentful';
+import ReachedBottom from '@/components/ReachedBottom';
+import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
 
 async function fetchData() {
   const data = await getJourneyContent();
@@ -34,3 +35,20 @@ async function Journey() {
 }
 
 export default Journey;
+
+export async function generateMetadata() {
+  const url = '/journey';
+
+  return {
+    sharedTitle,
+    sharedDescription,
+    openGraph: {
+      sharedTitle,
+      sharedDescription,
+      url: url,
+    },
+    alternates: {
+      canonical: url,
+    },
+  };
+}

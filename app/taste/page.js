@@ -3,6 +3,7 @@ import PageHeader from '@/components/PageHeader';
 import TasteImages from '@/components/TasteImages';
 import ReachedBottom from '@/components/ReachedBottom';
 import { getTasteFeedContent } from '@/lib/contentful';
+import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
 
 async function fetchData() {
   const data = await getTasteFeedContent();
@@ -38,3 +39,20 @@ async function Taste() {
 }
 
 export default Taste;
+
+export async function generateMetadata() {
+  const url = '/taste';
+
+  return {
+    sharedTitle,
+    sharedDescription,
+    openGraph: {
+      sharedTitle,
+      sharedDescription,
+      url: url,
+    },
+    alternates: {
+      canonical: url,
+    },
+  };
+}

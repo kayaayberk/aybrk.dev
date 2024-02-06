@@ -1,7 +1,8 @@
 import Direct from '@/components/Direct';
+import { Lightbulb } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import ContactForm from '@/components/ContactForm';
-import { Lightbulb } from 'lucide-react';
+import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
 
 function Contact() {
   return (
@@ -11,7 +12,7 @@ function Contact() {
       </div>
       <ContactForm />
       <div className='mx-auto'>
-        <p className='flex text-xs items-center font-light md:text-sm'>
+        <p className='flex items-center text-xs font-light md:text-sm'>
           <span className='mr-1 flex items-center font-bold'>
             <Lightbulb size={20} />
             Note:
@@ -34,3 +35,20 @@ function Contact() {
 }
 
 export default Contact;
+
+export async function generateMetadata() {
+  const url = '/contact';
+
+  return {
+    sharedTitle,
+    sharedDescription,
+    openGraph: {
+      sharedTitle,
+      sharedDescription,
+      url: url,
+    },
+    alternates: {
+      canonical: url,
+    },
+  };
+}
