@@ -17,7 +17,7 @@ export const contentType = sharedImage.type;
 
 export default async function Image() {
   const imageData = await fetch(
-    new URL('../public/meImages/IMG_6045.JPG', import.meta.url),
+    new URL('../public/meImages/OG1.JPG', import.meta.url),
   ).then((res) => res.arrayBuffer());
   return new ImageResponse(
     (
