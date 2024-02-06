@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 export const OgImage = ({ title, description, url, image }) => {
   return (
     <div
@@ -22,32 +21,9 @@ export const OgImage = ({ title, description, url, image }) => {
         style={{
           position: 'absolute',
           display: 'flex',
-          top: 60,
-          left: 60,
-          width: 250,
-          height: 250,
-          overflow: 'hidden',
-          borderRadius: '15%',
-        }}
-      >
-        <img
-          src={image}
-          alt='Ayberk'
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            objectPosition: 'left top',
-          }}
-        />
-      </div>
-      <div
-        style={{
-          position: 'absolute',
-          display: 'flex',
           alignItems: 'center',
           top: 60,
-          right: 60,
+          left: 60,
           fontSize: '2.5rem',
           lineHeight: 1,
           background: '#ffffff',

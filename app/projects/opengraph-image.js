@@ -5,7 +5,7 @@ import {
   } from '@/app/shared-metadata';
   import { ImageResponse } from 'next/og';
   import { getMediumFont } from '@/lib/utils';
-  import { OgImage } from '@/components/og-image';
+  import { OgImage } from '@/components/OgImage';
   
   export const runtime = 'edge';
   export const alt = sharedTitle;
@@ -16,15 +16,11 @@ import {
   export const contentType = sharedImage.type;
   
   export default async function Image() {
-    const imageData = await fetch(
-      new URL('../../public/meImages/OG1.JPG', import.meta.url),
-    ).then((res) => res.arrayBuffer());
     return new ImageResponse(
       (
         <OgImage
           title={sharedTitle}
           description={sharedDescription}
-          image={imageData}
           url='projects'
         />
       ),
