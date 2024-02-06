@@ -9,7 +9,7 @@ function ProjectCardContent({ project }) {
   return (
     <div className='flex flex-col justify-between gap-5 md:flex-row'>
       <div className='f-full flex flex-col gap-4 md:w-1/2'>
-        <div className='rounded-xl border border-gray-300 p-3 dark:border-zinc-700'>
+        <div className='rounded-xl border border-muted-foreground/30 dark:border-muted-foreground/20 p-3'>
           <Image
             src={project.image}
             alt='project image'

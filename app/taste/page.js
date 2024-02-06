@@ -4,6 +4,7 @@ import TasteImages from '@/components/TasteImages';
 import ReachedBottom from '@/components/ReachedBottom';
 import { getTasteFeedContent } from '@/lib/contentful';
 import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
+import BgShape from '@/components/BgShape';
 
 async function fetchData() {
   const data = await getTasteFeedContent();
@@ -15,7 +16,8 @@ async function Taste() {
 
   return (
     <>
-      <div className='container z-50 mx-auto flex min-h-max flex-col items-start gap-20 pt-28 md:max-w-4xl md:pt-28'>
+    <BgShape />
+      <div className='container z-50 mx-auto flex min-h-max flex-col items-start gap-20 pt-28 md:max-w-4xl'>
         <div className='mx-auto w-full'>
           <PageHeader />
         </div>

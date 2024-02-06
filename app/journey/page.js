@@ -4,6 +4,7 @@ import JourneyCard from '@/components/JourneyCard';
 import { getJourneyContent } from '@/lib/contentful';
 import ReachedBottom from '@/components/ReachedBottom';
 import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
+import BgShape from '@/components/BgShape';
 
 async function fetchData() {
   const data = await getJourneyContent();
@@ -14,7 +15,9 @@ async function Journey() {
   const result = await fetchData();
   console.log('data:', result);
   return (
-    <div className='container z-50 mx-auto flex min-h-max flex-col items-start gap-10 pt-28 md:max-w-4xl md:pt-28'>
+    <>
+    <BgShape />
+    <div className='container z-50 mx-auto flex min-h-max flex-col items-start gap-10 pt-28 md:max-w-4xl'>
       <PageHeader />
       <div className='flex size-full flex-col'>
         <JourneyCard result={result} />
@@ -31,6 +34,7 @@ async function Journey() {
         <ReachedBottom />
       </div>
     </div>
+    </>
   );
 }
 

@@ -15,7 +15,7 @@ function SideBarContent({ handleDrawerClose }) {
     <div className='flex h-screen w-full flex-col bg-spice p-2 text-sm dark:bg-spice'>
       <div className='flex flex-1 flex-col justify-start gap-3'>
         <Badge />
-        <div className='flex flex-col gap-1 rounded-lg border border-gray-300 p-2 dark:border-zinc-800'>
+        <div className='flex flex-col gap-1 rounded-lg border  p-2 border-muted-foreground/25'>
           {PAGES.map((page) => {
             return (
               <NavigationLink
@@ -28,7 +28,7 @@ function SideBarContent({ handleDrawerClose }) {
             );
           })}
         </div>
-        <div className='flex flex-col rounded-lg border border-gray-300 p-2 text-sm dark:border-zinc-800'>
+        <div className='flex flex-col rounded-lg border  p-2 text-sm border-muted-foreground/25'>
           <span className='px-2 text-xs font-normal leading-relaxed text-card dark:text-card'>
             Online
           </span>
@@ -47,7 +47,7 @@ function SideBarContent({ handleDrawerClose }) {
             })}
           </div>
         </div>
-        <div className='flex flex-col gap-2 rounded-lg border border-gray-300 p-2 text-xs dark:border-zinc-800'>
+        <div className='flex flex-col gap-2 rounded-lg border  p-2 text-xs border-muted-foreground/25'>
           <span className='px-2 text-xs font-normal leading-relaxed text-card dark:text-card'>
             Info
           </span>
@@ -64,7 +64,7 @@ function SideBarContent({ handleDrawerClose }) {
           })}
         </div>
 
-        <div className='flex h-full flex-col gap-2 rounded-lg border border-gray-300 p-2 text-xs dark:border-zinc-800'>
+        <div className='flex h-full flex-col gap-2 rounded-lg border  p-2 text-xs border-muted-foreground/25'>
           <span className='px-2 font-normal leading-relaxed text-card dark:text-card'>
             Built with:
           </span>

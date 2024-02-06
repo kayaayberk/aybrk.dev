@@ -13,7 +13,7 @@ function StepPointer({ index, posts }) {
       </div>
       <div
         className={[
-          'absolute inset-x-3.5 h-full border-l-[1px] border-gray-300 dark:border-zinc-800',
+          'absolute inset-x-3.5 h-full border-l-[1px] border-muted-foreground/30',
           index === posts.length - 1 && 'hidden',
         ].join(' ')}
       ></div>

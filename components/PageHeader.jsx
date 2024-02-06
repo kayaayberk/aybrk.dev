@@ -29,7 +29,7 @@ function PageHeader() {
             <h1 className='text-3xl font-semibold'>{currentPage.label}</h1>
             {clonedElement}
           </div>
-          <p className='text-base font-normal'>
+          <p className='text-base font-normal tracking-normal'>
             {currentPage.description &&
               currentPage.description.map((part, index) =>
                 typeof part === 'string' ? (
@@ -41,7 +41,7 @@ function PageHeader() {
                 ),
               )}
           </p>{' '}
-          <hr className='w-full border-zinc-800' />
+          <hr className='w-full border-muted-foreground/30' />
         </>
       )}
     </div>
