@@ -1,5 +1,6 @@
 import './globals.css';
 import Providers from './providers';
+import { LINKS } from '@/lib/constants';
 import SideBar from '@/components/SideBar';
 import { GeistSans } from 'geist/font/sans';
 import { Toaster } from '@/components/ui/toaster';
@@ -68,5 +69,10 @@ export const metadata = {
   },
   alternates: {
     canonical: '/',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: `@${LINKS.instagram.username}`,
+    creator: `@${LINKS.instagram.username}`,
   },
 };
