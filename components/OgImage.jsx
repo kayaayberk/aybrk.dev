@@ -14,7 +14,7 @@ export const OgImage = ({ title, description, url, image }) => {
           position: 'absolute',
           height: '100%',
           width: '100%',
-          backgroundImage: 'linear-gradient(to top right, #0D0D0D, #1a1a1a)',
+          backgroundImage: 'linear-gradient(to top right, #0D0D0D, #242424)',
         }}
       />
       <div
@@ -22,8 +22,36 @@ export const OgImage = ({ title, description, url, image }) => {
           position: 'absolute',
           display: 'flex',
           alignItems: 'center',
-          top: 60,
-          left: 60,
+          top: 85,
+          right: 75,
+        }}
+      >
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          width='80'
+          height='80'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='#ffffff'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          class='lucide lucide-sparkles'
+        >
+          <path d='m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z' />
+          <path d='M5 3v4' />
+          <path d='M19 17v4' />
+          <path d='M3 5h4' />
+          <path d='M17 19h4' />
+        </svg>
+      </div>
+      <div
+        style={{
+          position: 'absolute',
+          display: 'flex',
+          alignItems: 'center',
+          top: 85,
+          left: 75,
           fontSize: '2.5rem',
           lineHeight: 1,
           background: '#ffffff',
@@ -40,8 +68,8 @@ export const OgImage = ({ title, description, url, image }) => {
           flexDirection: 'column',
           gap: '0.5rem',
           position: 'absolute',
-          bottom: 60,
-          left: 60,
+          bottom: 85,
+          left: 75,
           width: '80%',
         }}
       >
