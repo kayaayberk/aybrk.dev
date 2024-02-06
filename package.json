@@ -1,5 +1,10 @@
 {
-  "name": "ayber.dev-next",
+  "name": "aybrk.dev",
+  "description": "Personal website.",
+  "author": {
+    "name": "Ayberk Kaya",
+    "url": "https://aybrk.dev"
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
