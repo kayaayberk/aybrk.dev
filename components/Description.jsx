@@ -2,8 +2,8 @@
 
 function Description() {
   return (
-    <div className="flex flex-col gap-1 md:gap-4">
-      <h1 className='text-4xl md:text-[42px] font-medium'>
+    <div className="flex flex-col justify-between md:py-7 h-full">
+      <h1 className='text-4xl md:text-[38px] font-medium'>
         Hi! <span className='text-4xl md:text-[42px]'>👋</span> I&apos;m{' '}
         <span className='bg-gradient-to-r from-[#A395F6] to-blue-300 bg-clip-text text-4xl md:text-[42px] font-extrabold text-transparent'>
           Ayberk
