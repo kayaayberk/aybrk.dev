@@ -5,9 +5,9 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useTheme } from 'next-themes';
-import { Monitor, Moon, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Monitor, Moon, Sun } from 'lucide-react';
 
 function DarkModeToggle() {
   const [mounted, setMounted] = useState(false);
