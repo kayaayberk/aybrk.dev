@@ -13,7 +13,12 @@ export default function Providers({ children }) {
   }
 
   return (
-    <ThemeProvider attribute='class' enableSystem='true'>
+    <ThemeProvider
+      attribute='class'
+      storageKey='theme'
+      defaultTheme='system'
+      enableSystem
+    >
       {children}
     </ThemeProvider>
   );
