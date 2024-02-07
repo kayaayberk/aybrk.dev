@@ -17,7 +17,7 @@ function Contact() {
           Your message will directly be sent as an email to me.
         </p>
       </div>
-      <div className='flex min-h-[400px] w-full flex-col justify-center'>
+      <div className='flex w-full flex-col justify-center mt-14'>
         <Direct
           option1='Projects'
           href1='/projects'
