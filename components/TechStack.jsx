@@ -29,7 +29,7 @@ function TechStack() {
                     src={tech.icon}
                     alt={tech.label}
                     height={tech.label === 'TailwindCSS' ? 24 : 32}
-                    priority={true}
+                    priority
                     quality={1}
                     className={[
                       'rounded-lg',
@@ -62,7 +62,7 @@ function TechStack() {
                     src={stack.icon}
                     alt={stack.label}
                     height={32}
-                    priority={true}
+                    priority
                     quality={1}
                     className={[
                       'rounded-lg',

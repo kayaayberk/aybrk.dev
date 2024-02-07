@@ -11,8 +11,7 @@ function JourneyImageRenderer({ post }) {
         width={700}
         height={400}
         quality={100}
-        placeholder='blur'
-        blurDataURL={post.featuredImage ? post.featuredImage.url : ''}
+        priority
         objectFit='cover'
         className='inset-0 w-full rounded-xl transition-all duration-500 ease-in-out hover:scale-105'
       />

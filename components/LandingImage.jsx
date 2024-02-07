@@ -10,7 +10,7 @@ function LandingImage() {
       <Image
         src={MeHomeImage}
         alt='Ayberk Kaya'
-        priority={true}
+        priority
         className='-translate-y-20 md:-translate-y-10'
         quality={100}
         objectFit='cover'
