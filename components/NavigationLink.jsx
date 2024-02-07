@@ -6,7 +6,7 @@ import { ExternalLink } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 
 export const NavigationLink = memo(
-  ({ href, label, icon, title, handleDrawerClose }) => {
+  ({ href, label, icon, title, handleDrawerClose, scrollToTop }) => {
     const pathname = usePathname();
 
     // Getting the current pathname to style the active tab.
@@ -26,7 +26,8 @@ export const NavigationLink = memo(
         prefetch={true}
         target={title ? '_blank' : ''}
         rel={title ? 'noopener noreferrer' : ''}
-        onClick={handleDrawerClose}
+        onClick={scrollToTop || handleDrawerClose}
+        scroll
         className={[
           'flex items-center justify-between rounded-lg p-2',
           isActive
