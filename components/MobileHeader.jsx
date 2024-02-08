@@ -29,9 +29,13 @@ function MobileHeader() {
           <DrawerMenu />
           <span>
             {pathname === '/' ? (
-              <h1 ref={headerRef} className='text-md font-semibold'>
+              <motion.h1
+                ref={headerRef}
+                style={{ opacity, translateY, scale }}
+                className='text-md font-semibold'
+              >
                 Home
-              </h1>
+              </motion.h1>
             ) : (
               <motion.h1
                 style={{ opacity, translateY, scale }}
