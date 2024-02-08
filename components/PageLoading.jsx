@@ -48,9 +48,7 @@ export function PageLoading() {
           variants={icon}
           initial='hidden'
           animate='visible'
-          //   x='0.5'
-          //   y='1'
-          stroke={theme === 'dark' || 'system' ? '#fff' : '#000'}
+          stroke={theme === 'dark' || theme === 'system' ? '#fff' : '#000000'}
           strokeWidth={2}
         />
       </motion.svg>
