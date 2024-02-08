@@ -2,50 +2,37 @@
 
 import useStore from '@/lib/store';
 import DrawerMenu from './DrawerMenu';
+import { PAGES } from '@/lib/constants';
 import DarkModeToggle from './DarkModeToggle';
 import { usePathname } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
 import { useScroll, useTransform, motion } from 'framer-motion';
 
 function MobileHeader() {
   const pathname = usePathname();
-  const headerRef = useRef(null);
   const fadeRef = useStore((state) => state.fadeRef);
   const divRef = useStore((state) => state.divRef);
 
   const { scrollYProgress } = useScroll({
-    target: fadeRef,
     container: divRef,
+    target: fadeRef,
+    offset: ['start 0.05', '0.7 0'],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.044], [1, 0]);
-  const translateY = useTransform(scrollYProgress, [0, 0.11], [0, 50]);
-  const scale = useTransform(scrollYProgress, [0, 0.11], [1, 0.6]);
+  const opacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+  const translateY = useTransform(scrollYProgress, [0, 1], [15, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.04], [0.6, 1]);
 
   return (
     <header className='fixed top-0 z-50 w-full overflow-hidden border-b border-gray-300 bg-spice p-2 px-4 dark:border-zinc-800 dark:bg-spice lg:hidden'>
       <div className='flex w-full items-center justify-between'>
         <div className='flex items-center gap-2'>
           <DrawerMenu />
-          <span>
-            {pathname === '/' ? (
-              <motion.h1
-                ref={headerRef}
-                style={{ opacity, translateY, scale }}
-                className='text-md font-semibold'
-              >
-                Home
-              </motion.h1>
-            ) : (
-              <motion.h1
-                style={{ opacity, translateY, scale }}
-                ref={headerRef}
-                className='text-md font-semibold'
-              >
-                {pathname.slice(1).charAt(0).toUpperCase() + pathname.slice(2)}
-              </motion.h1>
-            )}
-          </span>
+          <motion.span style={{ opacity, translateY, scale }}>
+            <h1 className='text-md font-semibold flex items-center gap-1'>
+              {PAGES.find((page) => page.href === pathname)?.label}
+              {PAGES.find((page) => page.href === pathname)?.icon}
+            </h1>
+          </motion.span>
         </div>
         <DarkModeToggle />
       </div>

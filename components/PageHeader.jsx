@@ -7,14 +7,10 @@ import { cloneElement, useEffect, useRef } from 'react';
 
 function PageHeader() {
   const pathname = usePathname();
-
   const fadeRef = useRef(null);
   const setFadeRef = useStore((state) => state.setFadeRef);
 
-  const formattedPathname =
-    pathname.replace('/', '').charAt(0).toUpperCase() +
-    pathname.replace('/', '').slice(1);
-  const currentPage = PAGES.find((page) => page.label === formattedPathname);
+  const currentPage = PAGES?.find((page) => page.href === pathname);
   const clonedElement = currentPage
     ? cloneElement(currentPage.icon, { size: 24 })
     : null;
@@ -23,17 +19,17 @@ function PageHeader() {
     setFadeRef(fadeRef);
   });
 
-  if (pathname === '/') return <></>;
-
   return (
-    <div className='w-full'>
+    <div className={['w-full', pathname === '/' && 'opacity-0 absolute'].join(' ')}>
       {currentPage && (
         <div className='mx-auto flex w-full max-w-xl flex-col gap-6 p-8 pt-28 md:max-w-4xl'>
           <div className='flex items-center gap-2'>
-            <h1 ref={fadeRef} className='text-3xl font-semibold'>{currentPage.label}</h1>
+            <h1 ref={fadeRef} className='text-2xl font-semibold'>
+              {currentPage.label}
+            </h1>
             {clonedElement}
           </div>
-          <p className='text-base font-normal tracking-normal'>
+          <p className='text-base font-light tracking-tight'>
             {currentPage.description &&
               currentPage.description.map((part, index) =>
                 typeof part === 'string' ? (
