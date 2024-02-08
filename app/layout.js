@@ -10,8 +10,6 @@ import MobileHeader from '@/components/MobileHeader';
 import SideBarContent from '@/components/SideBarContent';
 import ChildrenRenderer from '@/components/ChildrenRenderer';
 import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
-import { Suspense } from 'react';
-import { PageLoading } from '@/components/PageLoading';
 
 export const metadata = {
   metadataBase: new URL('https://aybrk.dev'),
@@ -69,7 +67,7 @@ export default function RootLayout({ children }) {
             <ChildrenRenderer>
               <PageHeader />
               <BgShape />
-              <Suspense fallback={<PageLoading />}>{children}</Suspense>
+              {children}
               <Analytics />
             </ChildrenRenderer>
             <Toaster />
