@@ -10,7 +10,7 @@ function ContentContainer({ posts }) {
       {posts.map((post, index) => (
         <div className='flex flex-col' key={index}>
           <div>
-            <div className='flex gap-12'>
+            <div className='flex gap-14'>
               {/* Path */}
               <StepPointer index={index} posts={posts} />
 

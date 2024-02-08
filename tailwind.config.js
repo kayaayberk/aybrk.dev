@@ -27,6 +27,8 @@ module.exports = {
         'gradient-linear': 'linear-gradient(var(--tw-gradient-stops))',
         'bg-grid': 'url(../public/background/bg22.svg)',
         'gradient-45deg': 'linear-gradient(-45deg, var(--tw-gradient-stops))',
+        'gradient-purp': `linear-gradient(to right, ${theme('colors.gradient-start')}, ${theme('colors.gradient-end')})`,
+
       }),
       textColor: ['group-hover'],
       alignSelf: ['start'],
@@ -34,6 +36,8 @@ module.exports = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        'gradient-start': '#A395F6',
+        'gradient-end': '#7EB3E7',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {

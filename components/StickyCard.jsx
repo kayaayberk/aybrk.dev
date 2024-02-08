@@ -65,7 +65,7 @@ function StickyCard() {
                     <span className='dark:drop-shadow-glow'>
                       {headline.icon}
                     </span>
-                    <span className='bg-gradient-to-r from-[#A395F6] to-blue-300 bg-clip-text text-xl font-extrabold text-transparent md:text-4xl'>
+                    <span className='bg-gradient-purp bg-clip-text text-xl font-extrabold text-transparent md:text-4xl'>
                       {headline.label}
                     </span>
                   </div>

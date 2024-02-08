@@ -32,11 +32,11 @@ const JourneyCard = ({ result }) => {
           .reverse()
           .map(([title, posts], index) => (
             <div
-              className='flex flex-col justify-start gap-10 md:flex-row'
+              className='flex flex-col justify-start gap-5 md:flex-row'
               key={index}
             >
               <div className='h-min w-[5rem]'>
-                <span className='text-xl font-semibold'>{title}</span>
+                <span className='text-xl font-medium leading-4'>{title}</span>
               </div>
               <ContentContainer posts={posts} />
             </div>
