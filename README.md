@@ -20,7 +20,7 @@ I'll be updating my website and sharing posts that are related to my journey int
   <br />
 </div>
 
-## 📒 walk-through
+## 📖 Walk-through
 
 - `/` ~ Home page.
 - `/projects` ~ The page where I share the projects I build over time.
