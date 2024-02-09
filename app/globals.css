@@ -36,6 +36,9 @@
 
     --spice: 0, 0%, 99%;
     --spiceLighter: 0, 0%, 50%;
+
+    --selection-bg: black;
+    --selection-color: white;
   }
 
   .dark {
@@ -70,7 +73,10 @@
     --spice: 0, 0%, 5.2%;
     --spiceLighter: 0, 0%, 10%;
 
-    --bb: #000000
+    --bb: #000000;
+
+    --selection-bg: #b3b3b3;
+    --selection-color: white;
   }
 }
 
@@ -81,4 +87,15 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-color);
+}
+
+::-moz-selection {
+  background: var(--selection-bg);
+  color: var(--selection-color);
 }
