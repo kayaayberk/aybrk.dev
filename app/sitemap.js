@@ -3,37 +3,37 @@ export default function sitemap() {
     {
       url: 'https://aybrk.dev',
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'daily',
       priority: 1,
     },
     {
       url: 'https://aybrk.dev/journey',
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'daily',
       priority: 0.5,
     },
     {
       url: 'https://aybrk.dev/taste',
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'daily',
       priority: 0.5,
     },
     {
       url: 'https://aybrk.dev/projects',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'daily',
       priority: 0.5,
     },
     {
       url: 'https://aybrk.dev/contact',
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'daily',
       priority: 0.5,
     },
     {
       url: 'https://aybrk.dev/blog',
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'daily',
       priority: 0.5,
     },
   ];
