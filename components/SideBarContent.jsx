@@ -72,9 +72,19 @@ function SideBarContent({ handleDrawerClose }) {
               </Link>
             );
           })}
+           <span className='inline-flex items-center gap-1 px-2 font-normal leading-relaxed text-card dark:text-card'>
+            by
+            <span className='font-medium text-black dark:text-zinc-300'>
+              Ayberk Kaya
+            </span>
+            with love
+            <span>
+              <Heart width={12} />
+            </span>
+          </span>
         </div>
 
-        <div className='flex h-full flex-col gap-2 rounded-lg border  border-muted-foreground/25 p-2 text-xs'>
+        {/* <div className='flex h-full flex-col gap-2 rounded-lg border  border-muted-foreground/25 p-2 text-xs'>
           <span className='px-2 font-normal leading-relaxed text-card dark:text-card'>
             Built with:
           </span>
@@ -115,7 +125,7 @@ function SideBarContent({ handleDrawerClose }) {
               <Heart width={12} />
             </span>
           </span>
-        </div>
+        </div> */}
       </div>
     </div>
   );
