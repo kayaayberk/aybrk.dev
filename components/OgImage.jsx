@@ -52,7 +52,7 @@ export const OgImage = ({ title, description, url, image }) => {
           alignItems: 'center',
           top: 85,
           left: 75,
-          fontSize: '2.5rem',
+          fontSize: '2.75rem',
           lineHeight: 1,
           background: '#ffffff',
           color: '#0D0D0D',
@@ -73,7 +73,7 @@ export const OgImage = ({ title, description, url, image }) => {
           width: '80%',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'flex-end', gap: '1rem' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-end', gap: '1rem', marginBottom: '1rem' }}>
           <svg
             version='1.0'
             xmlns='http://www.w3.org/2000/svg'
@@ -113,7 +113,7 @@ export const OgImage = ({ title, description, url, image }) => {
         </div>
         {description && (
           <span
-            style={{ fontSize: '2rem', lineHeight: '2.75rem', color: 'white' }}
+            style={{ fontSize: '2.25rem', lineHeight: '2.75rem', color: 'white' }}
           >
             {description}
           </span>
