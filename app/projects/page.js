@@ -10,7 +10,7 @@ function Projects() {
         <ProjectCard />
         <Direct
           option1='Journey'
-          href1='/Journey'
+          href1='/journey'
           option2='Contact'
           href2='/contact'
           message1='Visit my journey page'
