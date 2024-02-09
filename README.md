@@ -26,9 +26,10 @@ I'll be updating my website and sharing posts that are related to my journey int
 - `/projects` ~ The page where I share the projects I build over time.
 - `/journey` ~ A brief info of my journey. (Pre-rendered using <a href='https://www.contentful.com/'>Contentful</a> GraphQL API)
 - `/taste` ~ My photography feed (Pre-rendered using. <a href='https://www.contentful.com/'>Contentful</a> GraphQL API)
-- `/blog/[slug]` ~ Pages where the posts I write are shared. (Static pre-rendered using <a href='https://www.contentful.com/'>Contentful</a> GraphQL API)
-- `/contact` ~ The page where you can send me an email. (Uses <a href='https://resend.com/home'>Resend Email API</a> and <a href='https://react.email/'>React Email</a> for delivery and templating)
+- `/blog/[slug]` ~ Pages where I share writings. (Pre-rendered using <a href='https://www.contentful.com/'>Contentful</a> GraphQL API)
+- `/contact` ~ The page that handles contact via email. (Uses <a href='https://resend.com/home'>Resend Email API</a> and <a href='https://react.email/'>React Email</a> for delivery and templating)
 - `/api` ~ API routes.
+
 
 #### .env.local
 
