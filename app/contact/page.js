@@ -1,6 +1,5 @@
 import Direct from '@/components/Direct';
 import { Lightbulb } from 'lucide-react';
-import PageHeader from '@/components/PageHeader';
 import ContactForm from '@/components/ContactForm';
 import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
 

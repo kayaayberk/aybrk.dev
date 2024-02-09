@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import PageHeader from '@/components/PageHeader';
-import { PageLoading } from '@/components/PageLoading';
 import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
 
 function Blog() {

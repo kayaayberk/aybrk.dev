@@ -1,5 +1,4 @@
 import Direct from '@/components/Direct';
-import PageHeader from '@/components/PageHeader';
 import TasteImages from '@/components/TasteImages';
 import ReachedBottom from '@/components/ReachedBottom';
 import { getTasteFeedContent } from '@/lib/contentful';

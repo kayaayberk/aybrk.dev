@@ -1,5 +1,4 @@
 import Direct from '@/components/Direct';
-import PageHeader from '@/components/PageHeader';
 import JourneyCard from '@/components/JourneyCard';
 import { getJourneyContent } from '@/lib/contentful';
 import ReachedBottom from '@/components/ReachedBottom';
