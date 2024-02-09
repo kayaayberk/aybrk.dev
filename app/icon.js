@@ -2,8 +2,8 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 export const size = {
-  width: 48,
-  height: 48,
+  width: 96,
+  height: 96,
 };
 
 export const contentType = 'image/png';
@@ -18,7 +18,9 @@ export default function Icon() {
         }}
       >
         <svg
-          viewBox='0 0 48 48'
+          width='96'
+          height='96'
+          viewBox='0 0 96 96'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
         >
