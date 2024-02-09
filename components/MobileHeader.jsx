@@ -18,9 +18,9 @@ function MobileHeader() {
     offset: ['start 0.05', '0.7 0'],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
-  const translateY = useTransform(scrollYProgress, [0, 1], [15, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.04], [0.6, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
+  const translateY = useTransform(scrollYProgress, [0, 1], [20, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
   return (
     <header className='fixed top-0 z-50 w-full overflow-hidden border-b border-gray-300 bg-spice p-2 px-4 dark:border-zinc-800 dark:bg-spice lg:hidden'>
