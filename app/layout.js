@@ -45,6 +45,9 @@ export const metadata = {
     card: 'summary_large_image',
     site: `@kayaayberkk`,
     creator: `@kayaayberkk`,
+    description: sharedDescription,
+    title: sharedTitle,
+    images: ['https://aybrk.dev/opengraph-image'],
   },
   icons: {
     icon: '../public/icon.png',
