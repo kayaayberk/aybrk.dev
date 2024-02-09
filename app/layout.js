@@ -50,7 +50,7 @@ export const metadata = {
     images: ['https://aybrk.dev/opengraph-image?47857960366f59b2'],
   },
   icons: {
-    icon: '../public/icon.png',
+    icon: 'https://aybrk.dev/favicon.ico',
   },
 };
 
