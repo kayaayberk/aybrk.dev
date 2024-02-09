@@ -47,7 +47,7 @@ export const metadata = {
     creator: `@kayaayberkk`,
     description: sharedDescription,
     title: sharedTitle,
-    images: ['https://aybrk.dev/opengraph-image'],
+    images: ['https://aybrk.dev/opengraph-image?47857960366f59b2'],
   },
   icons: {
     icon: '../public/icon.png',
