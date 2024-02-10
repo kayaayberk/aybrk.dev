@@ -7,9 +7,17 @@ import { useRouter } from 'next/navigation';
 import { NavigationLink } from './NavigationLink';
 import { ExternalLink, Heart } from 'lucide-react';
 import { PAGES, LINKS, BUILT_WITH, INFO } from '@/lib/constants';
+import { useState } from 'react';
 
 function SideBarContent({ handleDrawerClose }) {
   const router = useRouter();
+  const [clicked, setClicked] = useState(24);
+
+  const handleClick = () => {
+    setClicked((prev) => prev + 5);
+    setEffect(true);
+  };
+  const [effect, setEffect] = useState(false);
 
   return (
     <div className='flex h-screen w-full flex-col bg-spice p-2 text-sm dark:bg-spice'>
@@ -72,17 +80,25 @@ function SideBarContent({ handleDrawerClose }) {
               </Link>
             );
           })}
-           <span className='inline-flex items-center gap-1 px-2 font-normal leading-relaxed text-card dark:text-card'>
-            by
-            <span className='font-medium text-black dark:text-zinc-300'>
-              Ayberk Kaya
+          <span className='inline-flex items-center p-2 text-sm leading-relaxed'>
+            <span className='mr-2'>
+              <Heart size={16} />
             </span>
-            with love
-            <span>
-              <Heart width={12} />
-            </span>
+            by <span className='ml-1 font-semibold'>Ayberk Kaya</span>, with
+            love
           </span>
         </div>
+
+        {/* Add heart counter */}
+        {/* <Heart
+          size={clicked}
+          strokeWidth={1}
+          onClick={handleClick}
+          className={`${
+            effect && 'animate-wiggle'
+          } mx-auto mt-10 cursor-pointer text-gradient-start  drop-shadow-glow hover:shadow-lg`}
+          onAnimationEnd={() => setEffect(false)}
+        /> */}
 
         {/* <div className='flex h-full flex-col gap-2 rounded-lg border  border-muted-foreground/25 p-2 text-xs'>
           <span className='px-2 font-normal leading-relaxed text-card dark:text-card'>
