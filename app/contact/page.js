@@ -16,7 +16,7 @@ function Contact() {
           Your message will directly be sent as an email to me.
         </p>
       </div>
-      <div className='flex w-full flex-col justify-center mt-14'>
+      <div className='mt-14 flex w-full flex-col justify-center'>
         <Direct
           option1='Projects'
           href1='/projects'
@@ -37,14 +37,25 @@ export async function generateMetadata() {
 
   return {
     title: 'Contact',
-    sharedDescription,
+    description: sharedDescription,
     openGraph: {
-      sharedTitle,
-      sharedDescription,
+      title: sharedTitle,
+      description: sharedDescription,
       url: url,
     },
     alternates: {
       canonical: url,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: `@kayaayberkk`,
+      creator: `@kayaayberkk`,
+      description: sharedDescription,
+      title: sharedTitle,
+      images: ['https://aybrk.dev/contact/opengraph-image?47857960366f59b2'],
+    },
+    icons: {
+      icon: 'https://aybrk.dev/favicon.ico',
     },
   };
 }

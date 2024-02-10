@@ -36,14 +36,25 @@ export async function generateMetadata() {
 
   return {
     title: 'Blog',
-    sharedDescription,
+    description: sharedDescription,
     openGraph: {
-      sharedTitle,
-      sharedDescription,
+      title: sharedTitle,
+      description: sharedDescription,
       url: url,
     },
     alternates: {
       canonical: url,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: `@kayaayberkk`,
+      creator: `@kayaayberkk`,
+      description: sharedDescription,
+      title: sharedTitle,
+      images: ['https://aybrk.dev/blog/opengraph-image?47857960366f59b2'],
+    },
+    icons: {
+      icon: 'https://aybrk.dev/favicon.ico',
     },
   };
 }

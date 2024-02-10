@@ -10,6 +10,7 @@ import LandingImage from '@/components/LandingImage';
 import StickyAboutMe from '@/components/StickyAboutMe';
 import ReachedBottom from '@/components/ReachedBottom';
 import { PARAGRAPH, READY_TO_CONTRIBUTE } from '@/lib/constants';
+import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
 
 export default function Home() {
   return (
@@ -54,4 +55,32 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function generateMetadata() {
+  const url = '/';
+
+  return {
+    title: sharedTitle,
+    description: sharedDescription,
+    openGraph: {
+      title: sharedTitle,
+      description: sharedDescription,
+      url: url,
+    },
+    alternates: {
+      canonical: url,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: `@kayaayberkk`,
+      creator: `@kayaayberkk`,
+      description: sharedDescription,
+      title: sharedTitle,
+      images: ['https://aybrk.dev/opengraph-image?47857960366f59b2'],
+    },
+    icons: {
+      icon: 'https://aybrk.dev/favicon.ico',
+    },
+  };
 }
