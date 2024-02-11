@@ -9,7 +9,7 @@ function TasteImageCard({ url }) {
         height={500}
         priority
         alt='Taste Image'
-        className='size-full transition-all duration-500 ease-in-out hover:scale-110'
+        className='size-full transition-all duration-500 ease-in-out hover:scale-110 animate-reveal'
       />
     </div>
   );

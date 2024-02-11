@@ -93,7 +93,7 @@ function ContactForm() {
             control={form.control}
             name='email'
             render={({ field }) => (
-              <FormItem className='w-full'>
+              <FormItem className='w-full animate-slide delay-300 opacity-0'>
                 <FormLabel>Email *</FormLabel>
                 <FormControl>
                   <Input
@@ -111,7 +111,7 @@ function ContactForm() {
             control={form.control}
             name='name'
             render={({ field }) => (
-              <FormItem className='w-full border-muted-foreground/50'>
+              <FormItem className='w-full border-muted-foreground/50 animate-slide delay-300 opacity-0'>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
                   <Input
@@ -130,7 +130,7 @@ function ContactForm() {
           control={form.control}
           name='message'
           render={({ field }) => (
-            <FormItem>
+            <FormItem className='animate-slide delay-400 opacity-0'>
               <FormLabel>Message *</FormLabel>
               <FormControl>
                 <Textarea
@@ -144,7 +144,7 @@ function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type='submit' className='w-full' disabled={isSubmitting}>
+        <Button type='submit' className='w-full animate-slide delay-500 opacity-0' disabled={isSubmitting}>
           {isSubmitting ? (
             <span className='flex items-center gap-1'>
               Sending message... <Loader2 size={16} className='animate-spin' />

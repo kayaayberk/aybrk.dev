@@ -32,7 +32,7 @@ const JourneyCard = ({ result }) => {
           .reverse()
           .map(([title, posts], index) => (
             <div
-              className='flex flex-col justify-start gap-5 md:flex-row'
+              className='flex flex-col justify-start gap-5 md:flex-row animate-slide delay-300 opacity-0'
               key={index}
             >
               <div className='h-min w-[5rem]'>

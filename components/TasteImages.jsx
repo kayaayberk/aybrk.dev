@@ -15,7 +15,6 @@ function TasteImages({ result }) {
 
   useEffect(() => {
     setIsLoading(true);
-
     setData(items);
     setTotalImgCount(totalImageCount);
     setIsLoading(false);
@@ -27,10 +26,11 @@ function TasteImages({ result }) {
         {data.slice(0, displayCount).map((image, index) => {
           return (
             <div
-              className='relative mb-5 rounded-xl shadow-lg shadow-black/50'
+
+              className='relative mb-5 rounded-xl shadow-lg shadow-black/50 animate-slide delay-300 opacity-0'
               key={index}
             >
-              <TasteImageCard url={image.image.url} />
+              <TasteImageCard url={image.image.url} index={index} />
               <div className='absolute bottom-0 left-0 p-3'>
                 <span className='flex items-center gap-1 rounded-full bg-gray-200/20 px-2 py-1 text-xs text-white filter backdrop-blur-3xl'>
                   <MapPin size={16} />
@@ -60,3 +60,10 @@ function TasteImages({ result }) {
 }
 
 export default TasteImages;
+
+
+
+// variants={slide}
+//               transition={{ delay: index * 0.05, duration: 0.5}}
+//               initial='hidden'
+//               animate='visible'

@@ -9,12 +9,12 @@ function ProjectCardContent({ project }) {
   return (
     <div className='flex flex-col justify-between gap-5 md:flex-row'>
       <div className='f-full flex flex-col gap-4 md:w-1/2'>
-        <div className='rounded-xl border border-muted-foreground/30 p-3 dark:border-muted-foreground/20'>
+        <div className='rounded-xl border border-muted-foreground/30 md:w-full dark:border-muted-foreground/20'>
           <Image
             src={project.image}
             alt='project image'
             priority
-            className='rounded-xl shadow-lg shadow-black/60'
+            className='rounded-xl shadow-lg shadow-black/60 animate-reveal'
           />
         </div>
         <div className='flex flex-wrap gap-3'>
