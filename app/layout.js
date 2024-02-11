@@ -68,7 +68,7 @@ export default function RootLayout({ children }) {
             </SideBar>
             <MobileHeader />
             <ChildrenRenderer>
-              <PageHeader />
+              {/* <PageHeader /> */}
               <BgShape />
               {children}
               <Analytics />

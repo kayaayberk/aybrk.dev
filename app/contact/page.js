@@ -1,10 +1,13 @@
 import Direct from '@/components/Direct';
 import { Lightbulb } from 'lucide-react';
+import PageHeader from '@/components/PageHeader';
 import ContactForm from '@/components/ContactForm';
 import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
 
 function Contact() {
   return (
+    <>
+      <PageHeader />
     <div className='container mx-auto flex h-full max-w-xl flex-col items-start gap-10 pb-24 pt-10 md:max-w-4xl'>
       <ContactForm />
       <div className='mx-auto'>
@@ -27,6 +30,7 @@ function Contact() {
         />
       </div>
     </div>
+    </>
   );
 }
 
