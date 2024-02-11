@@ -13,7 +13,7 @@ function JourneyImageRenderer({ post }) {
         quality={100}
         priority
         objectFit='cover'
-        className='inset-0 w-full rounded-xl transition-all duration-500 ease-in-out hover:scale-105'
+        className='inset-0 w-full rounded-xl transition-all duration-500 ease-in-out hover:scale-105 animate-reveal'
       />
     </div>
   );
