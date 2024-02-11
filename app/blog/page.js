@@ -58,7 +58,7 @@ export async function generateMetadata() {
       images: ['https://aybrk.dev/blog/opengraph-image?47857960366f59b2'],
     },
     icons: {
-      icon: '/favicon.png',
+      icon: '/icon.png',
     },
   };
 }
