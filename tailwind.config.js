@@ -16,6 +16,14 @@ module.exports = {
       },
     },
     extend: {
+      transitionDelay: {
+        100: '100ms',
+        200: '200ms',
+        300: '300ms',
+        400: '400ms',
+        500: '500ms',
+        600: '600ms',
+      },
       dropShadow: {
         glow: [
           '0 0px 10px rgba(154, 143, 229, 0.5)',
@@ -28,7 +36,6 @@ module.exports = {
         'bg-grid': 'url(../public/background/bg22.svg)',
         'gradient-45deg': 'linear-gradient(-45deg, var(--tw-gradient-stops))',
         'gradient-purp': `linear-gradient(to right, ${theme('colors.gradient-start')}, ${theme('colors.gradient-end')})`,
-
       }),
       textColor: ['group-hover'],
       alignSelf: ['start'],
@@ -83,18 +90,33 @@ module.exports = {
         sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
         },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
+        slide: {
+          '0%': { transform: 'translateY(8px)', opacity: 0 },
+          '100%': { transform: 'translateY(0)', opacity: 1 },
+        },
+        reveal: {
+          '0%': {
+            opacity: 0,
+            filter: 'brightness(1) blur(25px)',
+            scale: '1.125',
+          },
+          '10%': { opacity: 1, filter: 'brightness(1.25) blur(10px)' },
+          '100%': { opacity: 1, filter: 'brightness(1) blur(0)', scale: '1' },
+        },
+        innerScale: {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(1.1)' },
         },
       },
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
+        slide: 'slide 0.4s ease-in-out forwards',
+        reveal: 'reveal 1s ease-in-out',
+        wiggle: 'wiggle 0.2s ease-in-out',
+        innerScale: 'innerScale 0.5s ease-in-out forwards',
       },
       scale: {
         101: '1.01',
