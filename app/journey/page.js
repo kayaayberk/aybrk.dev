@@ -60,7 +60,7 @@ export async function generateMetadata() {
       images: ['https://aybrk.dev/journey/opengraph-image?47857960366f59b2'],
     },
     icons: {
-      icon: 'https://aybrk.dev/favicon.ico',
+      icon: '/favicon.png',
     },
   };
 }
