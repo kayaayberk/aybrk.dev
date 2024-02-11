@@ -102,7 +102,7 @@ module.exports = {
           '0%': {
             opacity: 0,
             filter: 'brightness(1) blur(25px)',
-            scale: '1.125',
+            scale: '1.05',
           },
           '10%': { opacity: 1, filter: 'brightness(1.25) blur(10px)' },
           '100%': { opacity: 1, filter: 'brightness(1) blur(0)', scale: '1' },
