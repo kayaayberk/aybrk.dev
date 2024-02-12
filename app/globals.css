@@ -42,7 +42,7 @@
   }
 
   .dark {
-    --background: 240,10%,4%;
+    --background: 240, 10%, 4%;
     --foreground: 210 40% 98%;
 
     --card: 240 4% 70%;
@@ -88,7 +88,6 @@
     @apply bg-background text-foreground;
   }
 }
-
 
 ::selection {
   background: var(--selection-bg);
