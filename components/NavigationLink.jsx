@@ -2,14 +2,36 @@
 
 import Link from 'next/link';
 import { memo } from 'react';
-import { ExternalLink } from 'lucide-react';
-import { usePathname } from 'next/navigation';
+import { ArrowUpRight } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
+import { useKeyPress } from '@/hooks/useKeyPress';
 
 export const NavigationLink = memo(
-  ({ href, label, icon, title, handleDrawerClose, scrollToTop }) => {
+  ({ href, label, icon, title, handleDrawerClose, scrollToTop, number }) => {
     const pathname = usePathname();
+    const router = useRouter();
 
-    // Getting the current pathname to style the active tab.
+    useKeyPress(onKeyPress, ['1', '2', '3', '4', '5', '6']);
+
+    function onKeyPress(event) {
+      event.preventDefault();
+
+      if (event.key === '1') {
+        router.push('/');
+      } else if (event.key === '2') {
+        router.push('/projects');
+      } else if (event.key === '3') {
+        router.push('/journey');
+      } else if (event.key === '4') {
+        router.push('/taste');
+      } else if (event.key === '5') {
+        router.push('/blog');
+      } else if (event.key === '6') {
+        router.push('/contact');
+      }
+    }
+
+    // Get the current pathname to style the active tab.
     let isActive = false;
     if (pathname?.length > 1) {
       const splitPathname = pathname.split('/');
@@ -29,25 +51,28 @@ export const NavigationLink = memo(
         onClick={scrollToTop || handleDrawerClose}
         scroll
         className={[
-          'flex items-center justify-between rounded-lg p-2',
+          'flex items-center justify-between rounded-md px-2 py-2 pr-1 ',
           isActive
-            ? 'bg-primary text-white dark:bg-white dark:text-black'
-            : 'hover:bg-gray-200 dark:text-white dark:hover:bg-gray-500/25',
+            ? 'bg-gray-400/40 dark:bg-white/20'
+            : 'hover:bg-gray-200 dark:hover:bg-gray-500/20 dark:text-white/80',
         ].join(' ')}
       >
-        <span className='flex items-center gap-2 font-normal'>
+        <span className='flex items-center gap-3 font-normal'>
           {icon}
-          <span className='tracking-wide'>{label}</span>
+          <span className='font-medium tracking-normal'>{label}</span>
         </span>
         <span>
           {!title ? (
-            !isActive ? (
-              '/'
-            ) : (
-              '//'
-            )
+            <span
+              className={[
+                'hidden md:flex rounded-sm px-1 size-5 items-center justify-center text-xs',
+                isActive ? 'dark:text-white text-black' : 'bg-black/5 dark:bg-white/10 dark:text-white/50 text-gray-400',
+              ].join(' ')}
+            >
+              {number}
+            </span>
           ) : (
-            <ExternalLink width={!isActive ? 16 : 18} />
+            <ArrowUpRight size={16} />
           )}
         </span>
       </Link>
