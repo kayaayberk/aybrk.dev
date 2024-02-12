@@ -20,10 +20,8 @@ export default function Home() {
       <div className='container z-50 mx-auto flex min-h-max flex-col items-start gap-20 pt-28 md:max-w-4xl'>
         <div className='flex flex-col items-center gap-10 rounded-2xl md:grid md:grid-cols-2 md:shadow-none'>
           <div className='w-full gap-10 md:col-span-2 md:grid md:grid-cols-2'>
+            <Description />
             <LandingImage />
-            <Card hoverActive classId={'homeCard'}>
-              <Description />
-            </Card>
           </div>
           <div className='col-span-2'>
             <TechStack />
