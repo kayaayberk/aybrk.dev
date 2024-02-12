@@ -5,7 +5,8 @@ module.exports = {
   images: {
     domains: ['images.ctfassets.net', 'downloads.ctfassets.net'],
   },
-  alias: {
-    '@': path.resolve(__dirname, './'),
+  webpack: (config) => {
+    config.resolve.alias['@'] = path.resolve(__dirname, './');
+    return config;
   },
 };
