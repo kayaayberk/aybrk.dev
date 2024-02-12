@@ -23,9 +23,9 @@ function Badge() {
   }, []);
 
   return (
-    <div className='flex items-center justify-between rounded-lg border border-gray-300 p-2 hover:bg-gray-200  dark:border-zinc-800 dark:hover:bg-gray-500/20 lg:bg-spice'>
-      <Link href='/' className='inline-flex items-center gap-2 rounded-lg'>
-        <div className='size-10 overflow-hidden rounded-full border'>
+    <div className='flex items-center justify-between rounded-lg p-2 pr-0 hover:bg-gray-200  dark:hover:bg-gray-500/20'>
+      <Link href='/' className='inline-flex items-center gap-2 rounded-md'>
+        <div className='size-10 overflow-hidden rounded-full'>
           <Image
             src={BadgeImage}
             alt='Ayberk Kaya'
@@ -37,7 +37,7 @@ function Badge() {
         </div>
         <div className='flex flex-1 flex-col'>
           <span className='font-semibold tracking-tight'>Ayberk Kaya</span>
-          <span className='text-xs font-extralight tracking-wide dark:text-card'>
+          <span className='text-xs font-light tracking-wide text-gray-700/70 dark:text-white/80'>
             Software Developer
           </span>
         </div>

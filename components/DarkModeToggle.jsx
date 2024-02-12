@@ -21,15 +21,8 @@ function DarkModeToggle() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger
-        asChild
-        className='bg-spice shadow-none dark:bg-spice md:flex'
-      >
-        <Button
-          variant='ghost'
-          size='icon'
-          className='hover:bg-gray-300 dark:hover:bg-gray-500/25'
-        >
+      <DropdownMenuTrigger asChild className='hover:bg-transparent md:flex'>
+        <Button variant='ghost' size='icon' className='hover:scale-110 transition-all duration-500 ease-in-out'>
           {theme === 'light' && (
             <Sun className='size-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0' />
           )}
@@ -41,22 +34,22 @@ function DarkModeToggle() {
           )}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className='dark:border-zinc-800 dark:bg-spice'>
+      <DropdownMenuContent className='bg-white/70 filter backdrop-blur-3xl dark:border-zinc-800 dark:bg-black/10'>
         <DropdownMenuItem
           onClick={() => setTheme('light')}
-          className='hover:bg-gray-200 dark:hover:bg-gray-500/25'
+          className='hover:bg-gray-200 dark:hover:bg-gray-500/20'
         >
           Light
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme('dark')}
-          className='hover:bg-gray-200 dark:hover:bg-gray-500/25'
+          className='hover:bg-gray-200 dark:hover:bg-gray-500/20'
         >
           Dark
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme('system')}
-          className='hover:bg-gray-200 dark:hover:bg-gray-500/25'
+          className='hover:bg-gray-200 dark:hover:bg-gray-500/20'
         >
           System
         </DropdownMenuItem>
