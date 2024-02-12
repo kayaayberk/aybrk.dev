@@ -17,11 +17,17 @@ module.exports = {
     },
     extend: {
       transitionDelay: {
+        50: '50ms',
         100: '100ms',
+        150: '150ms',
         200: '200ms',
+        250: '250ms',
         300: '300ms',
+        350: '350ms',
         400: '400ms',
+        450: '450ms',
         500: '500ms',
+        550: '550ms',
         600: '600ms',
       },
       dropShadow: {
@@ -104,8 +110,12 @@ module.exports = {
             filter: 'brightness(1) blur(25px)',
             scale: '1.05',
           },
-          '10%': { opacity: 1, filter: 'brightness(1.25) blur(10px)' },
-          '100%': { opacity: 1, filter: 'brightness(1) blur(0)', scale: '1' },
+          '10%': { opacity: 1, filter: 'brightness(1.15) blur(10px)' },
+          '100%': {
+            opacity: 1,
+            filter: 'dark:brightness(0.75) blur(0)',
+            scale: '1',
+          },
         },
         innerScale: {
           '0%': { transform: 'scale(1)' },
@@ -113,8 +123,8 @@ module.exports = {
         },
       },
       animation: {
-        slide: 'slide 0.4s ease-in-out forwards',
-        reveal: 'reveal 1s ease-in-out',
+        slide: 'slide 0.3s ease-in-out forwards',
+        reveal: 'reveal 0.7s ease-in-out',
         wiggle: 'wiggle 0.2s ease-in-out',
         innerScale: 'innerScale 0.5s ease-in-out forwards',
       },
