@@ -1,6 +1,6 @@
 'use client';
 
-import { Lightbulb } from 'lucide-react';
+import Link from 'next/link';
 
 function Description() {
   return (
@@ -24,7 +24,13 @@ function Description() {
         After graduating from a design school in Warsaw with solid experience in{' '}
         <span className='font-semibold'>teamwork</span>, thorough projects and
         hands-on collaborations, I&apos;m ready to contribute to the programming
-        era!
+        era! ind more information about me{' '}
+        <Link
+          href='/journey'
+          className=' inline-flex text-black hover:underline dark:text-white'
+        >
+          here ↗
+        </Link>
       </p>
       <p className='hidden animate-slide text-sm font-light tracking-normal text-stone-500 opacity-0 delay-150 dark:text-stone-400/70 md:flex  md:text-sm'>
         Use keyboard shortcuts 1 → 6 to navigate between the pages.

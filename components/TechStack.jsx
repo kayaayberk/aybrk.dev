@@ -18,25 +18,24 @@ function TechStack() {
             </span>
           </div>
 
-          <div className='flex size-full flex-wrap justify-center gap-3'>
+          <div className='flex flex-wrap justify-center gap-4 md:gap-6'>
             {STACK.map((tech) => {
               return (
                 <div
-                  className='flex size-20 flex-col items-center justify-between gap-2 rounded-xl p-2'
+                  className='flex w-16 flex-col items-center gap-2 rounded-xl p-2'
                   key={tech.label}
                 >
                   <Image
                     src={tech.icon}
                     alt={tech.label}
-                    height={tech.label === 'TailwindCSS' ? 24 : 32}
                     priority
                     quality={1}
                     className={[
-                      'rounded-lg',
+                      'size-7 rounded-lg md:size-8',
                       tech.label === 'Next.js' ? 'dark:invert dark:filter' : '',
                     ].join(' ')}
                   />
-                  <span className='text-xs text-muted-foreground'>
+                  <span className='text-xs text-stone-500 dark:text-stone-400/70'>
                     {tech.label}
                   </span>
                 </div>
@@ -51,27 +50,26 @@ function TechStack() {
               Design
             </span>
           </div>
-          <div className='flex size-full flex-wrap justify-center gap-3'>
+          <div className='flex flex-wrap justify-center gap-4 md:gap-6'>
             {DESIGN_STACK.map((stack) => {
               return (
                 <div
-                  className='flex size-20 flex-col items-center justify-between gap-2 rounded-xl p-2'
+                  className='flex w-16 flex-col items-center gap-2 rounded-xl p-2'
                   key={stack.label}
                 >
                   <Image
                     src={stack.icon}
                     alt={stack.label}
-                    height={32}
                     priority
                     quality={1}
                     className={[
-                      'rounded-lg',
+                      'size-7 rounded-lg md:size-8',
                       stack.label === 'Next.js'
                         ? 'dark:invert dark:filter'
                         : '',
                     ].join(' ')}
                   />
-                  <span className='text-center text-xs text-muted-foreground'>
+                  <span className='text-center text-xs text-stone-500 dark:text-stone-400/70'>
                     {stack.label}
                   </span>
                 </div>

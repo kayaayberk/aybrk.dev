@@ -23,11 +23,11 @@ function JourneyDescRenderer({ post }) {
   return (
     <div className='flex flex-col '>
       <span className=' font-semibold'>{post.subtitle}</span>
-      <span className='text-sm font-light text-muted-foreground/80'>
+      <span className='text-sm font-light text-stone-600 dark:text-stone-400/80'>
         {description}{' '}
         <Link
           target='_blank'
-          className='text-blue-500 underline-offset-4 hover:text-blue-600 hover:underline'
+          className='text-black underline-offset-4 hover:underline dark:text-white'
           href={link ? link : ''}
         >
           {linkText ? linkText : ''}

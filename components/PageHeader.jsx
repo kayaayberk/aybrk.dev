@@ -22,14 +22,14 @@ function PageHeader() {
   return (
     <div className={['w-full mx-auto max-w-4xl', pathname === '/' && 'opacity-0 absolute -z-50'].join(' ')}>
       {currentPage && (
-        <div className='mx-auto flex w-full max-w-xl flex-col gap-6 p-8 pt-28 md:max-w-4xl'>
+        <div className='mx-auto flex w-full max-w-xl flex-col gap-3 p-8 pt-28 md:max-w-4xl'>
           <div className='flex items-center gap-2 animate-slide'>
             <h1 ref={fadeRef} className='text-2xl font-semibold'>
               {currentPage.label}
             </h1>
             {clonedElement}
           </div>
-          <p className='text-base font-light tracking-normal animate-slide delay-100 opacity-0'>
+          <p className='tracking-tight text-stone-600 dark:text-stone-400/80 md:text-sm text-sm font-light animate-slide delay-100 opacity-0'>
             {currentPage.description &&
               currentPage.description.map((part, index) =>
                 typeof part === 'string' ? (
@@ -41,7 +41,7 @@ function PageHeader() {
                 ),
               )}
           </p>{' '}
-          <hr className='w-full border-muted-foreground/30 animate-slide delay-200 opacity-0' />
+          <hr className='w-full border-gray-700/30 dark:border-stone-800 animate-slide delay-200 opacity-0' />
         </div>
       )}
     </div>

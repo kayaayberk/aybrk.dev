@@ -8,10 +8,10 @@ function ReachedBottom() {
   const divRef = useStore((state) => state.divRef);
   return (
     <div className='z-50 flex w-full flex-col justify-center md:pb-7 pb-24'>
-      <p className='mx-auto text-sm font-extralight text-muted-foreground'>
-        You&apos;ve reached to bottom!
+      <p className='mx-auto text-xs font-extralight text-stone-500 dark:text-stone-400/70'>
+        You&apos;ve reached the bottom!
       </p>
-      <hr className='mt-4 border-muted-foreground/50' />
+      <hr className='mt-4 border-stone-300 dark:border-stone-400/30' />
 
       <Button
         onClick={(e) => {
@@ -22,7 +22,7 @@ function ReachedBottom() {
           });
         }}
         variant='ghost'
-        className='mx-auto mt-2 border-gray-300 bg-transparent font-extralight text-muted-foreground hover:bg-gray-200 dark:border-zinc-800 dark:hover:bg-gray-500/25'
+        className='mx-auto mt-2 text-xs border-gray-300 bg-transparent font-extralight text-stone-500 dark:text-stone-400/70 hover:bg-gray-200 dark:hover:bg-gray-500/20 dark:border-zinc-800'
       >
         Go to top
       </Button>

@@ -26,8 +26,7 @@ function TasteImages({ result }) {
         {data.slice(0, displayCount).map((image, index) => {
           return (
             <div
-
-              className='relative mb-5 rounded-xl shadow-lg shadow-black/50 animate-slide delay-300 opacity-0'
+              className='relative mb-5 animate-slide rounded-xl opacity-0 shadow-lg shadow-black/50 delay-300'
               key={index}
             >
               <TasteImageCard url={image.image.url} index={index} />
@@ -60,10 +59,3 @@ function TasteImages({ result }) {
 }
 
 export default TasteImages;
-
-
-
-// variants={slide}
-//               transition={{ delay: index * 0.05, duration: 0.5}}
-//               initial='hidden'
-//               animate='visible'

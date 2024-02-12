@@ -99,7 +99,7 @@ function ContactForm() {
                   <Input
                     {...register('email')}
                     placeholder='johndoe@email.com'
-                    className='w-full border-muted-foreground/50 text-muted-foreground'
+                    className='w-full border-stone-300 dark:border-stone-400/20 text-muted-foreground text-stone-500 dark:text-stone-400/70 placeholder:text-stone-500 placeholder:dark:text-stone-400/70'
                     {...field}
                   />
                 </FormControl>
@@ -111,13 +111,13 @@ function ContactForm() {
             control={form.control}
             name='name'
             render={({ field }) => (
-              <FormItem className='w-full border-muted-foreground/50 animate-slide delay-300 opacity-0'>
+              <FormItem className='w-full animate-slide delay-300 opacity-0'>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
                   <Input
                     {...register('name')}
                     placeholder='John Doe'
-                    className='w-full border-muted-foreground/50 text-muted-foreground'
+                    className='w-full border-stone-300 dark:border-stone-400/20 text-muted-foreground text-stone-500 dark:text-stone-400/70 placeholder:text-stone-500 placeholder:dark:text-stone-400/70'
                     {...field}
                   />
                 </FormControl>
@@ -137,7 +137,7 @@ function ContactForm() {
                   {...register('message')}
                   placeholder='Your message'
                   {...field}
-                  className='min-h-40 border-muted-foreground/50 text-muted-foreground'
+                  className='min-h-40 border-stone-300 dark:border-stone-400/20 text-stone-500 dark:text-stone-400/70 placeholder:text-stone-500 placeholder:dark:text-stone-400/70'
                 />
               </FormControl>
               <FormMessage />
