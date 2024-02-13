@@ -3,40 +3,33 @@
 import Link from 'next/link';
 import { memo } from 'react';
 import { ArrowUpRight } from 'lucide-react';
-// import { useKeyPress } from '@/hooks/useKeyPress';
 import { usePathname, useRouter } from 'next/navigation';
+import { useKeyPress } from '@/hooks/useKeyPress';
 
 export const NavigationLink = memo(
   ({ href, label, icon, title, handleDrawerClose, scrollToTop, number }) => {
     const pathname = usePathname();
-    // const router = useRouter();
+    const router = useRouter();
 
-    // useKeyPress(onKeyPress, [
-    //   'Digit1',
-    //   'Digit2',
-    //   'Digit3',
-    //   'Digit4',
-    //   'Digit5',
-    //   'Digit6',
-    // ]);
+    useKeyPress(onKeyPress, ['1', '2', '3', '4', '5', '6']);
 
-    // function onKeyPress(event) {
-    //   event.preventDefault();
+    function onKeyPress(event) {
+      event.preventDefault();
 
-    //   if (event.code === 'Digit1') {
-    //     router.push('/');
-    //   } else if (event.code === 'Digit2') {
-    //     router.push('/projects');
-    //   } else if (event.code === 'Digit3') {
-    //     router.push('/journey');
-    //   } else if (event.code === 'Digit4') {
-    //     router.push('/taste');
-    //   } else if (event.code === 'Digit5') {
-    //     router.push('/blog');
-    //   } else if (event.code === 'Digit6') {
-    //     router.push('/contact');
-    //   }
-    // }
+      if (event.key === '1') {
+        router.push('/');
+      } else if (event.key === '2') {
+        router.push('/projects');
+      } else if (event.key === '3') {
+        router.push('/journey');
+      } else if (event.key === '4') {
+        router.push('/taste');
+      } else if (event.key === '5') {
+        router.push('/blog');
+      } else if (event.key === '6') {
+        router.push('/contact');
+      }
+    }
 
     // Get the current pathname to style the active tab.
     let isActive = false;
