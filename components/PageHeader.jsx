@@ -41,7 +41,7 @@ function PageHeader() {
                 ),
               )}
           </p>{' '}
-          <hr className='w-full border-gray-700/30 dark:border-stone-800 animate-slide delay-200 opacity-0' />
+          <hr className='w-full border-gray-700/30 dark:border-stone-400/50 animate-slide delay-200 opacity-0' />
         </div>
       )}
     </div>
