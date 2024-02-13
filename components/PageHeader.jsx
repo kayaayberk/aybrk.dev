@@ -20,16 +20,21 @@ function PageHeader() {
   });
 
   return (
-    <div className={['w-full mx-auto max-w-4xl', pathname === '/' && 'opacity-0 absolute -z-50'].join(' ')}>
+    <div
+      className={[
+        'mx-auto w-full max-w-4xl',
+        pathname === '/' && 'absolute -z-50 opacity-0',
+      ].join(' ')}
+    >
       {currentPage && (
         <div className='mx-auto flex w-full max-w-xl flex-col gap-3 p-8 pt-28 md:max-w-4xl'>
-          <div className='flex items-center gap-2 animate-slide'>
+          <div className='flex animate-slide items-center gap-2'>
             <h1 ref={fadeRef} className='text-2xl font-semibold'>
               {currentPage.label}
             </h1>
             {clonedElement}
           </div>
-          <p className='tracking-tight text-stone-600 dark:text-stone-400/80 md:text-sm text-sm font-light animate-slide delay-100 opacity-0'>
+          <p className='animate-slide text-sm font-light tracking-tight text-stone-500 opacity-0 delay-100 dark:text-stone-300/60 md:text-sm'>
             {currentPage.description &&
               currentPage.description.map((part, index) =>
                 typeof part === 'string' ? (
@@ -41,7 +46,7 @@ function PageHeader() {
                 ),
               )}
           </p>{' '}
-          <hr className='w-full border-gray-700/30 dark:border-stone-400/50 animate-slide delay-200 opacity-0' />
+          <hr className='w-full animate-slide border-gray-700/30 opacity-0 delay-200 dark:border-stone-400/50' />
         </div>
       )}
     </div>

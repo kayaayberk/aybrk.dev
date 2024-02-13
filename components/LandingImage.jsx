@@ -5,7 +5,7 @@ function LandingImage() {
   return (
     <div
       className='hidden md:block col-span-1 h-[260px] w-full overflow-hidden transition-all
-          ease-in md:h-[350px] md:rounded-lg md:shadow-xl md:hover:scale-101 animate-slide'
+          ease-in md:h-[350px] md:rounded-lg shadow-xl dark:shadow-black/40 md:hover:scale-101 animate-slide'
     >
       <Image
         src={MeHomeImage}
