@@ -13,7 +13,7 @@ function Info() {
           return !link.mailTo ? (
             <span key={link.label} className='flex items-center gap-3 p-2 text-sm font-medium tracking-normal dark:text-white/80'>
               {link.icon}
-              <span className='tracking-wide'>{link.label}</span>
+              <span className='tracking-normal font-normal'>{link.label}</span>
             </span>
           ) : (
             <Link
@@ -23,7 +23,7 @@ function Info() {
             >
               <span className='hover flex items-center gap-3 text-sm font-normal'>
                 {link.icon}
-                <span className='font-medium tracking-normal dark:text-white/80'>
+                <span className='tracking-normal font-normal dark:text-white/80'>
                   {link.label}
                 </span>
               </span>
