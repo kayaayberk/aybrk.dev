@@ -10,7 +10,7 @@ function Description() {
           Hi, I&apos;m <span className='text-3xl font-semibold '>Ayberk</span>
           <span className='text-[25px]'>👋🏻</span>
         </h1>
-        <span className='delay-50 animate-slide bg-gradient-purp bg-clip-text text-xl font-semibold leading-tight text-transparent opacity-0'>
+        <span className='animate-slide bg-gradient-purp bg-clip-text text-xl font-semibold leading-tight text-transparent opacity-0 delay-50'>
           Software Developer / Designer
         </span>
       </div>
@@ -24,7 +24,7 @@ function Description() {
         After graduating from a design school in Warsaw with solid experience in{' '}
         <span className='font-semibold'>teamwork</span>, thorough projects and
         hands-on collaborations, I&apos;m ready to contribute to the programming
-        era! ind more information about me{' '}
+        era! Find out more about me{' '}
         <Link
           href='/journey'
           className=' inline-flex text-black hover:underline dark:text-white'
