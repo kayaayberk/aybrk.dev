@@ -18,10 +18,6 @@ export function PageLoading() {
   };
 
   const opacity = {
-    hidden: {
-      opacity: 0,
-      fill: 'rgba(13, 13, 13, 0)',
-    },
     visible: {
       opacity: 1,
       fill: 'rgba(13, 13, 13, 1)',
@@ -37,12 +33,6 @@ export function PageLoading() {
         height={96}
         fill='none'
       >
-        <motion.path
-          d='M0 25C0 11.193 11.193 0 25 0h46c13.807 0 25 11.193 25 25v46c0 13.807-11.193 25-25 25H25C11.193 96 0 84.807 0 71V25Z'
-          variants={opacity}
-          initial='hidden'
-          animate='visible'
-        />
         <motion.path
           d='M48 17 23 78h12l13-31 13 31h12L48 17Z'
           variants={icon}
