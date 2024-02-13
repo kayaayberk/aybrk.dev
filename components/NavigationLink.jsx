@@ -59,7 +59,7 @@ export const NavigationLink = memo(
       >
         <span className='flex items-center gap-3 font-normal'>
           {icon}
-          <span className='font-medium tracking-normal'>{label}</span>
+          <span className='font-normal tracking-normal'>{label}</span>
         </span>
         <span>
           {!title ? (
