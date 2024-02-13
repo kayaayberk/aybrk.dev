@@ -3,7 +3,7 @@ import Providers from './providers';
 import BgShape from '@/components/BgShape';
 import SideBar from '@/components/SideBar';
 import { GeistSans } from 'geist/font/sans';
-import PageHeader from '@/components/PageHeader';
+// import PageHeader from '@/components/PageHeader';
 import { Toaster } from '@/components/ui/toaster';
 import { Analytics } from '@vercel/analytics/react';
 import MobileHeader from '@/components/MobileHeader';
