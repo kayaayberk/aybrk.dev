@@ -21,8 +21,8 @@ function DarkModeToggle() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild className='hover:bg-transparent md:flex'>
-        <Button variant='ghost' size='icon' className='hover:scale-110 transition-all duration-500 ease-in-out'>
+      <DropdownMenuTrigger asChild className='hover:bg-transparent md:flex focus-visible:ring-0'>
+        <Button variant='ghost' size='icon' className='hover:scale-110 transition-all duration-500 ease-in-out focus-visible:ring-0'>
           {theme === 'light' && (
             <Sun className='size-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0' />
           )}
