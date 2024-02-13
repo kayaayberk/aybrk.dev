@@ -4,4 +4,5 @@ const nextConfig = {
     domains: ['images.ctfassets.net', 'downloads.ctfassets.net'],
   },
 };
+
 module.exports = nextConfig;

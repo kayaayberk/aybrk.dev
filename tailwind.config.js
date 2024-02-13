@@ -41,7 +41,7 @@ module.exports = {
         'gradient-linear': 'linear-gradient(var(--tw-gradient-stops))',
         'bg-grid': 'url(../public/background/bg22.svg)',
         'gradient-45deg': 'linear-gradient(-45deg, var(--tw-gradient-stops))',
-        'gradient-purp': `linear-gradient(to right, #A395F6, #93c4fd)`,
+        'gradient-purp': `linear-gradient(to right, #A395F6, #7EB3E7)`,
       }),
       textColor: ['group-hover'],
       alignSelf: ['start'],
@@ -111,7 +111,7 @@ module.exports = {
           '10%': { opacity: 1, filter: 'brightness(1.15) blur(10px)' },
           '100%': {
             opacity: 1,
-            filter: 'dark:brightness(0.75) blur(0)',
+            filter: 'brightness(0.75) blur(0)',
             scale: '1',
           },
         },

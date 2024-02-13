@@ -5,10 +5,9 @@ import Image from 'next/image';
 import { STACK, DESIGN_STACK } from '@/lib/constants';
 
 function TechStack() {
-  const classId = 'tech-stack';
 
   return (
-    <Card classId={classId} hoverActive>
+    <Card>
       <span className='mx-auto text-lg font-semibold'>My current stack</span>
       <div className='flex flex-col gap-4 md:flex-row'>
         <div className='flex w-full flex-col gap-4'>
