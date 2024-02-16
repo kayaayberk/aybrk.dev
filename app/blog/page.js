@@ -12,7 +12,7 @@ function Blog() {
         <div className='flex size-full items-center justify-center gap-6'>
           <div className='flex flex-col  items-center justify-start gap-3'>
             <p className='flex items-center justify-center text-sm font-medium'>
-              I'm currently working on my first post. Stay tuned!
+              I&apos;m currently working on my first post. Stay tuned!
             </p>
             <span className='flex flex-col items-center gap-3 text-sm font-medium'>
               <Link href={'/'} prefetch={true}>
