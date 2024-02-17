@@ -1,31 +1,22 @@
-import Link from 'next/link';
-import { Home } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { getPostTitle } from '@/lib/contentful';
 import PageHeader from '@/components/PageHeader';
 import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
 
-function Blog() {
+async function fetchData() {
+  const data = await getPostTitle();
+  return data;
+}
+
+async function Blog() {
+  const result = await fetchData();
+  const { title, slug } = result[0];
+  console.log(title, slug);
+
   return (
     <>
       <PageHeader />
       <div className='container mx-auto flex h-full max-w-xl flex-col items-start gap-10 pb-24 pt-10 md:max-w-4xl'>
-        <div className='flex size-full items-center justify-center gap-6'>
-          <div className='flex flex-col  items-center justify-start gap-3'>
-            <p className='flex items-center justify-center text-sm font-medium'>
-              I&apos;m currently working on my first post. Stay tuned!
-            </p>
-            <span className='flex flex-col items-center gap-3 text-sm font-medium'>
-              <Link href={'/'} prefetch={true}>
-                <Button
-                  variant='outline'
-                  className='gap-1 border-[0.01rem] border-muted-foreground/50 bg-transparent hover:bg-muted-foreground/20'
-                >
-                  <Home size={16} /> Home
-                </Button>
-              </Link>
-            </span>
-          </div>
-        </div>
+        <p className='text-sm'>{title}</p>
       </div>
     </>
   );
