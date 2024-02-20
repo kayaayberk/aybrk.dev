@@ -4,7 +4,6 @@ export default async function Blog() {
   return (
     <>
       <div className='container mx-auto flex h-full max-w-xl flex-col items-start gap-10 pb-24 pt-10 md:max-w-4xl'>
-        asdas
       </div>
     </>
   );
