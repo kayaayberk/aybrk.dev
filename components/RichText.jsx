@@ -25,7 +25,6 @@ function options(links) {
       ),
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const assets = findAsset(node.data.target.sys.id);
-        // console.log(assets);
 
         return (
           <div className='mb-6 overflow-hidden rounded-xl'>
