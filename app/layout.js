@@ -5,11 +5,13 @@ import SideBar from '@/components/SideBar';
 import { GeistSans } from 'geist/font/sans';
 // import PageHeader from '@/components/PageHeader';
 import { Toaster } from '@/components/ui/toaster';
+import { getAllPostSlugs } from '@/lib/contentful';
 import { Analytics } from '@vercel/analytics/react';
 import MobileHeader from '@/components/MobileHeader';
 import SideBarContent from '@/components/SideBarContent';
 import ChildrenRenderer from '@/components/ChildrenRenderer';
 import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
+import PostList from '@/components/PostList';
 
 export const metadata = {
   metadataBase: new URL('https://aybrk.dev'),
@@ -54,7 +56,14 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+async function fetchData() {
+  const allPosts = await getAllPostSlugs();
+  return { allPosts };
+}
+
+export default async function RootLayout({ children }) {
+  const { allPosts } = await fetchData();
+
   return (
     <html lang='en' className={GeistSans.className} suppressHydrationWarning>
       <body
@@ -64,9 +73,10 @@ export default function RootLayout({ children }) {
         <Providers>
           <main className='flex-1 lg:flex'>
             <SideBar className='relative lg:flex'>
-              <SideBarContent />
+              <SideBarContent allPosts={allPosts} />
             </SideBar>
-            <MobileHeader />
+            <PostList allPosts={allPosts} />
+            <MobileHeader allPosts={allPosts} />
             <ChildrenRenderer>
               {/* <PageHeader /> */}
               <BgShape />

@@ -1,9 +1,20 @@
+import PageHeader from '@/components/PageHeader';
+import { getAllPostSlugs } from '@/lib/contentful';
+import PageBlogPostList from '@/components/PageBlogPostList';
 import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
 
+async function fetchData() {
+  const allPosts = await getAllPostSlugs();
+  return { allPosts };
+}
+
 export default async function Blog() {
+  const { allPosts } = await fetchData();
   return (
     <>
-      <div className='container mx-auto flex h-full max-w-xl flex-col items-start gap-10 pb-24 pt-10 md:max-w-4xl'>
+      <PageHeader />
+      <div className='container mx-auto flex h-full min-h-max flex-col items-start gap-2 pb-24 md:max-w-4xl'>
+        <PageBlogPostList allPosts={allPosts} />
       </div>
     </>
   );
