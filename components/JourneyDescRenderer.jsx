@@ -19,7 +19,6 @@ function JourneyDescRenderer({ post }) {
     } = {},
   } = content ?? {};
 
-  // console.log(post);
   return (
     <div className='flex flex-col '>
       <span className=' font-semibold'>{post.subtitle}</span>
