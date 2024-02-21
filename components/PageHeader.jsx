@@ -3,12 +3,15 @@
 import useStore from '@/lib/store';
 import { PAGES } from '@/lib/constants';
 import { usePathname } from 'next/navigation';
+import { getDateTimeFormat } from '@/lib/utils';
 import { cloneElement, useEffect, useRef } from 'react';
 
-function PageHeader() {
-  const pathname = usePathname();
+function PageHeader({ allPosts, title, createdAt }) {
   const fadeRef = useRef(null);
+  const blogRef = useRef(null);
+  const pathname = usePathname();
   const setFadeRef = useStore((state) => state.setFadeRef);
+  const setBlogRef = useStore((state) => state.setBlogRef);
 
   const currentPage = PAGES?.find((page) => page.href === pathname);
   const clonedElement = currentPage
@@ -18,6 +21,25 @@ function PageHeader() {
   useEffect(() => {
     setFadeRef(fadeRef);
   });
+  useEffect(() => {
+    setBlogRef(blogRef);
+  });
+
+  const isTruthy =
+    allPosts && !!allPosts.find((post) => pathname.includes(post.slug));
+  console.log(pathname);
+  if (isTruthy) {
+    return (
+      <div className='mx-auto flex w-full max-w-xl flex-col gap-3 p-7 pt-28 md:max-w-2xl'>
+        <h1 ref={blogRef} className='text-3xl font-medium'>
+          {title}
+        </h1>
+        <span className='text-sm font-normal tracking-normal text-stone-500 dark:text-stone-300/60'>
+          {getDateTimeFormat(createdAt)}
+        </span>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -27,7 +49,7 @@ function PageHeader() {
       ].join(' ')}
     >
       {currentPage && (
-        <div className='mx-auto flex w-full max-w-xl flex-col gap-3 p-8 pt-28 md:max-w-4xl'>
+        <div className='mx-auto flex w-full flex-col gap-3 p-8 pt-28 md:max-w-4xl'>
           <div className='flex animate-slide items-center gap-2'>
             <h1 ref={fadeRef} className='text-2xl font-semibold'>
               {currentPage.label}
