@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { getDateTimeFormat } from '@/lib/utils';
-import { ArrowRight, EyeIcon } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, EyeIcon } from 'lucide-react';
 
-function PageBlogPostList({ allPosts }) {
+function PageBlogPostList({ allPosts, isBlogPage }) {
   const pathname = usePathname();
   const splitPathname = pathname.split('/');
   const currentPathname = splitPathname[2];
@@ -39,14 +39,18 @@ function PageBlogPostList({ allPosts }) {
               prefetch={true}
               style={{ animationDelay: `${300 + i * 100}ms` }}
               className={[
-                `flex w-full animate-slide items-center justify-between gap-1 rounded-md p-2 opacity-0 dark:text-white/80 `,
+                `flex w-full animate-slide items-center justify-between gap-1 rounded-md p-2 opacity-0 transition-all duration-300 ease-in-out dark:text-white/80`,
                 currentPathname === post.slug
                   ? 'bg-gray-400/40 dark:bg-white/20'
                   : 'hover:bg-gray-200 dark:text-white/80 dark:hover:bg-gray-500/20',
+                isBlogPage &&
+                  'border-b-[1px] border-b-gray-700/30 dark:border-b-stone-400/50',
               ].join(' ')}
             >
-              <div className='flex flex-col'>
-                <span className='text-sm font-normal tracking-normal'>
+              <div
+                className={`flex flex-col ${isBlogPage ? 'gap-3' : 'gap-1'}`}
+              >
+                <span className='flex items-center text-sm font-normal tracking-normal'>
                   {post.title}
                 </span>
                 <span className='flex items-start gap-1'>
@@ -58,15 +62,11 @@ function PageBlogPostList({ allPosts }) {
                   </span>
                 </span>
               </div>
-              {currentPathname !== post.slug && (
-                <span className='w-4'>
-                  <ArrowRight
-                    className={[
-                      'text-sm font-normal tracking-normal transition-all duration-300 ease-out',
-                      isHovered[i] ? 'opacity-100' : 'opacity-0',
-                    ].join(' ')}
-                    size={16}
-                  />
+              {isBlogPage && currentPathname !== post.slug && (
+                <span
+                  className={`flex w-4 min-w-max items-center gap-1 text-sm font-normal tracking-normal transition-all duration-300 ease-out ${isHovered[i] && isBlogPage ? 'opacity-100' : 'opacity-0'}`}
+                >
+                  Read now <ArrowRight size={16} />
                 </span>
               )}
             </Link>

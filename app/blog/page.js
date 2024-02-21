@@ -14,7 +14,7 @@ export default async function Blog() {
     <>
       <PageHeader />
       <div className='container mx-auto flex h-full min-h-max flex-col items-start gap-2 pb-24 md:max-w-4xl'>
-        <PageBlogPostList allPosts={allPosts} />
+        <PageBlogPostList allPosts={allPosts} isBlogPage />
       </div>
     </>
   );
