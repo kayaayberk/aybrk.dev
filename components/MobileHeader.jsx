@@ -14,15 +14,22 @@ function MobileHeader({ allPosts }) {
   const divRef = useStore((state) => state.divRef);
   const fadeRef = useStore((state) => state.fadeRef);
   const blogRef = useStore((state) => state.blogRef);
-  console.log(blogRef);
+  const blogDivRef = useStore((state) => state.blogDivRef);
 
   const { scrollYProgress } = useScroll({
-    container: divRef,
-    target: !!allPosts.find((post) => pathname.includes(post.slug))
-      ? blogRef
-      : fadeRef,
+    container:
+      pathname === `/blog/${allPosts.map((post) => post.slug)}`
+        ? blogDivRef
+        : divRef,
+    target:
+      pathname === `/blog/${allPosts.map((post) => post.slug)}`
+        ? blogRef
+        : fadeRef,
     offset: ['start 0.05', '0.7 0'],
   });
+
+  const xxx = pathname === `/blog/${allPosts.map((post) => post.slug)}`;
+  console.log(xxx);
 
   const opacity = useTransform(scrollYProgress, [0, 0.7], [0, 1]);
   const translateY = useTransform(scrollYProgress, [0, 1], [15, 0]);
@@ -46,7 +53,7 @@ function MobileHeader({ allPosts }) {
           <motion.span className='' style={{ opacity, translateY }}>
             {
               <h1 className='text-md flex items-center gap-1 font-semibold'>
-                {!!allPosts.find((post) => pathname.includes(post.slug)) ? (
+                {pathname === `/blog/${allPosts.map((post) => post.slug)}` ? (
                   allPosts.find((post) => pathname.includes(post.slug))?.title
                 ) : (
                   <>

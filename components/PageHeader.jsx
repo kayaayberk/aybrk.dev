@@ -27,7 +27,6 @@ function PageHeader({ allPosts, title, createdAt }) {
 
   const isTruthy =
     allPosts && !!allPosts.find((post) => pathname.includes(post.slug));
-  console.log(pathname);
   if (isTruthy) {
     return (
       <div className='mx-auto flex w-full max-w-xl flex-col gap-3 p-7 pt-28 md:max-w-2xl'>
