@@ -41,7 +41,11 @@ function options(links) {
         );
       },
       [INLINES.HYPERLINK]: (node, children) => (
-        <Link className='font-medium hover:underline' href={node.data.uri}>
+        <Link
+          target='_blank'
+          className='font-medium hover:underline'
+          href={node.data.uri}
+        >
           {children}
         </Link>
       ),
@@ -51,7 +55,7 @@ function options(links) {
         </ul>
       ),
       [BLOCKS.OL_LIST]: (_, children) => (
-        <ol className='mb-4 flex pl-6 list-decimal flex-col gap-2'>
+        <ol className='mb-4 flex list-decimal flex-col gap-2 pl-6'>
           {children}
         </ol>
       ),
