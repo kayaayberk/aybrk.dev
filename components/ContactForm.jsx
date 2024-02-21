@@ -93,13 +93,16 @@ function ContactForm() {
             control={form.control}
             name='email'
             render={({ field }) => (
-              <FormItem className='w-full animate-slide opacity-0 delay-300'>
+              <FormItem
+                style={{ animationDelay: '300ms' }}
+                className='w-full animate-slide opacity-0'
+              >
                 <FormLabel>Email *</FormLabel>
                 <FormControl>
                   <Input
                     {...register('email')}
                     placeholder='johndoe@email.com'
-                    className='w-full font-light border-stone-300 text-stone-500 placeholder:text-stone-500 dark:border-stone-400/20 dark:text-stone-300/60 placeholder:dark:text-stone-300/60'
+                    className='w-full border-stone-300 font-light text-stone-500 placeholder:text-stone-500 dark:border-stone-400/20 dark:text-stone-300/60 placeholder:dark:text-stone-300/60'
                     {...field}
                   />
                 </FormControl>
@@ -111,13 +114,16 @@ function ContactForm() {
             control={form.control}
             name='name'
             render={({ field }) => (
-              <FormItem className='w-full animate-slide opacity-0 delay-300'>
+              <FormItem
+                style={{ animationDelay: '300ms' }}
+                className='w-full animate-slide opacity-0'
+              >
                 <FormLabel>Name</FormLabel>
                 <FormControl>
                   <Input
                     {...register('name')}
                     placeholder='John Doe'
-                    className='w-full font-light border-stone-300 text-stone-500 placeholder:text-stone-500 dark:border-stone-400/20 dark:text-stone-300/60 placeholder:dark:text-stone-300/60'
+                    className='w-full border-stone-300 font-light text-stone-500 placeholder:text-stone-500 dark:border-stone-400/20 dark:text-stone-300/60 placeholder:dark:text-stone-300/60'
                     {...field}
                   />
                 </FormControl>
@@ -130,14 +136,17 @@ function ContactForm() {
           control={form.control}
           name='message'
           render={({ field }) => (
-            <FormItem className='animate-slide opacity-0 delay-400'>
+            <FormItem
+              style={{ animationDelay: '400ms' }}
+              className='animate-slide opacity-0'
+            >
               <FormLabel>Message *</FormLabel>
               <FormControl>
                 <Textarea
                   {...register('message')}
                   placeholder='Your message'
                   {...field}
-                  className='min-h-40 font-light border-stone-300 text-stone-500 placeholder:text-stone-500 dark:border-stone-400/20 dark:text-stone-300/60 placeholder:dark:text-stone-300/60'
+                  className='min-h-40 border-stone-300 font-light text-stone-500 placeholder:text-stone-500 dark:border-stone-400/20 dark:text-stone-300/60 placeholder:dark:text-stone-300/60'
                 />
               </FormControl>
               <FormMessage />
@@ -146,7 +155,8 @@ function ContactForm() {
         />
         <Button
           type='submit'
-          className='w-full animate-slide opacity-0 delay-500'
+          style={{ animationDelay: '500ms' }}
+          className='w-full animate-slide opacity-0'
           disabled={isSubmitting}
         >
           {isSubmitting ? (
