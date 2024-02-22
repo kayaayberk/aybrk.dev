@@ -40,10 +40,10 @@
     --selection-bg: black;
     --selection-color: white;
 
-    --sh-class: #2d5e9d;
+    --sh-class: #3a8fff;
     --sh-identifier: #354150;
     --sh-sign: #354150;
-    --sh-property: #0550ae;
+    --sh-property: #ff5500;
     --sh-entity: #249a97;
     --sh-jsxliterals: #6266d1;
 
@@ -106,6 +106,17 @@
 
     --selection-bg: #b3b3b3;
     --selection-color: white;
+
+    --sh-class: #7ab4ff;
+    --sh-identifier: #bcbcbc;
+    --sh-sign: #bcbcbc;
+    --sh-property: #ff8c52;
+    --sh-entity: #249a97;
+    --sh-jsxliterals: #6266d1;
+
+    --sh-keyword: #ff55a4;
+    --sh-string: #028265;
+    --sh-comment: #9ca3af84;
   }
 }
 
