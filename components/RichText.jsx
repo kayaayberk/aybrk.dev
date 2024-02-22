@@ -33,26 +33,31 @@ function options(links) {
         }
       },
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className='mb-10 font-light leading-relaxed tracking-wide'>{children}</p>
+        <p className='mb-6 font-light leading-relaxed dark:text-gray-400 tracking-wide'>
+          {children}
+        </p>
       ),
       [BLOCKS.HEADING_2]: (node, children) => (
-        <span className='mb-5 text-md font-semibold'>{children}</span>
+        <span className='text-md mb-5 font-medium'>{children}</span>
       ),
       [BLOCKS.HEADING_3]: (node, children) => (
-        <span className='mb-5 text-xl font-semibold'>{children}</span>
+        <span className='mb-3 text-xl font-medium'>{children}</span>
       ),
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const assets = findAsset(node.data.target.sys.id);
         return (
-          <div className='mb-10 overflow-hidden rounded-xl'>
-            <Image
-              src={assets.url}
-              width={assets.width || 400}
-              height={assets.height || 400}
-              alt={assets.title}
-              loading='lazy'
-              className='animate-reveal'
-            />
+          <div className='flex flex-col items-center gap-3 mb-10 mt-5'>
+            <div className='overflow-hidden rounded-xl shadow-lg'>
+              <Image
+                src={assets.url}
+                width={assets.width || 400}
+                height={assets.height || 400}
+                alt={assets.title}
+                loading='lazy'
+                className='animate-reveal'
+              />
+            </div>
+            <span className='text-xs tracking-wide font-extralight text-muted-foreground'>{assets.title}</span>
           </div>
         );
       },

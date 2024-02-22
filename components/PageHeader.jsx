@@ -6,12 +6,13 @@ import { usePathname } from 'next/navigation';
 import { getDateTimeFormat } from '@/lib/utils';
 import { cloneElement, useEffect, useRef } from 'react';
 
-function PageHeader({ allPosts, title, createdAt }) {
+function PageHeader({ allPosts, title, createdAt, readTime }) {
   const fadeRef = useRef(null);
   const blogRef = useRef(null);
   const pathname = usePathname();
   const setFadeRef = useStore((state) => state.setFadeRef);
   const setBlogRef = useStore((state) => state.setBlogRef);
+  console.log(readTime);
 
   const currentPage = PAGES?.find((page) => page.href === pathname);
   const clonedElement = currentPage
@@ -29,12 +30,17 @@ function PageHeader({ allPosts, title, createdAt }) {
     allPosts && !!allPosts.find((post) => pathname.includes(post.slug));
   if (isTruthy) {
     return (
-      <div className='mx-auto flex w-full max-w-xl flex-col gap-3 p-7 pt-28 md:max-w-2xl'>
+      <div className='mx-auto flex w-full max-w-xl flex-col gap-3 p-7 pt-28 md:max-w-3xl'>
         <h1 ref={blogRef} className='text-3xl font-medium'>
           {title}
         </h1>
-        <span className='text-sm font-normal tracking-normal text-stone-500 dark:text-stone-300/60'>
-          {getDateTimeFormat(createdAt)}
+        <span className='flex gap-1'>
+          <span className='text-sm font-normal tracking-normal text-stone-500 dark:text-stone-300/60'>
+            {getDateTimeFormat(createdAt)} •
+          </span>
+          <span className='text-sm font-normal tracking-normal text-stone-500 dark:text-stone-300/60'>
+            {allPosts.find((post) => pathname.includes(post.slug)).readTime}min
+          </span>
         </span>
       </div>
     );

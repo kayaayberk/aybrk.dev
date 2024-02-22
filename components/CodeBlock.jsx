@@ -97,7 +97,7 @@ function CodeBlock({ entry }) {
           </LazyMotion>
         </Button>
       </div>
-      <div className="overflow-x-auto text-xs border w-full mb-10 p-2 border-t-0 border-gray-700/20 dark:border-stone-400/20 rounded-lg rounded-t-none">
+      <div className="overflow-x-auto shadow-xl text-xs border w-full mb-10 p-2 border-t-0 border-gray-700/20 dark:border-stone-400/20 rounded-lg rounded-t-none">
         <pre className='ml-5'>
           <code ref={codeRef} className="sh__line" />
         </pre>

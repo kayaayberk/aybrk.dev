@@ -25,13 +25,13 @@ export default async function BlogSlug({ params }) {
   const { slug } = params;
   const { allPosts } = await fetchPost();
   const {
-    data: { title, body, createdAt },
+    data: { title, body, createdAt, readTime },
   } = await fetchData(slug);
 
   return (
     <>
-      <PageHeader allPosts={allPosts} title={title} createdAt={createdAt} />
-      <div className='container mx-auto flex min-h-max max-w-xl flex-col items-start pb-24 md:max-w-2xl'>
+      <PageHeader allPosts={allPosts} title={title} createdAt={createdAt} readTime={readTime} />
+      <div className='container mx-auto flex min-h-max max-w-xl flex-col items-start pb-24 md:max-w-3xl'>
         <RichText body={body} />
       </div>
     </>
