@@ -6,9 +6,9 @@ export const runtime = 'edge';
 export async function GET(request) {
   const searchParams = request.nextUrl.searchParams;
   const secret = searchParams.get('secret');
-  console.log(secret);
 
-  if (secret !== process.env.NEXT_REVALIDATE_SECRET) {
+
+  if (secret !== process.env.CONTENTFUL_REVALIDATE_SECRET) {
     return NextResponse.json({ error: 'Invalid token' }, { status: 401 });
   }
 
