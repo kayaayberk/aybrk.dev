@@ -30,7 +30,7 @@ function CodeBlock({ entry }) {
   return (
     <>
       {' '}
-      <div className='flex w-full flex-wrap items-center justify-between gap-2 rounded-t-lg border border-gray-700/30 dark:border-stone-400/50 py-1.5 pl-4 pr-2'>
+      <div className='flex w-full flex-wrap items-center justify-between gap-2 rounded-t-lg bg-gray-50 dark:bg-stone-700/5 border border-gray-700/20 dark:border-stone-400/20 py-1.5 pl-4 pr-2'>
         <div className='flex items-center gap-4'>
           <span className='inline-flex items-center gap-1.5'>
             <span className='size-4 rounded-full bg-gray-400/40 dark:bg-white/20' />
@@ -42,7 +42,7 @@ function CodeBlock({ entry }) {
         <Button
           variant='outline'
           size='xs'
-          className='rounded-lg p-1 px-2 border-gray-700/30 dark:border-stone-400/50'
+          className='rounded-lg p-1 px-2 bg-transparent shadow-lg border-gray-700/20 dark:border-stone-400/20 hover:bg-gray-200 dark:hover:bg-gray-500/20'
           disabled={copied}
           onClick={onCopy}
         >
@@ -97,7 +97,7 @@ function CodeBlock({ entry }) {
           </LazyMotion>
         </Button>
       </div>
-      <div className="overflow-x-auto text-xs border w-full mb-10 p-2 border-t-0 border-gray-700/30 dark:border-stone-400/50 rounded-lg rounded-t-none">
+      <div className="overflow-x-auto text-xs border w-full mb-10 p-2 border-t-0 border-gray-700/20 dark:border-stone-400/20 rounded-lg rounded-t-none">
         <pre className='ml-5'>
           <code ref={codeRef} className="sh__line" />
         </pre>
