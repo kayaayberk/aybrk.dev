@@ -28,12 +28,8 @@ function MobileHeader({ allPosts }) {
     offset: ['start 0.05', '0.7 0'],
   });
 
-  const xxx = pathname === `/blog/${allPosts.map((post) => post.slug)}`;
-  console.log(xxx);
-
   const opacity = useTransform(scrollYProgress, [0, 0.7], [0, 1]);
   const translateY = useTransform(scrollYProgress, [0, 1], [15, 0]);
-  // scrollYProgress.on('change', (v) => console.log(v));
 
   return (
     <header className='fixed top-0 z-50 w-full overflow-hidden border-b border-gray-300 bg-spice p-2 px-4 dark:border-zinc-800 dark:bg-spice lg:hidden'>
