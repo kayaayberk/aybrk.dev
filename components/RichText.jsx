@@ -33,7 +33,7 @@ function options(links) {
         }
       },
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className='mb-10 leading-relaxed'>{children}</p>
+        <p className='mb-10 font-light leading-relaxed tracking-wide'>{children}</p>
       ),
       [BLOCKS.HEADING_2]: (node, children) => (
         <span className='mb-5 text-md font-semibold'>{children}</span>

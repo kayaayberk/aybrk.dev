@@ -39,6 +39,35 @@
 
     --selection-bg: black;
     --selection-color: white;
+
+    --sh-class: #2d5e9d;
+    --sh-identifier: #354150;
+    --sh-sign: #354150;
+    --sh-property: #0550ae;
+    --sh-entity: #249a97;
+    --sh-jsxliterals: #6266d1;
+
+    --sh-keyword: #ff0078;
+    --sh-string: #028265;
+    --sh-comment: #9ca3af;
+  }
+  .inline-code {
+    @apply inline-block rounded-md bg-gray-100 px-0.5 py-0.5 text-sm not-italic before:content-['`'] after:content-['`'];
+  }
+
+  code {
+    @apply whitespace-pre-wrap;
+  }
+  pre code {
+    counter-reset: sh-line-number;
+  }
+
+  code .sh__line::before {
+    counter-increment: sh-line-number 1;
+    content: counter(sh-line-number);
+    margin-right: 24px;
+    text-align: right;
+    color: #a4a4a4;
   }
 
   .dark {
