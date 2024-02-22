@@ -31,7 +31,7 @@ export default async function BlogSlug({ params }) {
   return (
     <>
       <PageHeader allPosts={allPosts} title={title} createdAt={createdAt} />
-      <div className='container mx-auto flex min-h-max max-w-xl flex-col items-start gap-10 pb-24 md:max-w-2xl'>
+      <div className='container mx-auto flex min-h-max max-w-xl flex-col items-start pb-24 md:max-w-2xl'>
         <RichText body={body} />
       </div>
     </>

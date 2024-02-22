@@ -1,33 +1,50 @@
 'use client';
 
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
+import CodeBlock from './CodeBlock';
+import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 function options(links) {
   const findAsset = (id) => links.assets.block.find((ast) => ast.sys.id === id);
+  const findInlineEntry = (id) =>
+    links?.entries?.block?.find((item) => item.sys.id === id);
+
   return {
     renderMark: {
       [MARKS.BOLD]: (text) => <span className='font-semibold'>{text}</span>,
       [MARKS.ITALIC]: (text) => <span className='font-semibold'>{text}</span>,
-      [MARKS.CODE]: (text) => <span className='font-semibold'>{text}</span>,
+      [MARKS.CODE]: (text) => {
+        return (
+          <pre>
+            <code>{text}</code>
+          </pre>
+        );
+      },
     },
     renderNode: {
+      [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
+        const entry = findInlineEntry(node.data.target.sys.id);
+        console.log(entry);
+
+        if (entry.__typename === 'CodeBlock') {
+          return <CodeBlock entry={entry} />;
+        }
+      },
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className='leading-relaxed'>{children}</p>
+        <p className='mb-10 leading-relaxed'>{children}</p>
       ),
       [BLOCKS.HEADING_2]: (node, children) => (
-        <span className='text-md font-semibold'>{children}</span>
+        <span className='mb-5 text-md font-semibold'>{children}</span>
       ),
       [BLOCKS.HEADING_3]: (node, children) => (
-        <span className='text-xl font-semibold'>{children}</span>
+        <span className='mb-5 text-xl font-semibold'>{children}</span>
       ),
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const assets = findAsset(node.data.target.sys.id);
-
         return (
-          <div className='mb-6 overflow-hidden rounded-xl'>
+          <div className='mb-10 overflow-hidden rounded-xl'>
             <Image
               src={assets.url}
               width={assets.width || 400}
