@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { isDevelopment } from '@/lib/utils';
 import PageHeader from '@/components/PageHeader';
 import { RichText } from '@/components/RichText';
+import AudioPlayer from '@/components/AudioPlayer';
 import { getAllPostSlugs, getPost } from '@/lib/contentful';
 
 export async function generateStaticParams() {
@@ -25,13 +26,19 @@ export default async function BlogSlug({ params }) {
   const { slug } = params;
   const { allPosts } = await fetchPost();
   const {
-    data: { title, body, createdAt, readTime },
+    data: { title, body, createdAt, readTime, audio },
   } = await fetchData(slug);
 
   return (
     <>
-      <PageHeader allPosts={allPosts} title={title} createdAt={createdAt} readTime={readTime} />
+      <PageHeader
+        allPosts={allPosts}
+        title={title}
+        createdAt={createdAt}
+        readTime={readTime}
+      />
       <div className='container mx-auto flex min-h-max max-w-xl flex-col items-start pb-24 md:max-w-3xl'>
+        <AudioPlayer audioUrl={audio.url} />
         <RichText body={body} />
       </div>
     </>
