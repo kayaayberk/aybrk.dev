@@ -12,7 +12,6 @@ function PageHeader({ allPosts, title, createdAt, readTime }) {
   const pathname = usePathname();
   const setFadeRef = useStore((state) => state.setFadeRef);
   const setBlogRef = useStore((state) => state.setBlogRef);
-  console.log(readTime);
 
   const currentPage = PAGES?.find((page) => page.href === pathname);
   const clonedElement = currentPage
