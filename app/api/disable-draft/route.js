@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { draftMode } from 'next/headers';
-import { redirect } from 'next/navigation';
 
 export async function GET(request) {
   const searchParams = request.nextUrl.searchParams;
@@ -10,7 +9,9 @@ export async function GET(request) {
     return NextResponse.json({ error: 'Invalid token' }, { status: 401 });
   }
 
-  const slug = searchParams.get('slug');
-  draftMode().enable();
-  redirect(slug ?? '/');
+  draftMode().disable();
+  return NextResponse.json(
+    { messsage: 'Draft mode is disabled successfully', now: Date.now() },
+    { status: 200 },
+  );
 }
