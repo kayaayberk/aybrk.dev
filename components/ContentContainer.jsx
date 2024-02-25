@@ -15,7 +15,6 @@ function ContentContainer({ posts }) {
               <StepPointer index={index} posts={posts} />
 
               <div className='mb-10 flex w-full flex-col gap-4 md:w-5/6'>
-                {/* Description !TODO: Render External Links */}
                 <JourneyDescRenderer post={post} />
 
                 {post.featuredImage !== null && (
