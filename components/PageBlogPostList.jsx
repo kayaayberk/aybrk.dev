@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { getDateTimeFormat } from '@/lib/utils';
-import { ArrowRight, ArrowUpRight, ChevronRight, EyeIcon } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, EyeIcon } from 'lucide-react';
 
 function PageBlogPostList({ allPosts, isBlogPage, sideBar }) {
   const pathname = usePathname();
@@ -65,16 +65,9 @@ function PageBlogPostList({ allPosts, isBlogPage, sideBar }) {
               </div>
               {isBlogPage && currentPathname !== post.slug && (
                 <span
-                  className={`flex w-4 min-w-max items-center gap-1 text-sm font-normal tracking-normal`}
+                  className={`flex w-4 min-w-max items-center gap-1 text-sm font-normal tracking-normal transition-all duration-300 ease-out ${isHovered[i] && isBlogPage ? 'animate-slideFromSide' : 'opacity-0'}`}
                 >
-                  {isHovered[i] ? (
-                    <span className='flex items-center animate-slideFromSide transition-all ease-in-out'>
-                      {' '}
-                      Read now <ArrowRight size={16} />
-                    </span>
-                  ) : (
-                    <ChevronRight size={16} className='animate-out transition-all duration-300 ease-in-out' />
-                  )}
+                  Read now <ArrowRight size={16} />
                 </span>
               )}
             </Link>

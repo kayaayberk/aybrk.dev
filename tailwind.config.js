@@ -103,7 +103,7 @@ module.exports = {
           '100%': { transform: 'translateY(0)', opacity: 1 },
         },
         slideFromSide: {
-          '0%': { transform: 'translateX(-20px)', opacity: 0 },
+          '0%': { transform: 'translateX(-15px)', opacity: 0 },
           '100%': { transform: 'translateX(0)', opacity: 1 },
         },
         reveal: {
@@ -126,7 +126,7 @@ module.exports = {
       },
       animation: {
         slide: 'slide 0.3s ease-in-out forwards',
-        slideFromSide: 'slideFromSide 0.7s ease-in-out forwards',
+        slideFromSide: 'slideFromSide 0.5s ease-in-out forwards',
         reveal: 'reveal 0.7s ease-in-out',
         wiggle: 'wiggle 0.2s ease-in-out',
         innerScale: 'innerScale 0.5s ease-in-out forwards',
