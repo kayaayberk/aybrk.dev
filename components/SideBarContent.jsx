@@ -22,7 +22,7 @@ function SideBarContent({ handleDrawerClose, allPosts }) {
           </span>
           <PageBlogPostList allPosts={allPosts} sideBar />
         </div>
-        <AudioPlayer playlist />
+        {/* <AudioPlayer playlist /> */}
         <BuiltWith handleDrawerClose={handleDrawerClose} />
 
         {/* Add heart counter */}
