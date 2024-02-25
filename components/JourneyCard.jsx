@@ -30,17 +30,19 @@ const JourneyCard = ({ result }) => {
         // Map the groups to a list of elements
         return Object.entries(postsByTitle)
           .reverse()
-          .map(([title, posts], index) => (
-            <div
-              className='flex flex-col justify-start gap-5 md:flex-row animate-slide delay-300 opacity-0'
-              key={index}
-            >
-              <div className='h-min w-[5rem]'>
-                <span className='text-xl font-medium leading-4'>{title}</span>
+          .map(([title, posts], index) => {
+            return (
+              <div
+                className={`flex flex-col justify-start gap-5 md:flex-row`}
+                key={index}
+              >
+                <div className='h-min w-[5rem]'>
+                  <span className='text-xl font-medium leading-4'>{title}</span>
+                </div>
+                <ContentContainer posts={posts} index={index} />
               </div>
-              <ContentContainer posts={posts} />
-            </div>
-          ));
+            );
+          });
       })()}
     </>
   );
