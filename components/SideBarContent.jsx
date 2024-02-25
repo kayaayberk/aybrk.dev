@@ -5,6 +5,7 @@ import Badge from './Badge';
 import Pages from './Pages';
 import Online from './Online';
 import BuiltWith from './BuiltWith';
+import AudioPlayer from './AudioPlayer';
 import PageBlogPostList from './PageBlogPostList';
 
 function SideBarContent({ handleDrawerClose, allPosts }) {
@@ -19,8 +20,9 @@ function SideBarContent({ handleDrawerClose, allPosts }) {
           <span className='px-2 text-xs font-normal leading-relaxed text-card dark:text-card'>
             Latest Posts
           </span>
-          <PageBlogPostList allPosts={allPosts} />
+          <PageBlogPostList allPosts={allPosts} sideBar />
         </div>
+        <AudioPlayer playlist />
         <BuiltWith handleDrawerClose={handleDrawerClose} />
 
         {/* Add heart counter */}
