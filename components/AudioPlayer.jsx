@@ -11,7 +11,7 @@ function AudioPlayer({ audioUrl, imageUrl, playlist }) {
   const playerRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const [play, setPlay] = useState(false);
-  const [volume, setVolume] = useState(0.5);
+  const [volume, setVolume] = useState(0.25);
 
   useEffect(() => {
     const audio = playerRef.current;
@@ -66,7 +66,7 @@ function AudioPlayer({ audioUrl, imageUrl, playlist }) {
           className={`flex w-full ${playlist ? 'flex-col' : ''} items-center gap-4`}
         >
           <div
-            className={`${!playlist ? 'flex' : 'flex-col'} w-full items-center`}
+            className={`${!playlist ? 'flex' : 'flex-col'} w-full gap-2 items-center`}
           >
             {playlist ? (
               <div className='flex items-center justify-center'>
@@ -93,7 +93,7 @@ function AudioPlayer({ audioUrl, imageUrl, playlist }) {
                 </Button>
               </div>
             ) : (
-              <Button onClick={handlePlay} className='p-0 px-2' variant='ghost'>
+              <Button onClick={handlePlay} className='p-0 px-2 hover:bg-gray-200 dark:text-white/80 dark:hover:bg-gray-500/20' variant='ghost'>
                 {play ? <Pause size={18} /> : <Play size={18} />}
               </Button>
             )}
