@@ -49,7 +49,7 @@ function PageBlogPostList({ allPosts, isBlogPage, sideBar }) {
             >
               <div className={`flex flex-col gap-1`}>
                 <span
-                  className={`flex items-center ${sideBar ? 'text-xs tracking-tight' : 'text-xs tracking-normal md:text-sm'} font-normal`}
+                  className={`flex items-center ${sideBar ? 'text-xs tracking-tight' : 'text-xs tracking-normal md:text-sm'} font-normal whitespace-nowrap`}
                 >
                   {post.title}
                 </span>
