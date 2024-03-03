@@ -22,7 +22,7 @@ function Description() {
         <p className='animate-slide text-sm font-light tracking-normal text-stone-500/80 opacity-0 delay-100 dark:text-stone-300/60 md:text-sm'>
           I&apos;m a passionate learner of the latest web technologies and I
           have an endless energy for learning. I&apos;m trying to improve my
-          skills everyday by learning new technologies and working on new
+          skills every day by learning new technologies and working on new
           projects.
         </p>
 
