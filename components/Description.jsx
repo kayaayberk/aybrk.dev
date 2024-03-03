@@ -15,7 +15,7 @@ function Description() {
             </span>
             <span className='text-[25px]'>👋🏻</span>
           </h1>
-          <span className='animate-slide text-md md:text-xl font-semibold leading-tight opacity-0 delay-50'>
+          <span className='animate-slide text-md md:text-xl font-medium leading-tight opacity-0 delay-50'>
             I&apos;m a Software Developer & Designer
           </span>
         </div>
