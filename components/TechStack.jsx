@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { STACK, DESIGN_STACK } from '@/lib/constants';
 
 function TechStack() {
-
   return (
     <Card>
       <span className='mx-auto text-lg font-semibold'>My current stack</span>
@@ -17,11 +16,11 @@ function TechStack() {
             </span>
           </div>
 
-          <div className='flex flex-wrap justify-center gap-4 md:gap-6'>
+          <div className='flex flex-wrap justify-center gap-1 md:gap-2'>
             {STACK.map((tech) => {
               return (
                 <div
-                  className='flex w-16 flex-col items-center gap-2 rounded-xl p-2'
+                  className='md:mb-6 flex w-16 flex-col items-center gap-2 rounded-xl p-2'
                   key={tech.label}
                 >
                   <Image
@@ -49,11 +48,11 @@ function TechStack() {
               Design
             </span>
           </div>
-          <div className='flex flex-wrap justify-center gap-4 md:gap-6'>
+          <div className='flex flex-wrap justify-center gap-1 md:gap-2'>
             {DESIGN_STACK.map((stack) => {
               return (
                 <div
-                  className='flex w-16 flex-col items-center gap-2 rounded-xl p-2'
+                  className='md:mb-2 flex w-16 flex-col items-center gap-2 rounded-xl p-2'
                   key={stack.label}
                 >
                   <Image

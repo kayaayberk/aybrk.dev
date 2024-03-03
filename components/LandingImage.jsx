@@ -4,8 +4,8 @@ import MeHomeImage from '@/public/meImages/IMG_6045.JPG';
 function LandingImage() {
   return (
     <div
-      className='hidden md:block col-span-1 h-[260px] w-full overflow-hidden transition-all
-          ease-in md:h-[350px] md:rounded-lg shadow-xl dark:shadow-black/40 md:hover:scale-101 animate-slide'
+      className='col-span-1 hidden h-[260px] w-full animate-slide overflow-hidden shadow-xl
+          transition-all ease-in dark:shadow-black/40 md:block md:h-[350px] md:rounded-lg'
     >
       <Image
         src={MeHomeImage}
@@ -13,7 +13,7 @@ function LandingImage() {
         priority
         quality={100}
         objectFit='cover'
-        className='-translate-y-20 md:-translate-y-10 animate-reveal dark:brightness-75'
+        className='-translate-y-20 animate-reveal dark:brightness-75 md:-translate-y-10'
       />
     </div>
   );
