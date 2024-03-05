@@ -6,7 +6,7 @@ import ProjectCardContent from './ProjectCardContent';
 
 function ProjectCard() {
   return (
-    <div className='flex flex-col gap-32 animate-slide'>
+    <div className='flex flex-col gap-10 animate-slide'>
       {PROJECTS.map((project, index) => {
         return (
           <Card key={project.title}>
