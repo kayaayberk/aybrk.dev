@@ -7,20 +7,19 @@ import { STACK, DESIGN_STACK } from '@/lib/constants';
 function TechStack() {
   return (
     <Card>
-      <span className='mx-auto text-lg font-semibold'>My current stack</span>
-      <div className='flex flex-col gap-4 md:flex-row'>
+      <div className='flex gap-6 flex-row'>
         <div className='flex w-full flex-col gap-4'>
           <div>
-            <span className='flex items-center justify-center text-lg font-medium'>
-              Programming
+            <span className='text-lg font-medium'>
+              Programming Stack
             </span>
           </div>
 
-          <div className='flex flex-wrap justify-center gap-1 md:gap-2'>
+          <div className='flex w-full flex-col justify-center gap-1.5'>
             {STACK.map((tech) => {
               return (
                 <div
-                  className='md:mb-6 flex w-16 flex-col items-center gap-2 rounded-xl p-2'
+                  className='flex w-full items-center gap-2 rounded-xl p-1'
                   key={tech.label}
                 >
                   <Image
@@ -29,7 +28,7 @@ function TechStack() {
                     priority
                     quality={1}
                     className={[
-                      'size-7 rounded-lg md:size-8',
+                      'rounded-sm size-4',
                       tech.label === 'Next.js' ? 'dark:invert dark:filter' : '',
                     ].join(' ')}
                   />
@@ -44,15 +43,15 @@ function TechStack() {
 
         <div className='flex w-full flex-col gap-4'>
           <div>
-            <span className='flex items-center justify-center text-lg font-medium'>
-              Design
+            <span className='text-lg font-medium'>
+              Design Stack
             </span>
           </div>
-          <div className='flex flex-wrap justify-center gap-1 md:gap-2'>
+          <div className='flex w-full flex-col flex-wrap justify-center gap-1.5'>
             {DESIGN_STACK.map((stack) => {
               return (
                 <div
-                  className='md:mb-2 flex w-16 flex-col items-center gap-2 rounded-xl p-2'
+                  className='flex w-full items-center gap-2 rounded-xl p-1'
                   key={stack.label}
                 >
                   <Image
@@ -61,13 +60,13 @@ function TechStack() {
                     priority
                     quality={1}
                     className={[
-                      'size-7 rounded-lg md:size-8',
+                      'rounded-sm size-4',
                       stack.label === 'Next.js'
                         ? 'dark:invert dark:filter'
                         : '',
                     ].join(' ')}
                   />
-                  <span className='text-center text-xs text-stone-500 dark:text-stone-400/70'>
+                  <span className='text-xs text-stone-500 dark:text-stone-400/70'>
                     {stack.label}
                   </span>
                 </div>
