@@ -16,7 +16,6 @@ import ProjectCardContent from './ProjectCardContent';
 
 function ProjectCarousel({ carousel }) {
   const [isHovered, setIsHovered] = useState(false);
-  console.log(isHovered)
 
   const handleMouseEnter = () => {
     setIsHovered((prev) => !prev);
