@@ -31,7 +31,6 @@ function ProjectCarousel({ carousel }) {
       onMouseLeave={handleMouseLeave}
       isHovered={isHovered}
       carousel
-      className={`hidden lg:block`}
     >
       <Carousel
         plugins={[
