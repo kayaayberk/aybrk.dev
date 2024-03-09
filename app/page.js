@@ -25,8 +25,8 @@ export default function Home() {
             <LandingImage />
           </div>
           <div className='w-full gap-7 md:col-span-2 md:grid md:grid-cols-2'>
-            <TechStack />
             <ProjectCarousel carousel />
+            <TechStack />
           </div>
         </div>
 
