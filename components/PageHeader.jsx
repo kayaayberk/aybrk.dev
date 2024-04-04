@@ -72,7 +72,7 @@ function PageHeader({ allPosts, title, createdAt, readTime }) {
                 ),
               )}
           </p>{' '}
-          <hr className='w-full animate-slide border-gray-700/30 opacity-0 delay-200 dark:border-stone-400/50' />
+          {/* <hr className='w-full animate-slide border-gray-700/30 opacity-0 delay-200 dark:border-stone-400/50' /> */}
         </div>
       )}
     </div>
