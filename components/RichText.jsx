@@ -26,7 +26,6 @@ function options(links) {
     renderNode: {
       [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
         const entry = findInlineEntry(node.data.target.sys.id);
-        console.log(entry);
 
         if (entry.__typename === 'CodeBlock') {
           return <CodeBlock entry={entry} />;

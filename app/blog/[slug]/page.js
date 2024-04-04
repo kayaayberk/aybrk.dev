@@ -38,7 +38,7 @@ export default async function BlogSlug({ params }) {
         readTime={readTime}
       />
       <div className='container mx-auto flex min-h-max max-w-xl flex-col items-start pb-24 md:max-w-3xl'>
-        <AudioPlayer audioUrl={audio.url} />
+        {audio && <AudioPlayer audioUrl={audio.url} />}
         <RichText body={body} />
       </div>
     </>
