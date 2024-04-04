@@ -32,7 +32,7 @@ function options(links) {
         }
       },
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className='mb-6 font-light leading-relaxed dark:text-gray-400 tracking-wide'>
+        <p className='mb-6 font-light leading-relaxed tracking-wide dark:text-gray-400'>
           {children}
         </p>
       ),
@@ -45,18 +45,22 @@ function options(links) {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const assets = findAsset(node.data.target.sys.id);
         return (
-          <div className='flex flex-col items-center gap-3 mb-10 mt-5'>
+          <div className='mb-10 mt-5 flex mx-auto flex-col items-center gap-3'>
             <div className='overflow-hidden rounded-xl shadow-lg'>
-              <Image
-                src={assets.url}
-                width={assets.width || 400}
-                height={assets.height || 400}
-                alt={assets.title}
-                loading='lazy'
-                className='animate-reveal'
-              />
+              {assets.url && (
+                <Image
+                  src={assets.url}
+                  width={assets.width || 400}
+                  height={assets.height || 400}
+                  alt={assets.title}
+                  loading='lazy'
+                  className='animate-reveal'
+                />
+              )}
             </div>
-            <span className='text-xs tracking-wide font-extralight text-muted-foreground'>{assets.title}</span>
+            <span className='text-xs font-extralight tracking-wide text-muted-foreground'>
+              {assets.title}
+            </span>
           </div>
         );
       },
