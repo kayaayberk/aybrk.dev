@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://aybrk.dev">
     <img src="https://github.com/kayaayberk/aybrk.dev/assets/136496255/c1140cf2-428d-4e08-a93e-279e55687978" alt="Logo" >
   </a>
   <h1 align="center">aybrk.dev</h1>
