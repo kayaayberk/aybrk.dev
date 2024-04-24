@@ -23,7 +23,7 @@ function ProjectCardContent({ project, carousel, isHovered }) {
             className='animate-reveal dark:brightness-75'
           />
         </div>
-        <div className={`${carousel ? 'hidden' : 'flex flex-wrap gap-3'}`}>
+        <div className={`${carousel ? 'hidden' : 'flex flex-wrap gap-1.5'}`}>
           {project.builtWith.map((tech, index) => {
             return (
               <TechBadge key={index}>
