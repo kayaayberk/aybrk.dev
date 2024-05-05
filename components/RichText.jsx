@@ -67,7 +67,7 @@ function options(links) {
       [INLINES.HYPERLINK]: (node, children) => (
         <Link
           target='_blank'
-          className='font-medium text-black hover:underline dark:text-white'
+          className='text-black hover:underline dark:text-white'
           href={node.data.uri}
         >
           {children}
@@ -97,11 +97,19 @@ function options(links) {
           </li>
         );
       },
-      [BLOCKS.QUOTE]: (_, children) => (
-        <blockquote className='mb-4 rounded-r-lg border-l-2 border-gray-200 px-4 font-normal italic'>
-          {children}
-        </blockquote>
-      ),
+      [BLOCKS.QUOTE]: (node, children) => {
+        const UnTaggedChildren = documentToReactComponents(node, {
+          renderNode: {
+            [BLOCKS.PARAGRAPH]: (node, children) => children,
+            [BLOCKS.QUOTE]: (node, children) => children,
+          },
+        });
+        return (
+          <blockquote className='mb-4 leading-relaxed tracking-wide dark:text-gray-400 border-l-4 border-zinc-200 dark:border-zinc-800 px-4 font-light'>
+            {UnTaggedChildren}
+          </blockquote>
+        );
+      },
     },
   };
 }

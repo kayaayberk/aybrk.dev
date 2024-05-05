@@ -40,16 +40,15 @@
     --selection-bg: black;
     --selection-color: white;
 
-    --sh-class: #354150;
+    --sh-class: #2d5e9d;
     --sh-identifier: #354150;
-    --sh-sign: #354150;
-    --sh-property: #BF7AF1;
+    --sh-sign: #8996a3;
+    --sh-property: #0550ae;
     --sh-entity: #249a97;
     --sh-jsxliterals: #6266d1;
-
-    --sh-keyword: #F75F8F;
-    --sh-string: #028265;
-    --sh-comment: #9ca3af;
+    --sh-string: #00a99a;
+    --sh-keyword: #f47067;
+    --sh-comment: #a19595;
   }
   .inline-code {
     @apply inline-block rounded-md bg-gray-100 px-0.5 py-0.5 text-sm not-italic before:content-['`'] after:content-['`'];
