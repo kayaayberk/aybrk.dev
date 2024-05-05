@@ -83,7 +83,20 @@ function options(links) {
           {children}
         </ol>
       ),
-      [BLOCKS.LIST_ITEM]: (_, children) => <li>{children}</li>,
+      [BLOCKS.LIST_ITEM]: (node, children) => {
+        const UnTaggedChildren = documentToReactComponents(node, {
+          renderNode: {
+            [BLOCKS.PARAGRAPH]: (node, children) => children,
+            [BLOCKS.LIST_ITEM]: (node, children) => children,
+          },
+        });
+
+        return (
+          <li className='font-light leading-relaxed tracking-wide dark:text-gray-400'>
+            {UnTaggedChildren}
+          </li>
+        );
+      },
       [BLOCKS.QUOTE]: (_, children) => (
         <blockquote className='mb-4 rounded-r-lg border-l-2 border-gray-200 px-4 font-normal italic'>
           {children}
