@@ -17,9 +17,9 @@ function options(links) {
       [MARKS.ITALIC]: (text) => <span className='font-semibold'>{text}</span>,
       [MARKS.CODE]: (text) => {
         return (
-          <pre>
-            <code>{text}</code>
-          </pre>
+          <code className='rounded-md bg-gray-200 px-2 py-0.5 text-sm dark:bg-zinc-800'>
+            {text}
+          </code>
         );
       },
     },
@@ -45,7 +45,7 @@ function options(links) {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const assets = findAsset(node.data.target.sys.id);
         return (
-          <div className='mb-10 mt-5 flex mx-auto flex-col items-center gap-3'>
+          <div className='mx-auto mb-10 mt-5 flex flex-col items-center gap-3'>
             <div className='overflow-hidden rounded-xl shadow-lg'>
               {assets.url && (
                 <Image
@@ -67,7 +67,7 @@ function options(links) {
       [INLINES.HYPERLINK]: (node, children) => (
         <Link
           target='_blank'
-          className='font-medium hover:underline'
+          className='font-medium text-black hover:underline dark:text-white'
           href={node.data.uri}
         >
           {children}
