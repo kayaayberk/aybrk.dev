@@ -2,9 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Suspense } from 'react';
 import CodeBlock from './CodeBlock';
-import { BlogImageSkeleton } from './ImageSkeleton';
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
@@ -50,16 +48,16 @@ function options(links) {
           <div className='mx-auto mb-10 mt-5 flex flex-col items-center gap-3'>
             <div className='overflow-hidden rounded-xl shadow-lg'>
               {assets.url && (
-                <Suspense fallback={<BlogImageSkeleton />}>
-                  <Image
-                    src={assets.url}
-                    width={assets.width || 400}
-                    height={assets.height || 400}
-                    alt={assets.title}
-                    loading='lazy'
-                    className='animate-reveal'
-                  />
-                </Suspense>
+                <Image
+                  src={assets.url}
+                  width={assets.width || 400}
+                  height={assets.height || 400}
+                  alt={assets.title}
+                  className='animate-reveal opacity-0 transition-opacity duration-500'
+                  onLoadingComplete={(image) =>
+                    image.classList.remove('opacity-0')
+                  }
+                />
               )}
             </div>
             <span className='text-xs font-extralight tracking-wide text-muted-foreground'>
