@@ -5,7 +5,7 @@ import PageHeader from '@/components/PageHeader';
 import { RichText } from '@/components/RichText';
 import AudioPlayer from '@/components/AudioPlayer';
 import { getAllPostSlugs, getPost } from '@/lib/contentful';
-import { BlogImageSkeleton } from '@/components/ImageSkeleton';
+
 
 export async function generateStaticParams() {
   const allPosts = await getAllPostSlugs();
@@ -32,7 +32,6 @@ export default async function BlogSlug({ params }) {
 
   return (
     <div>
-      {/* <GradientWrapper /> */}
       <PageHeader
         allPosts={allPosts}
         title={title}

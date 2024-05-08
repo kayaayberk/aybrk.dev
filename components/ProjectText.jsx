@@ -1,5 +1,3 @@
-'use client';
-
 import { ArrowUpRight } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 

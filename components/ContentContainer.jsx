@@ -1,5 +1,3 @@
-'use client';
-
 import StepPointer from '@/components/StepPointer';
 import JourneyDescRenderer from '@/components/JourneyDescRenderer';
 import JourneyImageRenderer from '@/components/JourneyImageRenderer';

@@ -53,10 +53,8 @@ function options(links) {
                   width={assets.width || 400}
                   height={assets.height || 400}
                   alt={assets.title}
-                  className='animate-reveal opacity-0 transition-opacity duration-500'
-                  onLoadingComplete={(image) =>
-                    image.classList.remove('opacity-0')
-                  }
+                  loading='lazy'
+                  className='animate-reveal'
                 />
               )}
             </div>

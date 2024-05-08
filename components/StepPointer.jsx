@@ -1,5 +1,3 @@
-'use client';
-
 import { PlusCircle } from 'lucide-react';
 
 function StepPointer({ index, posts }) {
