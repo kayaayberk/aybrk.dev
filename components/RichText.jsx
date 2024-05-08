@@ -2,7 +2,9 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { Suspense } from 'react';
 import CodeBlock from './CodeBlock';
+import { BlogImageSkeleton } from './ImageSkeleton';
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
@@ -48,14 +50,16 @@ function options(links) {
           <div className='mx-auto mb-10 mt-5 flex flex-col items-center gap-3'>
             <div className='overflow-hidden rounded-xl shadow-lg'>
               {assets.url && (
-                <Image
-                  src={assets.url}
-                  width={assets.width || 400}
-                  height={assets.height || 400}
-                  alt={assets.title}
-                  loading='lazy'
-                  className='animate-reveal'
-                />
+                <Suspense fallback={<BlogImageSkeleton />}>
+                  <Image
+                    src={assets.url}
+                    width={assets.width || 400}
+                    height={assets.height || 400}
+                    alt={assets.title}
+                    loading='lazy'
+                    className='animate-reveal'
+                  />
+                </Suspense>
               )}
             </div>
             <span className='text-xs font-extralight tracking-wide text-muted-foreground'>
@@ -105,7 +109,7 @@ function options(links) {
           },
         });
         return (
-          <blockquote className='mb-4 leading-relaxed tracking-wide dark:text-gray-400 border-l-4 border-zinc-200 dark:border-zinc-800 px-4 font-light'>
+          <blockquote className='mb-4 border-l-4 border-zinc-200 px-4 font-light leading-relaxed tracking-wide dark:border-zinc-800 dark:text-gray-400'>
             {UnTaggedChildren}
           </blockquote>
         );
