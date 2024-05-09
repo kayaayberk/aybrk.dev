@@ -17,7 +17,7 @@ function options(links) {
       [MARKS.ITALIC]: (text) => <span className='font-semibold'>{text}</span>,
       [MARKS.CODE]: (text) => {
         return (
-          <code className='rounded-md bg-gray-200 px-2 py-0.5 text-sm dark:bg-zinc-800'>
+          <code className='rounded-md px-2 py-0.5 text-zinc-500 dark:text-zinc-300 text-sm bg-muted-foreground/15'>
             {text}
           </code>
         );
@@ -32,7 +32,7 @@ function options(links) {
         }
       },
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className='mb-6 font-light leading-relaxed tracking-wide dark:text-gray-400'>
+        <p className='mb-6 font-light leading-relaxed tracking-wide text-zinc-500'>
           {children}
         </p>
       ),
@@ -58,7 +58,7 @@ function options(links) {
                 />
               )}
             </div>
-            <span className='text-xs font-extralight tracking-wide text-muted-foreground'>
+            <span className='text-xs font-extralight tracking-wide text-zinc-500'>
               {assets.title}
             </span>
           </div>
@@ -92,7 +92,7 @@ function options(links) {
         });
 
         return (
-          <li className='font-light leading-relaxed tracking-wide dark:text-gray-400'>
+          <li className='font-light leading-relaxed tracking-wide text-zinc-500'>
             {UnTaggedChildren}
           </li>
         );
@@ -105,7 +105,7 @@ function options(links) {
           },
         });
         return (
-          <blockquote className='mb-4 border-l-4 border-zinc-200 px-4 font-light leading-relaxed tracking-wide dark:border-zinc-800 dark:text-gray-400'>
+          <blockquote className='mb-4 border-l-4 border-zinc-200 px-4 font-light leading-relaxed tracking-wide dark:border-zinc-800 text-zinc-500'>
             {UnTaggedChildren}
           </blockquote>
         );

@@ -43,11 +43,11 @@
     --sh-class: #2d5e9d;
     --sh-identifier: #354150;
     --sh-sign: #8996a3;
-    --sh-property: #0550ae;
-    --sh-entity: #249a97;
+    --sh-property: #7e00cc;
+    --sh-entity: #005FF2;
     --sh-jsxliterals: #6266d1;
-    --sh-string: #00a99a;
-    --sh-keyword: #f47067;
+    --sh-string: #107e32;
+    --sh-keyword: #ff4d8d;
     --sh-comment: #a19595;
   }
   .inline-code {
@@ -106,16 +106,16 @@
     --selection-bg: #b3b3b3;
     --selection-color: white;
 
-    --sh-class: #bcbcbc;
-    --sh-identifier: #bcbcbc;
-    --sh-sign: #bcbcbc;
-    --sh-property: #BF7AF1;
-    --sh-entity: #249a97;
+    --sh-class: white;
+    --sh-identifier: #dedede;
+    --sh-sign: white;
+    --sh-property: #bf7af1;
+    --sh-entity: #48a8ff;
     --sh-jsxliterals: #6266d1;
 
-    --sh-keyword: #F75F8F;
-    --sh-string: #028265;
-    --sh-comment: #9ca3af84;
+    --sh-keyword: #ff4d8d;
+    --sh-string: #00ca51;
+    --sh-comment: #a1a1a1;
   }
 }
 

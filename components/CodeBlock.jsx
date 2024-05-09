@@ -31,11 +31,11 @@ function CodeBlock({ entry }) {
     <>
       <div className='flex w-full flex-wrap items-center justify-between gap-2 rounded-t-lg border border-gray-700/20 bg-gray-50 py-1.5 pl-4 pr-2 dark:border-stone-400/20 dark:bg-stone-700/5'>
         <div className='flex items-center gap-4'>
-          <span className='inline-flex items-center gap-1.5'>
+          {/* <span className='inline-flex items-center gap-1.5'>
             <span className='size-4 rounded-full bg-gray-400/40 dark:bg-white/20' />
             <span className='size-4 rounded-full bg-gray-400/40 dark:bg-white/20' />
             <span className='size-4 rounded-full bg-gray-400/40 dark:bg-white/20' />
-          </span>
+          </span> */}
           {title && (
             <p className='m-0 text-xs font-light tracking-wide md:text-sm'>{title}</p>
           )}
@@ -43,7 +43,7 @@ function CodeBlock({ entry }) {
         <Button
           variant='outline'
           size='xs'
-          className='rounded-lg border-gray-700/20 bg-transparent p-1 px-2 shadow-lg hover:bg-gray-200 dark:border-stone-400/20 dark:hover:bg-gray-500/20'
+          className='rounded-md border-gray-700/20 bg-transparent p-1 px-2 shadow-lg hover:bg-gray-200 dark:border-stone-400/20 dark:hover:bg-gray-500/20'
           disabled={copied}
           onClick={onCopy}
         >
@@ -99,7 +99,7 @@ function CodeBlock({ entry }) {
         </Button>
       </div>
       <div className='mb-10 w-full overflow-x-auto rounded-lg rounded-t-none border border-t-0 border-gray-700/20 p-2 text-xs shadow-xl dark:border-stone-400/20'>
-        <pre className='ml-5'>
+        <pre className='ml-2'>
           <code ref={codeRef} className='sh__line' />
         </pre>
       </div>
