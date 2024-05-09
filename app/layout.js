@@ -79,7 +79,7 @@ export default async function RootLayout({ children }) {
             <MobileHeader allPosts={allPosts} />
             <ChildrenRenderer>
               {/* <PageHeader /> */}
-              <BgShape />
+              {/* <BgShape /> */}
               {children}
               <Analytics />
             </ChildrenRenderer>
