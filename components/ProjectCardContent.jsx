@@ -18,7 +18,7 @@ function ProjectCardContent({ project, carousel, isHovered }) {
             src={project.image}
             alt='project image'
             priority
-            className='animate-reveal dark:brightness-75'
+            className='animate-reveal'
           />
         </div>
         <div className={`${carousel ? 'hidden' : 'flex flex-wrap gap-1.5'}`}>

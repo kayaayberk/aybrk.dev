@@ -51,7 +51,7 @@ export const NavigationLink = memo(
         onClick={scrollToTop || handleDrawerClose}
         scroll
         className={[
-          'flex items-center justify-between rounded-md px-2 py-2 pr-1 ',
+          'flex items-center justify-between rounded-md px-2 py-1.5 pr-1 ',
           isActive
             ? 'bg-gray-400/40 dark:bg-white/20'
             : 'hover:bg-gray-200 dark:text-white/80 dark:hover:bg-gray-500/20',

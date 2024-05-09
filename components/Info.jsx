@@ -11,14 +11,14 @@ function Info() {
       <div className='flex flex-col gap-1'>
         {INFO.map((link) => {
           return !link.mailTo ? (
-            <span key={link.label} className='flex items-center gap-3 p-2 text-sm font-medium tracking-normal dark:text-white/80'>
+            <span key={link.label} className='flex items-center gap-3 px-2 py-1.5 text-sm font-medium tracking-normal dark:text-white/80'>
               {link.icon}
               <span className='tracking-normal font-normal'>{link.label}</span>
             </span>
           ) : (
             <Link
               key={link.label}
-              className='flex items-center justify-between rounded-md p-2 hover:bg-gray-200 dark:hover:bg-gray-500/20'
+              className='flex items-center justify-between rounded-md px-2 py-1.5 hover:bg-gray-200 dark:hover:bg-gray-500/20'
               href='mailto:kayaayberk98@gmail.com'
             >
               <span className='hover flex items-center gap-3 text-sm font-normal'>

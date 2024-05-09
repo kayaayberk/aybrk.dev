@@ -1,6 +1,6 @@
 function TechBadge({ children }) {
   return (
-    <div className='rounded-md border border-gray-700/20 px-2 dark:border-white/20'>
+    <div className='rounded-md border px-2 border-muted-foreground/10'>
       {children}
     </div>
   );

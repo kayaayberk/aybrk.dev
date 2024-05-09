@@ -23,8 +23,8 @@ function Badge() {
   }, []);
 
   return (
-    <div className='flex items-center justify-between rounded-lg p-2 pr-0 hover:bg-gray-200  dark:hover:bg-gray-500/20'>
-      <Link href='/' className='inline-flex items-center gap-2 rounded-md'>
+    <div className='flex items-center justify-between rounded-lg gap-3 p-2 pr-0 hover:bg-gray-200 dark:hover:bg-gray-500/20'>
+      <Link href='/' className='inline-flex items-center gap-2 w-full rounded-md'>
         <div className='size-10 overflow-hidden rounded-full'>
           <Image
             src={BadgeImage}

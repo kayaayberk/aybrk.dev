@@ -39,7 +39,7 @@ function PageBlogPostList({ allPosts, isBlogPage, sideBar }) {
               prefetch={true}
               style={{ animationDelay: `${300 + i * 100}ms` }}
               className={[
-                `flex w-full animate-slide items-center justify-between gap-1 rounded-md p-2 opacity-0 transition-all duration-300 ease-in-out dark:text-white/80`,
+                `flex w-full animate-slide items-center justify-between gap-1 rounded-md px-2 py-1.5 opacity-0 transition-all duration-300 ease-in-out dark:text-white/80`,
                 currentPathname === post.slug
                   ? 'bg-gray-400/40 dark:bg-white/20'
                   : 'hover:bg-gray-200 dark:text-white/80 dark:hover:bg-gray-500/20',
