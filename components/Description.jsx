@@ -2,11 +2,12 @@
 
 import Link from 'next/link';
 import Card from './Card';
+import LandingImage from './LandingImage';
 
 function Description() {
   return (
-    <Card desc>
-      <div className='flex h-full flex-col gap-4'>
+    <Card className={'flex flex-row'} desc>
+      <div className='flex h-full w-full md:w-1/2 flex-col gap-4'>
         <div className='flex flex-col gap-2'>
           <h1 className='flex items-center justify-start gap-2 text-3xl font-semibold tracking-tight  drop-shadow-xl'>
             Hi, I&apos;m{' '}
@@ -15,7 +16,7 @@ function Description() {
             </span>
             <span className='text-[25px]'>👋🏻</span>
           </h1>
-          <span className='text-md md:text-xl font-medium leading-tight'>
+          <span className='text-md font-medium leading-tight md:text-xl'>
             I&apos;m a Software Developer & Designer
           </span>
         </div>
@@ -41,6 +42,7 @@ function Description() {
           Use keyboard shortcuts 1 → 6 to navigate between the pages.
         </p>
       </div>
+      <LandingImage />
     </Card>
   );
 }
