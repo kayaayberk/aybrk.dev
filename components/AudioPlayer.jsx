@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Button } from './ui/button';
 import { useTheme } from 'next-themes';
 import { useEffect, useRef, useState } from 'react';
-import { Pause, Play, SkipForward, Volume2 } from 'lucide-react';
+import { Pause, Play, SkipForward, Volume2, VolumeX } from 'lucide-react';
 
 function AudioPlayer({ audioUrl, imageUrl, playlist }) {
   const { theme } = useTheme();
@@ -12,6 +12,7 @@ function AudioPlayer({ audioUrl, imageUrl, playlist }) {
   const [progress, setProgress] = useState(0);
   const [play, setPlay] = useState(false);
   const [volume, setVolume] = useState(0.25);
+  const [isMuted, setIsMuted] = useState(false);
 
   useEffect(() => {
     const audio = playerRef.current;
@@ -43,6 +44,15 @@ function AudioPlayer({ audioUrl, imageUrl, playlist }) {
     }
   };
 
+  const handleMute = () => {
+    if (isMuted) {
+      playerRef.current.volume = volume;
+    } else {
+      playerRef.current.volume = 0;
+    }
+    setIsMuted(!isMuted);
+  };
+
   const handleVolume = (e) => {
     setVolume(e.target.value);
     playerRef.current.volume = e.target.value;
@@ -54,7 +64,9 @@ function AudioPlayer({ audioUrl, imageUrl, playlist }) {
   };
 
   return (
-    <div className={`mb-5 flex $${playlist ? 'w-full' : 'w-1/2'} items-center gap-2`}>
+    <div
+      className={`sticky top-5 w-20 hover:w-80 transition-all duration-300 group mb-5 flex $${playlist ? 'w-full' : 'w-1/2'} items-center gap-2 rounded-md dark:bg-white/15 bg-black/5 backdrop-blur-md`}
+    >
       {imageUrl && (
         <div>
           <Image src={imageUrl && imageUrl} alt={title} />
@@ -63,10 +75,10 @@ function AudioPlayer({ audioUrl, imageUrl, playlist }) {
 
       <div className='flex w-full items-center justify-center gap-2 rounded-lg '>
         <div
-          className={`flex w-full ${playlist ? 'flex-col' : ''} items-center gap-4`}
+          className={`flex w-full ${playlist ? 'flex-col' : ''} items-center gap-0 group-hover:gap-4 transition-all duration-300`}
         >
           <div
-            className={`${!playlist ? 'flex' : 'flex-col'} w-full gap-2 items-center`}
+            className={`${!playlist ? 'flex' : 'flex-col'} w-full items-center gap-2`}
           >
             {playlist ? (
               <div className='flex items-center justify-center'>
@@ -93,7 +105,11 @@ function AudioPlayer({ audioUrl, imageUrl, playlist }) {
                 </Button>
               </div>
             ) : (
-              <Button onClick={handlePlay} className='p-0 px-2 hover:bg-gray-200 dark:text-white/80 dark:hover:bg-gray-500/20' variant='ghost'>
+              <Button
+                onClick={handlePlay}
+                className='p-0 px-2 hover:bg-gray-200 dark:text-white/80 dark:hover:bg-gray-500/20'
+                variant='ghost'
+              >
                 {play ? <Pause size={18} /> : <Play size={18} />}
               </Button>
             )}
@@ -109,11 +125,17 @@ function AudioPlayer({ audioUrl, imageUrl, playlist }) {
                 borderRadius: '50px',
                 backgroundImage: `linear-gradient(to right, ${theme === 'light' ? 'black' : 'white'} ${progress * 97}%, ${theme === 'light' ? 'white' : 'black'} 0)`,
               }}
-              className={`w-full appearance-none rounded-none border-none bg-transparent [&::-webkit-slider-runnable-track]:cursor-pointer [&::-webkit-slider-runnable-track]:rounded-sm [&::-webkit-slider-runnable-track]:bg-black/10 dark:[&::-webkit-slider-runnable-track]:bg-white/30 [&::-webkit-slider-thumb]:size-[5px] [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-sm`}
+              className={`opacity-0 group-hover:opacity-100 transition-all duration-300 w-full appearance-none rounded-none border-none bg-transparent [&::-webkit-slider-runnable-track]:cursor-pointer [&::-webkit-slider-runnable-track]:rounded-sm [&::-webkit-slider-runnable-track]:bg-black/10 dark:[&::-webkit-slider-runnable-track]:bg-white/30 [&::-webkit-slider-thumb]:size-[5px] [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-sm`}
             />
           </div>
           <div className='flex items-center justify-center gap-2 pr-2'>
-            <Volume2 size={22} />
+            <Button
+              onClick={handleMute}
+              className='p-0 px-2 hover:bg-gray-200 dark:text-white/80 dark:hover:bg-gray-500/20'
+              variant='ghost'
+            >
+              {isMuted ? <VolumeX size={22} /> : <Volume2 size={22} />}
+            </Button>
             <input
               type='range'
               min='0'
@@ -125,7 +147,7 @@ function AudioPlayer({ audioUrl, imageUrl, playlist }) {
                 borderRadius: '50px',
                 backgroundImage: `linear-gradient(to right, ${theme === 'light' ? 'black' : 'white'} ${volume * 97}%, ${theme === 'light' ? 'white' : 'black'} 0)`,
               }}
-              className={`w-20 appearance-none rounded-none border-none bg-transparent [&::-webkit-slider-runnable-track]:cursor-pointer [&::-webkit-slider-runnable-track]:rounded-sm [&::-webkit-slider-runnable-track]:bg-black/10 dark:[&::-webkit-slider-runnable-track]:bg-white/30 [&::-webkit-slider-thumb]:size-[5px] [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-sm`}
+              className={`opacity-0 group-hover:opacity-100 transition-all duration-300 w-20 appearance-none rounded-none border-none bg-transparent [&::-webkit-slider-runnable-track]:cursor-pointer [&::-webkit-slider-runnable-track]:rounded-sm [&::-webkit-slider-runnable-track]:bg-black/10 dark:[&::-webkit-slider-runnable-track]:bg-white/30 [&::-webkit-slider-thumb]:size-[5px] [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-sm`}
             />
           </div>
         </div>
