@@ -8,7 +8,7 @@ function ProjectText({ project, isHovered }) {
       <div className='flex items-center'>
         <h1 className='text-2xl font-bold'>{project.title}</h1>
         <ArrowUpRight
-          className={`${isHovered ? 'opacity-100' : 'opacity-0'}`}
+          className={`${isHovered ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200`}
         />
       </div>
       <p

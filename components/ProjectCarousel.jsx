@@ -31,13 +31,7 @@ function ProjectCarousel({ carousel }) {
       isHovered={isHovered}
       carousel
     >
-      <Carousel
-        plugins={[
-          Autoplay({
-            delay: 15000,
-          }),
-        ]}
-      >
+      <Carousel>
         <Link href='/projects'>
           <CarouselContent>
             {PROJECTS.map((project, index) => {

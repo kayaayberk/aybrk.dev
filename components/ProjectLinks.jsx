@@ -8,25 +8,29 @@ function ProjectLinks({ project }) {
   return (
     <div className='flex gap-2'>
       {project.live && (
-        <Link href={project.live} target='_blank'>
-          <Button
-            size={pathname === '/' ? 'sm' : ''}
-            className='flex gap-2 border-muted-foreground/30 dark:border-muted-foreground/20'
-          >
+        <Button
+          asChild
+          size='sm'
+          variant='outline'
+          className='flex border-[0.8px] bg-transparent border-muted-foreground/10 hover:bg-gray-200 dark:hover:bg-gray-500/20 gap-2'
+        >
+          <Link href={project.live} target='_blank'>
             <ExternalLink width={18} />
             See Live
-          </Button>
-        </Link>
+          </Link>
+        </Button>
       )}
-      <Link href={project.sourcecode} target='_blank'>
-        <Button
-          size={pathname === '/' ? 'sm' : ''}
-          className='flex gap-2 border-muted-foreground/30 dark:border-muted-foreground/20'
-        >
+      <Button
+        asChild
+        size='sm'
+        variant='outline'
+        className='flex border-[0.8px] bg-transparent border-muted-foreground/10 hover:bg-gray-200 dark:hover:bg-gray-500/20 gap-2'
+      >
+        <Link href={project.sourcecode} target='_blank'>
           <Github width={18} />
           Source Code
-        </Button>
-      </Link>
+        </Link>
+      </Button>
     </div>
   );
 }
