@@ -37,18 +37,19 @@
     --spice: 0, 0%, 99%;
     --spiceLighter: 0, 0%, 50%;
 
-    --selection-bg: black;
+    --selection-bg: #b3b3b3;
     --selection-color: white;
 
-    --sh-class: #2d5e9d;
-    --sh-identifier: #354150;
-    --sh-sign: #8996a3;
-    --sh-property: #7e00cc;
-    --sh-entity: #005FF2;
-    --sh-jsxliterals: #6266d1;
-    --sh-string: #107e32;
-    --sh-keyword: #ff4d8d;
-    --sh-comment: #a19595;
+    --sh-class: #8C8C8D;
+    --sh-identifier: #ffffffdc;
+    --sh-sign: #8C8C8D;
+    --sh-property: #ffffffdc;
+    --sh-entity: #ffffffdc;
+    --sh-jsxliterals: #8C8C8D; /* props, .something etc. */
+
+    --sh-keyword: #8C8C8D; /* export, async, function etc. */
+    --sh-string: #8C8C8D; /* 'string', "string" */
+    --sh-comment: #a1a1a1b0;
   }
   .inline-code {
     @apply inline-block rounded-md bg-gray-100 px-0.5 py-0.5 text-sm not-italic before:content-['`'] after:content-['`'];
@@ -106,16 +107,16 @@
     --selection-bg: #b3b3b3;
     --selection-color: white;
 
-    --sh-class: white;
-    --sh-identifier: #dedede;
-    --sh-sign: white;
-    --sh-property: #bf7af1;
-    --sh-entity: #48a8ff;
-    --sh-jsxliterals: #6266d1;
+    --sh-class: #8C8C8D;
+    --sh-identifier: #ffffffdc;
+    --sh-sign: #8C8C8D;
+    --sh-property: #ffffffdc;
+    --sh-entity: #ffffffdc;
+    --sh-jsxliterals: #8C8C8D; /* props, .something etc. */
 
-    --sh-keyword: #ff4d8d;
-    --sh-string: #00ca51;
-    --sh-comment: #a1a1a1;
+    --sh-keyword: #8C8C8D; /* export, async, function etc. */
+    --sh-string: #8C8C8D; /* 'string', "string" */
+    --sh-comment: #a1a1a1b0;
   }
 }
 
