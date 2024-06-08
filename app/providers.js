@@ -14,6 +14,7 @@ export default function Providers({ children }) {
 
   return (
     <ThemeProvider
+      disableTransitionOnChange
       attribute='class'
       storageKey='theme'
       defaultTheme='system'

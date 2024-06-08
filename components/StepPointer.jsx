@@ -6,7 +6,7 @@ function StepPointer({ index, posts }) {
       <div className='absolute -top-0.5 z-10'>
         <PlusCircle
           strokeWidth={1}
-          className='group-hover:fill-stone-700 transition-colors duration-300 size-7 fill-black text-white dark:fill-white dark:text-black'
+          className='dark:group-hover:fill-stone-700 group-hover:fill-stone-400 transition-colors duration-300 size-7 fill-black text-white dark:fill-white dark:text-black'
         />
       </div>
       <div
