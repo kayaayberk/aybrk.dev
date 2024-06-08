@@ -1,15 +1,15 @@
 import Image from 'next/image';
 
-function TasteImageCard({ url }) {
+function TasteImageCard({ url, width, height }) {
   return (
-    <div className='relative size-full overflow-hidden rounded-xl transition-all duration-500'>
+    <div className='relative overflow-hidden rounded-xl transition-all duration-500'>
       <Image
         src={url}
-        width={500}
-        height={500}
+        width={width}
+        height={height}
         priority
         alt='Taste Image'
-        className='size-full animate-reveal transition-all duration-500 ease-in-out hover:scale-110'
+        className='animate-reveal object-cover transition-all duration-500 ease-in-out hover:scale-110'
       />
     </div>
   );

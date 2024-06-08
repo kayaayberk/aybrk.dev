@@ -4,55 +4,50 @@ import { Button } from './ui/button';
 import { MapPin } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import TasteImageCard from '@/components/TasteImageCard';
-import LoadingSpinner from '@/components/LoadingSpinner';
+import Masonry from 'react-layout-masonry';
+import { useWindowSize } from '@uidotdev/usehooks';
 
 function TasteImages({ result }) {
   const { items, totalImageCount } = result;
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [displayCount, setDisplayCount] = useState(20);
-  const [totalImgCount, setTotalImgCount] = useState();
-
-  useEffect(() => {
-    setIsLoading(true);
-    setData(items);
-    setTotalImgCount(totalImageCount);
-    setIsLoading(false);
-  }, []);
+  const { width } = useWindowSize();
 
   return (
-    <div className='flex flex-col gap-10'>
-      <div className='columns-1 gap-5 md:columns-2 lg:columns-3'>
-        {data.slice(0, displayCount).map((image, index) => {
-          return (
-            <div
-              className='relative mb-5 animate-slide rounded-xl opacity-0 shadow-lg shadow-black/50 delay-300'
-              key={index}
-            >
-              <TasteImageCard url={image.image.url} index={index} />
-              <div className='absolute bottom-0 left-0 p-3'>
-                <span className='flex items-center gap-1 rounded-full bg-gray-200/20 px-2 py-1 text-xs text-white filter backdrop-blur-3xl'>
-                  <MapPin size={16} />
-                  {image.location}
-                </span>
-              </div>
+    <div className='flex flex-col gap-5'>
+      <Masonry
+        columns={width <= 768 ? 1 : width <= 1024 ? 2 : width <= 1280 ? 3 : 3}
+        gap={20}
+      >
+        {items.slice(0, displayCount).map((image, index) => (
+          <div
+            className='relative animate-slide rounded-xl opacity-0 shadow-lg shadow-black/50 delay-300'
+            key={index}
+          >
+            <TasteImageCard
+              url={image.image.url}
+              index={index}
+              width={image.image.width}
+              height={image.image.height}
+            />
+
+            <div className='absolute bottom-0 left-0 p-3'>
+              <span className='flex items-center gap-1 rounded-full bg-gray-200/20 px-2 py-1 text-xs text-white filter xl:backdrop-blur-3xl'>
+                <MapPin size={16} />
+                {image.location}
+              </span>
             </div>
-          );
-        })}
-      </div>
+          </div>
+        ))}
+      </Masonry>
       <Button
-        onClick={() => {
-          setIsLoading(true);
-          setDisplayCount((prev) => prev + 13);
-          setIsLoading(false);
-        }}
+        onClick={() => setDisplayCount((prev) => prev + 13)}
         variant='outline'
         className={[
           'mx-auto w-full border-gray-300 bg-transparent font-normal hover:bg-gray-200 dark:border-white dark:text-white dark:hover:bg-gray-500/25 md:w-1/2',
-          totalImgCount <= displayCount ? 'hidden' : '',
+          totalImageCount <= displayCount ? 'hidden' : '',
         ].join(' ')}
       >
-        {isLoading ? <LoadingSpinner /> : 'Show more'}
+        Show more
       </Button>
     </div>
   );
