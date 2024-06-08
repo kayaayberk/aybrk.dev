@@ -1,9 +1,13 @@
 import Direct from '@/components/Direct';
 import PageHeader from '@/components/PageHeader';
-import TasteImages from '@/components/TasteImages';
 import ReachedBottom from '@/components/ReachedBottom';
 import { getTasteFeedContent } from '@/lib/contentful';
 import { sharedTitle, sharedDescription } from '@/app/shared-metadata';
+import dynamic from 'next/dynamic';
+
+const TasteImages = dynamic(() => import('@/components/TasteImages'), {
+  ssr: false,
+});
 
 async function fetchData() {
   const data = await getTasteFeedContent();
