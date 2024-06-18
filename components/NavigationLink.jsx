@@ -62,7 +62,7 @@ export const NavigationLink = memo(
           {icon}
           <span className='font-normal tracking-normal'>{label}</span>
         </span>
-        <span className='overflow-hidden'>
+        <span className='relative overflow-hidden'>
           {!title ? (
             <span
               className={[
@@ -78,7 +78,7 @@ export const NavigationLink = memo(
             <>
               <ArrowUpRight
                 size={16}
-                className='-translate-x-3 translate-y-3 text-gray-400 opacity-0 transition-all duration-300 group-hover:-translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 dark:text-white/50'
+                className='-translate-x-3 translate-y-3 text-gray-400 opacity-100 transition-all duration-300 group-hover:-translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 dark:text-white/50'
               />
               <ArrowUpRight
                 size={16}

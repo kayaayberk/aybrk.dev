@@ -30,7 +30,7 @@ function Info() {
                   {link.label}
                 </span>
               </span>
-              <span className='dark:text-white/80'>
+              <span className='dark:text-white/80 relative'>
                 <ArrowUpRight
                   size={16}
                   className='-translate-x-3 translate-y-3 text-gray-400 opacity-0 transition-all duration-300 group-hover:-translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 dark:text-white/50'

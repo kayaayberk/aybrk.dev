@@ -1,11 +1,12 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
 import { MapPin } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import TasteImageCard from '@/components/TasteImageCard';
 import Masonry from 'react-layout-masonry';
+import { useState } from 'react';
 import { useWindowSize } from '@uidotdev/usehooks';
+import TasteImageCard from '@/components/TasteImageCard';
 
 function TasteImages({ result }) {
   const { items, totalImageCount } = result;
@@ -42,10 +43,10 @@ function TasteImages({ result }) {
       <Button
         onClick={() => setDisplayCount((prev) => prev + 13)}
         variant='outline'
-        className={[
+        className={cn(
           'mx-auto w-full border-gray-300 bg-transparent font-normal hover:bg-gray-200 dark:border-white dark:text-white dark:hover:bg-gray-500/25 md:w-1/2',
           totalImageCount <= displayCount ? 'hidden' : '',
-        ].join(' ')}
+        )}
       >
         Show more
       </Button>

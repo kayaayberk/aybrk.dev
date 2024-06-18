@@ -16,7 +16,7 @@ function SideBarContent({ handleDrawerClose, allPosts }) {
         <Pages handleDrawerClose={handleDrawerClose} />
         <Online handleDrawerClose={handleDrawerClose} />
         <Info />
-        <div>
+        <div className='hidden lg:block'>
           <span className='px-2 text-xs font-normal leading-relaxed text-card dark:text-card'>
             Latest Posts
           </span>
