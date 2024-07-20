@@ -33,10 +33,10 @@ function ProjectCarousel({ carousel }) {
     >
       <Carousel>
         <Link href='/projects'>
-          <CarouselContent>
+          <CarouselContent className='max-w-fit'>
             {PROJECTS.map((project, index) => {
               return (
-                <CarouselItem key={index}>
+                <CarouselItem key={index} className='m-0 p-0'>
                   <ProjectCardContent
                     key={project.title}
                     project={project}
