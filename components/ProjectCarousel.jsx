@@ -32,22 +32,22 @@ function ProjectCarousel({ carousel }) {
       carousel
     >
       <Carousel>
-        <Link href='/projects'>
-          <CarouselContent className='max-w-fit'>
+          <CarouselContent>
             {PROJECTS.map((project, index) => {
               return (
-                <CarouselItem key={index} className='m-0 p-0'>
+                <CarouselItem key={index}>
+                  <Link href='/projects'>
                   <ProjectCardContent
                     key={project.title}
                     project={project}
                     carousel={carousel}
                     isHovered={isHovered}
                   />
+                  </Link>
                 </CarouselItem>
               );
             })}
           </CarouselContent>
-        </Link>
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>

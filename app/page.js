@@ -23,7 +23,7 @@ export default function Home() {
           <div className='w-full gap-5 md:col-span-2 md:grid md:grid-cols-1'>
             <Description />
           </div>
-          <div className='w-full flex flex-col gap-5 md:col-span-2 md:grid md:grid-cols-2'>
+          <div className='w-full flex flex-col gap-5 md:col-span-2 md:grid md:grid-cols-2 contain-inline-size'>
             <ProjectCarousel carousel />
             <TechStack />
           </div>
