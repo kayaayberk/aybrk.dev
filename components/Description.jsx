@@ -6,7 +6,7 @@ import LandingImage from './LandingImage';
 
 function Description() {
   return (
-    <Card className={'flex flex-row'} desc>
+    <Card className={'flex flex-row border-none shadow-none w-full'} desc>
       <div className='flex h-full w-full md:w-1/2 flex-col gap-4'>
         <div className='flex flex-col gap-2'>
           <h1 className='flex items-center justify-start gap-2 text-3xl font-semibold tracking-tight  drop-shadow-xl'>
@@ -17,32 +17,20 @@ function Description() {
             <span className='text-[25px]'>👋🏻</span>
           </h1>
           <span className='text-md font-medium leading-tight md:text-xl'>
-            I&apos;m a Software Developer & Designer
+            I&apos;m a Frontend Developer & Designer
           </span>
         </div>
         <p className='text-sm font-light tracking-normal text-stone-500/80 dark:text-stone-300/60 md:text-sm'>
-          I&apos;m a passionate learner of the latest web technologies and I
-          have an endless energy for learning. I&apos;m trying to improve my
-          skills every day by learning new technologies and working on new
-          projects.
+          Currently experimenting with AI-related technologies, building stuff that I find interesting and exploring new areas in software development.
+
+          Feel free to reach me out through my links. ✌🏻
         </p>
 
-        <p className='text-sm font-light tracking-normal text-stone-500/80 dark:text-stone-300/60 md:text-sm'>
-          After graduating from a design school in Warsaw with solid experience
-          in teamwork, thorough projects and collaborations, I&apos;m ready to
-          contribute to the programming era! Find out more about me{' '}
-          <Link
-            href='/journey'
-            className='inline-flex text-black hover:underline dark:text-white'
-          >
-            here ↗
-          </Link>
-        </p>
         <p className='hidden bg-gradient-purp bg-clip-text text-sm font-semibold tracking-normal text-transparent dark:text-stone-300/60 md:flex md:text-sm'>
           Use keyboard shortcuts 1 → 6 to navigate between the pages.
         </p>
       </div>
-      <LandingImage />
+    <LandingImage />
     </Card>
   );
 }

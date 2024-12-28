@@ -30,6 +30,7 @@ function ProjectCarousel({ carousel }) {
       onMouseLeave={handleMouseLeave}
       isHovered={isHovered}
       carousel
+      className="grid"
     >
       <Carousel>
           <CarouselContent>

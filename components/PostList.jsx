@@ -11,7 +11,7 @@ function PostList({ allPosts, totalCount }) {
   return (
     <div
       className={[
-        'sticky left-0 hidden h-full gap-1 overflow-scroll border-r border-r-muted-foreground/10 p-2.5 lg:flex lg:w-[270px] lg:flex-col xl:w-96',
+        'sticky left-0 hidden h-full gap-1 overflow-scroll border-r border-r-muted-foreground/10 p-2.5 lg:flex lg:w-[270px] lg:flex-col xl:w-96 no-scrollbar',
         !!allPosts.find((post) => pathname.includes(post.slug))
           ? ''
           : 'lg:hidden',

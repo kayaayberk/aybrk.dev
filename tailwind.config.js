@@ -148,7 +148,22 @@ module.exports = {
       duration: ['hover', 'focus'],
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    // Hide scrollbar
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.no-scrollbar::-webkit-scrollbar': {
+          display: 'none',
+        },
+        '.no-scrollbar': {
+          '-ms-overflow-style': 'none',
+          'scrollbar-width': 'none',
+        },
+      };
+      addUtilities(newUtilities);
+    },
+    require('tailwindcss-animate'),
+  ],
   corePlugins: {
     filter: true,
     invert: true,

@@ -13,7 +13,7 @@ function ChildrenRenderer({ children }) {
 
   return (
     <div
-      className='h-screen w-full flex-1 overflow-y-scroll lg:flex lg:flex-col'
+      className='h-screen w-full flex-1 overflow-y-scroll lg:flex lg:flex-col no-scrollbar'
       ref={divRef}
     >
       {children}

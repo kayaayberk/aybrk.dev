@@ -19,13 +19,11 @@ export default function Home() {
     <>
       <PageHeader />
       <div className='container z-50 mx-auto flex min-h-max flex-col items-start gap-20 pt-28 md:max-w-4xl px-5'>
+        <Description />
         <div className='flex flex-col items-center gap-5 rounded-2xl md:grid md:grid-cols-2 md:shadow-none'>
-          <div className='w-full gap-5 md:col-span-2 md:grid md:grid-cols-1'>
-            <Description />
-          </div>
           <div className='w-full flex flex-col gap-5 md:col-span-2 md:grid md:grid-cols-2 contain-inline-size'>
-            <ProjectCarousel carousel />
-            <TechStack />
+            {/* <ProjectCarousel carousel /> */}
+            {/* <TechStack /> */}
           </div>
         </div>
 
